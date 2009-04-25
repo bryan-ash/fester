@@ -1,0 +1,9 @@
+config/database.yml
+coverage
+db/*.sqlite3
+db/schema.rb
+doc
+log/*.log
+public/cache/**/*
+tmp/*
+vendor/plugins/doc/**/*
