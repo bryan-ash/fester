@@ -1,0 +1,20 @@
+<h1>Editing jump</h1>
+
+<% form_for(@jump) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :load_id %><br />
+    <%= f.text_field :load_id %>
+  </p>
+  <p>
+    <%= f.label :jumper_id %><br />
+    <%= f.text_field :jumper_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @jump %> |
+<%= link_to 'Back', jumps_path %>

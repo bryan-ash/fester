@@ -1,0 +1,22 @@
+<h1>Listing jumps</h1>
+
+<table>
+  <tr>
+    <th>Load</th>
+    <th>Jumper</th>
+  </tr>
+
+<% @jumps.each do |jump| %>
+  <tr>
+    <td><%=h jump.load_id %></td>
+    <td><%=h jump.jumper_id %></td>
+    <td><%= link_to 'Show', jump %></td>
+    <td><%= link_to 'Edit', edit_jump_path(jump) %></td>
+    <td><%= link_to 'Destroy', jump, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New jump', new_jump_path %>

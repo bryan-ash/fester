@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @aircraft.name %>
+</p>
+
+<p>
+  <b>Capacity:</b>
+  <%=h @aircraft.capacity %>
+</p>
+
+
+<%= link_to 'Edit', edit_aircraft_path(@aircraft) %> |
+<%= link_to 'Back', aircrafts_path %>

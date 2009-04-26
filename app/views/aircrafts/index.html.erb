@@ -1,0 +1,22 @@
+<h1>Listing aircrafts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Capacity</th>
+  </tr>
+
+<% @aircrafts.each do |aircraft| %>
+  <tr>
+    <td><%=h aircraft.name %></td>
+    <td><%=h aircraft.capacity %></td>
+    <td><%= link_to 'Show', aircraft %></td>
+    <td><%= link_to 'Edit', edit_aircraft_path(aircraft) %></td>
+    <td><%= link_to 'Destroy', aircraft, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New aircraft', new_aircraft_path %>

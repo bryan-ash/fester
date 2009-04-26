@@ -1,0 +1,20 @@
+<h1>Editing aircraft</h1>
+
+<% form_for(@aircraft) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :capacity %><br />
+    <%= f.text_field :capacity %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @aircraft %> |
+<%= link_to 'Back', aircrafts_path %>

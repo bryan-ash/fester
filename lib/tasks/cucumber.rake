@@ -7,6 +7,16 @@ begin
     t.cucumber_opts = "--format pretty"
   end
   task :features => 'db:test:prepare'
+
+  namespace :features do
+    Cucumber::Rake::Task.new(:rcov) do |t|
+      t.rcov = true
+      t.rcov_opts = %w{--rails --exclude osx\/objc,gems\/,spec\/}
+      t.rcov_opts = ['-o features_rcov --text-report --exclude features\/,spec\/']
+    end
+    task :rcov => 'db:test:prepare'
+  end
+  
 rescue LoadError
   desc 'Cucumber rake task not available'
   task :features do

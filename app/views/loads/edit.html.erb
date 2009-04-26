@@ -1,0 +1,20 @@
+<h1>Editing load</h1>
+
+<% form_for(@load) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :date %><br />
+    <%= f.datetime_select :date %>
+  </p>
+  <p>
+    <%= f.label :aircraft_id %><br />
+    <%= f.text_field :aircraft_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @load %> |
+<%= link_to 'Back', loads_path %>

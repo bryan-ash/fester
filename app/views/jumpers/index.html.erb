@@ -1,0 +1,20 @@
+<h1>Listing jumpers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @jumpers.each do |jumper| %>
+  <tr>
+    <td><%=h jumper.name %></td>
+    <td><%= link_to 'Show', jumper %></td>
+    <td><%= link_to 'Edit', edit_jumper_path(jumper) %></td>
+    <td><%= link_to 'Destroy', jumper, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New jumper', new_jumper_path %>

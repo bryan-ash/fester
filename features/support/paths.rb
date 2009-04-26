@@ -17,7 +17,14 @@ module NavigationHelpers
     when /the homepage/
       root_path
     
-    # Add more page name => path mappings here
+    when /the aircraft page/
+      'aircrafts'
+    
+    when /the jumpers page/
+      'jumpers'
+    
+    when /the loads page/
+      'loads'
     
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +

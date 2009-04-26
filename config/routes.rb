@@ -1,4 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :jumps
+
+  map.resources :loads
+
+  map.resources :jumpers
+
+  map.resources :aircrafts
+
+  map.resources :manifests
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
