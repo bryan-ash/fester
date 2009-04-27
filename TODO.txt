@@ -1,0 +1,14 @@
+Aircraft should be radio buttons on load pages with textbox for new aircraft
+
+Rename Jump to Slot
+
+Only create in database slots that are populated on a load
+
+Provide method to add and remove slots on a load
+- Railscasts 73, 74, 75
+
+Autocomplete
+- Railscast 102
+- Railscast 16
+- ruby script\plugin install auto_complete
+
