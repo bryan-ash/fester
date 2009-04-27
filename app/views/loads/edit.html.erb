@@ -12,6 +12,13 @@
     <%= f.text_field :aircraft_id %>
   </p>
   <p>
+    <% for slot in @load.slots %>
+      <% fields_for "load[slots_on_load][]", slot do |slot_form| %>
+        <%= collection_select(:slot, :jumper_id, Jumper.find(:all), :id, :name) %>
+      <% end %>
+    <% end %>
+  </p>
+  <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>

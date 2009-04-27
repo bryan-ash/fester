@@ -12,7 +12,7 @@ begin
     Cucumber::Rake::Task.new(:rcov) do |t|
       t.rcov = true
       t.rcov_opts = %w{--rails --exclude osx\/objc,gems\/,spec\/}
-      t.rcov_opts = ['-o features_rcov --text-report --exclude features\/,spec\/']
+      t.rcov_opts = ['-o features_rcov --text-report --exclude config\/,features\/,spec\/']
     end
     task :rcov => 'db:test:prepare'
   end

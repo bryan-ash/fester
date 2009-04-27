@@ -25,6 +25,7 @@ class LoadsController < ApplicationController
   # GET /loads/new.xml
   def new
     @load = Load.new
+    5.times { @load.slots.build }
 
     respond_to do |format|
       format.html # new.html.erb
