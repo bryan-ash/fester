@@ -14,3 +14,5 @@ I want Fester to remember who jumped
     Then  I should see "success"
     And   I should see "42Z"
     And   I should see "Johnny Jumper"
+    When  I go to the loads page
+    Then  I should see "42Z"
