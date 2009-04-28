@@ -11,4 +11,5 @@ Autocomplete
 - Railscast 16
 - ruby script\plugin install auto_complete
 
-  
+When we need authentication
+- checkout: git://github.com/thoughtbot/clearance.git

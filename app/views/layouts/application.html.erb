@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Fester - Manifest System</title>
+    <%= stylesheet_link_tag 'system', 'general', 'template' %>
+  </head>
+  <body id="page_bg">
+    <div id="container">
+      <div id="title_container">
+        <div id="title"> Vermont Skydiving Adventures </div>
+      </div>
+      <div class="spacer"></div>
+      <div id="top_menu"> </div>
+      <div id="search"> </div>
+      <div class="spacer"></div>
+      <div id="contents">
+        <div id="column1_container">
+          <div id="column1">
+            <div class="moduletable_menu">
+              <h3>Main Menu</h3>
+              <ul class="menu"><li id="current" class="active item1"><a href="http://www.vtskydiving.com/"><span>Home</span></a></li><li class="item2"><a href="/index.php?option=com_content&amp;view=article&amp;id=2&amp;Itemid=2"><span>Directions</span></a></li><li class="item3"><a href="/index.php?option=com_content&amp;view=article&amp;id=3&amp;Itemid=3"><span>Contact Us</span></a></li><li class="item4"><a href="/index.php?option=com_content&amp;view=article&amp;id=4&amp;Itemid=4"><span>Hours</span></a></li><li class="item5"><a href="/index.php?option=com_content&amp;view=article&amp;id=5&amp;Itemid=5"><span>Prices</span></a></li><li class="item18"><a href="/index.php?option=com_gcalendar&amp;view=gcalendar&amp;Itemid=18"><span>Calendar</span></a></li></ul>               </div>
+            <div class="moduletable">
+              <h3>First-Timers</h3>
+              <ul class="menu"><li class="item6"><a href="/index.php?option=com_content&amp;view=article&amp;id=6&amp;Itemid=6"><span>Tandem Skydive</span></a></li><li class="item7"><a href="/index.php?option=com_content&amp;view=article&amp;id=7&amp;Itemid=7"><span>AFF Training</span></a></li><li class="item8"><a href="/index.php?option=com_content&amp;view=article&amp;id=8&amp;Itemid=8"><span>Static Line</span></a></li><li class="item9"><a href="/index.php?option=com_content&amp;view=article&amp;id=9&amp;Itemid=9"><span>Photos + Video</span></a></li></ul>             </div>
+            <div class="moduletable">
+              <h3>Experienced Jumpers</h3>
+              <ul class="menu"><li class="item10"><a href="/index.php?option=com_content&amp;view=article&amp;id=10&amp;Itemid=10"><span>Aircraft</span></a></li><li class="item11"><a href="/index.php?option=com_content&amp;view=article&amp;id=11&amp;Itemid=11"><span>Rigging</span></a></li><li class="item12"><a href="/index.php?option=com_content&amp;view=article&amp;id=12&amp;Itemid=12"><span>Organizing</span></a></li><li class="item14"><a href="/index.php?option=com_content&amp;view=article&amp;id=13&amp;Itemid=14"><span>Camping</span></a></li></ul>            </div>
+            <div class="moduletable">
+              <h3>Staff</h3>
+              <ul class="menu"><li class="item15"><a href="/index.php?option=com_content&amp;view=category&amp;id=1&amp;Itemid=15"><span>Staff Profiles</span></a></li></ul>            
+            </div>
+          </div>
+        </div>
+                                
+        <div id="column2_container">
+          <p style="color: green"><%= flash[:notice] %></p>
+          <div class="spacer25"></div>
+          <div id="pathway"></div>
+          <div class="spacer"></div>
+          <div class="spacer"></div>          
+          <div id="column2">
+            <%= yield -%>
+          </div>
+          <div id="sidebar">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
