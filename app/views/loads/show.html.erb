@@ -8,10 +8,12 @@
   <%=h @load.aircraft_name %>
 </p>
 <% for slot in @load.slots %>
-<p>
-  Jumper: <%=h slot.jumper_name %>
-</p>
+  <p>
+    <b>Jumper:</b>
+    <%=h slot.jumper_name %>
+  </p>
 <% end %>
 
 <%= link_to 'Edit', edit_load_path(@load) %> |
-<%= link_to 'Back', loads_path %>
+<%= link_to 'New',  new_load_path %> |
+<%= link_to 'List', loads_path %>

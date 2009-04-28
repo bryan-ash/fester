@@ -1,27 +1,3 @@
 <h1>New load</h1>
 
-<% form_for(@load) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
-  </p>
-  <p>
-    <%= f.label :aircraft_id %><br />
-    <%= collection_select(:load, :aircraft_id, Aircraft.find(:all), :id, :name, { :prompt => true}) %>
-  </p>
-  <% for slot in @load.slots %>
-    <% fields_for "load[slot_attributes][]", slot do |slot_form| %>
-      <p>
-        <%= slot_form.label :jumper_id %>
-        <%= slot_form.collection_select(:jumper_id, Jumper.find(:all), :id, :name, { :prompt => true}) %>
-      </p>
-    <% end %>
-  <% end %>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', loads_path %>
+<%= render :partial => 'form' %>

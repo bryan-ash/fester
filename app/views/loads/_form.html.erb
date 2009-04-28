@@ -1,0 +1,23 @@
+<%= error_messages_for :load %>
+
+<% form_for @load do |f| -%>
+
+<p>
+  <%= f.label :date, 'Date:' %>
+  <%= f.date_select :date, {}, { :class => 'inputbox' } %>
+</p>
+<p>
+  <%= f.label :aircraft_id, 'Aircraft:' %>
+  <%= collection_select(:load, :aircraft_id, Aircraft.find(:all), :id, :name, { :prompt => true}, :class => 'inputbox') %>
+</p>
+
+<div id="slots">
+  <%= render :partial => 'slot', :collection => @load.slots %>
+</div>
+
+<p>
+  <%= add_slot_link "Add a slot" %>
+</p>
+
+<%= f.submit "Submit", :class => 'button' %>
+<% end -%>

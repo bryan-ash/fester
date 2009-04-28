@@ -25,7 +25,7 @@ class LoadsController < ApplicationController
   # GET /loads/new.xml
   def new
     @load = Load.new
-    5.times { @load.slots.build }
+    @load.slots.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -58,6 +58,8 @@ class LoadsController < ApplicationController
   # PUT /loads/1
   # PUT /loads/1.xml
   def update
+    params[:load][:existing_slot_attributes] ||= {}
+    
     @load = Load.find(params[:id])
 
     respond_to do |format|

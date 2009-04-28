@@ -1,0 +1,12 @@
+<div class="slot">
+  <% new_or_existing = slot.new_record? ? 'new' : 'existing' %>
+  <% prefix = "load[#{new_or_existing}_slot_attributes][]" %>
+
+  <% fields_for prefix, slot do |slot_form| -%>
+    <p>
+      <%= slot_form.label :jumper_id, 'Jumper:' %>
+      <%= slot_form.collection_select(:jumper_id, Jumper.find(:all), :id, :name, { :prompt => true}, :class => 'inputbox') %>
+      <%= link_to_function "remove", "$(this).up('.slot').remove()" %>
+    </p>
+  <% end -%>
+</div>
