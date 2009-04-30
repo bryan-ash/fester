@@ -7,8 +7,10 @@
   <%= f.date_select :date, {}, { :class => 'inputbox' } %>
 </p>
 <p>
-  <%= f.label :aircraft_id, 'Aircraft:' %>
-  <%= collection_select(:load, :aircraft_id, Aircraft.find(:all), :id, :name, { :prompt => true}, :class => 'inputbox') %>
+  <%= f.label :aircraft_name, 'Aircraft:' %>
+  <%= text_field_with_auto_complete :load, :aircraft_name, 
+      { :class => 'inputbox' }, 
+      { :url => aircrafts_path(:format => :js), :method => :get, :param_name => 'search' } %>
 </p>
 
 <div id="slots">

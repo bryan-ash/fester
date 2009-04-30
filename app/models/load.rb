@@ -32,4 +32,8 @@ class Load < ActiveRecord::Base
     aircraft.name if aircraft
   end
 
+  def aircraft_name=(name)
+    self.aircraft = Aircraft.find_or_create_by_name(name) unless name.blank?
+  end
+
 end

@@ -1,13 +1,8 @@
 class AircraftsController < ApplicationController
   # GET /aircrafts
-  # GET /aircrafts.xml
+  # GET /aircrafts.js  # used for auto_complete
   def index
-    @aircrafts = Aircraft.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @aircrafts }
-    end
+    @aircrafts = Aircraft.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
   end
 
   # GET /aircrafts/1
