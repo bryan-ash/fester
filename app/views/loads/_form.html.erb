@@ -4,7 +4,7 @@
 
 <p>
   <%= f.label :date, 'Date:' %>
-  <%= f.date_select :date, {}, { :class => 'inputbox' } %>
+  <%= f.date_select :date, { :order => [:day, :month, :year] }, { :class => 'inputbox' } %>
 </p>
 <p>
   <%= f.label :aircraft_name, 'Aircraft:' %>
