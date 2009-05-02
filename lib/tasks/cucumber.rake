@@ -1,3 +1,7 @@
+require 'rake/clean'
+
+CLOBBER.include('doc')
+
 $LOAD_PATH.unshift(RAILS_ROOT + '/vendor/plugins/cucumber/lib') if File.directory?(RAILS_ROOT + '/vendor/plugins/cucumber/lib')
 
 begin
@@ -12,7 +16,7 @@ begin
     Cucumber::Rake::Task.new(:rcov) do |t|
       t.rcov = true
       t.rcov_opts = %w{--rails --exclude osx\/objc,gems\/,spec\/}
-      t.rcov_opts = ['-o features_rcov --text-report --exclude config\/,features\/,spec\/']
+      t.rcov_opts = ['-o doc\/features --text-report --exclude config\/,features\/,spec\/']
     end
     task :rcov => 'db:test:prepare'
   end
