@@ -1,0 +1,19 @@
+<% form_for(@aircraft) do |f| -%>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :class => :inputbox %>
+  </p>
+  <p>
+    <%= f.label :capacity %><br />
+    <%= f.text_field :capacity, :class => :inputbox %>
+  </p>
+  <div id="ours">
+    <%= f.check_box :ours %>
+    <%= f.label :ours %>
+  </div>
+  <p>
+    <%= f.submit 'Submit', :class => :button %>
+  </p>
+<% end -%>

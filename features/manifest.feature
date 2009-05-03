@@ -4,7 +4,7 @@ I want Fester to remember who jumped
 
   Scenario: No loads manifested
     Given there are no loads manifested
-    And   there is an aircraft named "42Z"
+    And   we own an aircraft named "42Z"
     And   there is a jumper named "Johnny Jumper"
     When  I go to the loads page
     And   I follow "New load"
@@ -18,7 +18,7 @@ I want Fester to remember who jumped
     Then  I should see "42Z"
 
   Scenario: Change a jumper in a given slot
-    Given there is an aircraft named "42Z"
+    Given we own an aircraft named "42Z"
     And   there is a jumper named "Johnny Jumper"
     And   there is a jumper named "Sally Skydiver"
     And   "Johnny Jumper" is manifested on "42Z"
@@ -32,4 +32,17 @@ I want Fester to remember who jumped
     When  I go to the loads page
     Then  I should see "42Z"
     
-    
+  Scenario: Manifest on a visiting aircraft
+    Given there is a jumper named "Bobby Bounce"
+    When  I go to the loads page
+    And   I follow "New load"
+    And   I fill in "Other" with "visitor"
+    And   I select "Bobby Bounce" from "Jumper"
+    And   I press "Submit"
+    Then  I should see "success"
+    And   I should see "visitor"
+    And   I should see "Bobby Bounce"
+    When  I go to the loads page
+    Then  I should see "visitor"
+    When  I follow "Edit"
+    Then  "visitor" should not be a radio button
