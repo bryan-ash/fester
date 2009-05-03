@@ -3,6 +3,9 @@ class Load < ActiveRecord::Base
   belongs_to :aircraft
   has_many   :slots, :dependent => :destroy
 
+  attr_accessor :new_aircraft_name
+
+  before_save  :create_aircraft_from_name
   after_update :save_slots
   
   def new_slot_attributes=(slot_attributes)
@@ -21,7 +24,11 @@ class Load < ActiveRecord::Base
       end
     end
   end
-  
+
+  def create_aircraft_from_name
+    create_aircraft(:name => new_aircraft_name) unless new_aircraft_name.blank?
+  end
+
   def save_slots
     slots.each do |slot|
       slot.save(false)

@@ -4,13 +4,16 @@
 
 <p>
   <%= f.label :date, 'Date:' %>
-  <%= f.date_select :date, { :order => [:day, :month, :year] }, { :class => 'inputbox' } %>
+  <%= f.date_select :date, { :order => [:day, :month, :year] }, { :class => :inputbox } %>
 </p>
 <p>
   <%= f.label :aircraft_name, 'Aircraft:' %>
-  <%= text_field_with_auto_complete :load, :aircraft_name, 
-      { :class => 'inputbox' }, 
-      { :url => aircrafts_path(:format => :js), :method => :get, :param_name => 'search' } %>
+  <% Aircraft.find(:all).each do |aircraft| %>
+    <%= f.radio_button :aircraft_name, aircraft.name %>
+    <%= f.label 'aircraft_name_' + aircraft.name.downcase, aircraft.name %>
+  <% end %>
+  <%= f.label :new_aircraft_name, 'Other:' %> 
+  <%= f.text_field :new_aircraft_name, { :class => :inputbox } %>
 </p>
 
 <div id="slots">

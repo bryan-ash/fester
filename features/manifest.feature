@@ -8,7 +8,7 @@ I want Fester to remember who jumped
     And   there is a jumper named "Johnny Jumper"
     When  I go to the loads page
     And   I follow "New load"
-    And   I fill in "Aircraft" with "42Z"
+    And   I choose "42Z"
     And   I select "Johnny Jumper" from "Jumper"
     And   I press "Submit"
     Then  I should see "success"
