@@ -1,7 +1,5 @@
 Need to identify some aircraft as Ours
 
-Factor Aircraft selection into partial
-
 When we need authentication
 - checkout: git://github.com/thoughtbot/clearance.git
 

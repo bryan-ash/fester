@@ -7,13 +7,7 @@
   <%= f.date_select :date, { :order => [:day, :month, :year] }, { :class => :inputbox } %>
 </p>
 <p>
-  <%= f.label :aircraft_name, 'Aircraft:' %>
-  <% Aircraft.find(:all).each do |aircraft| %>
-    <%= f.radio_button :aircraft_name, aircraft.name %>
-    <%= f.label 'aircraft_name_' + aircraft.name.downcase, aircraft.name %>
-  <% end %>
-  <%= f.label :new_aircraft_name, 'Other:' %> 
-  <%= f.text_field :new_aircraft_name, { :class => :inputbox } %>
+  <%= render :partial => 'aircraft', :locals => { :f => f } %>
 </p>
 
 <div id="slots">
