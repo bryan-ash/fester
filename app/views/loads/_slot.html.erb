@@ -4,8 +4,12 @@
 
   <% fields_for prefix, slot do |slot_form| -%>
     <p>
+      <%= slot_form.label :jump_type_id, 'Jump Type:' %>
+      <%= slot_form.collection_select(:jump_type_id, JumpType.find(:all), :id, :name, { }, :class => :inputbox) %>
+
       <%= slot_form.label :jumper_id, 'Jumper:' %>
-      <%= slot_form.collection_select(:jumper_id, Jumper.find(:all), :id, :name, { :prompt => true}, :class => 'inputbox') %>
+      <%= slot_form.collection_select(:jumper_id, Jumper.find(:all), :id, :name, { :prompt => true }, :class => 'inputbox') %>
+
       <%= link_to_function "remove", "$(this).up('.slot').remove()" %>
     </p>
   <% end -%>

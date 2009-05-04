@@ -7,3 +7,4 @@ log/*.log
 public/cache/**/*
 tmp/*
 vendor/plugins/doc/**/*
+semantic.cache
