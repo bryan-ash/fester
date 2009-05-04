@@ -11,6 +11,11 @@
       <%= slot_form.collection_select(:jumper_id, Jumper.find(:all), :id, :name, { :prompt => true }, :class => 'inputbox') %>
 
       <%= link_to_function "remove", "$(this).up('.slot').remove()" %>
+
+      <div>
+        <%= slot_form.label :notes, 'Notes:' %>
+        <%= slot_form.text_field :notes %>
+      </div>
     </p>
   <% end -%>
 </div>

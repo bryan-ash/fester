@@ -7,4 +7,8 @@ class Slot < ActiveRecord::Base
     jumper.name if jumper
   end
 
+  def jump_type_name
+    jump_type.name if jump_type
+  end
+
 end

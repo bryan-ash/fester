@@ -1,3 +1,5 @@
+Add Jump Type management
+
 Rename Jumper to Account
 
 When we need authentication
