@@ -1,0 +1,11 @@
+<% form_for(@jumper) do |f| -%>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :class => :inputbox %>
+  </p>
+  <p>
+    <%= f.submit 'Submit', :class => :button %>
+  </p>
+<% end -%>
