@@ -8,9 +8,14 @@
       <%= slot_form.collection_select(:jump_type_id, JumpType.find(:all), :id, :name, { }, :class => :inputbox) %>
 
       <%= slot_form.label :jumper_id, 'Jumper:' %>
-      <%= slot_form.collection_select(:jumper_id, Jumper.find(:all), :id, :name, { :prompt => true }, :class => 'inputbox') %>
+      <%= slot_form.collection_select(:jumper_id, Jumper.find(:all), :id, :name, { :prompt => true }, :class => :inputbox) %>
 
       <%= link_to_function "remove", "$(this).up('.slot').remove()" %>
+
+      <div>
+        <%= slot_form.label :equipment_id, 'Equipment:' %>
+        <%= slot_form.collection_select(:equipment_id, Equipment.find(:all), :id, :name, { }, :class => :inputbox) %>
+      </div>
 
       <div>
         <%= slot_form.label :notes, 'Notes:' %>
