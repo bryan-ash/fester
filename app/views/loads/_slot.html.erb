@@ -10,6 +10,9 @@
       <%= slot_form.label :jumper_id, 'Jumper:' %>
       <%= slot_form.collection_select(:jumper_id, Jumper.find(:all), :id, :name, { :prompt => true }, :class => :inputbox) %>
 
+      <%= slot_form.label :altitude, 'Altitude:' %>
+      <%= slot_form.text_field :altitude, :class => :inputbox %>
+
       <%= link_to_function "remove", "$(this).up('.slot').remove()" %>
 
       <div>
