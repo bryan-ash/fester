@@ -1,3 +1,8 @@
+Default altitude for jump types
+Default cost for jump type
+
+Form validations
+
 Add Jump Type management
 
 Rename Jumper to Account

@@ -16,6 +16,7 @@ I want Fester to remember who jumped
     And   I select "AFF" from "Jump Type"
     And   I fill in "Altitude" with "11000"
     And   I select "Wing Suit" from "Equipment"
+    And   I fill in "Cost" with "123.45"
     And   I fill in "Notes" with "Level 4"
     And   I press "Submit"
     Then  I should see "success"
@@ -25,6 +26,7 @@ I want Fester to remember who jumped
     And   I should see "Wing Suit"
     And   I should see "Level 4"
     And   I should see "11000"
+    And   I should see "123.45"
     When  I go to the loads page
     Then  I should see "42Z"
 
