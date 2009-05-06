@@ -2,7 +2,6 @@ In order to track customer's jumps
 As a Manifester
 I want Fester to remember who jumped
 
-  @focus
   Scenario: No loads manifested
     Given there are no loads manifested
     And   we own an aircraft named "42Z"

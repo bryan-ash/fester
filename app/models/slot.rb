@@ -1,11 +1,11 @@
 class Slot < ActiveRecord::Base
 
-  belongs_to :jumper
+  belongs_to :account
   belongs_to :jump_type
   belongs_to :equipment
   
-  def jumper_name
-    jumper.name if jumper
+  def account_name
+    account.name if account
   end
 
   def jump_type_name

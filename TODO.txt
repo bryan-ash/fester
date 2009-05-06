@@ -5,8 +5,6 @@ Form validations
 
 Add Jump Type management
 
-Rename Jumper to Account
-
 Refactor Manifest feature scenarios
 
 When we need authentication

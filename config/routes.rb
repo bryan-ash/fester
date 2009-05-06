@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :loads
 
-  map.resources :jumpers
+  map.resources :accounts
 
   map.resources :aircrafts
 

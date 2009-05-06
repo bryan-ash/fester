@@ -7,8 +7,8 @@
       <%= slot_form.label :jump_type_id, 'Jump Type:' %>
       <%= slot_form.collection_select(:jump_type_id, JumpType.find(:all), :id, :name, { }, :class => :inputbox) %>
 
-      <%= slot_form.label :jumper_id, 'Jumper:' %>
-      <%= slot_form.collection_select(:jumper_id, Jumper.find(:all), :id, :name, { :prompt => true }, :class => :inputbox) %>
+      <%= slot_form.label :account_id, 'Jumper:' %>
+      <%= slot_form.collection_select(:account_id, Account.find(:all), :id, :name, { :prompt => true }, :class => :inputbox) %>
 
       <%= slot_form.label :altitude, 'Altitude:' %>
       <%= slot_form.text_field :altitude, :size => 6 %>
@@ -27,6 +27,8 @@
 
       <%= slot_form.label :notes, 'Notes:' %>
       <%= slot_form.text_field :notes, :size => 60 %>
+
+      <hr />
     </p>
   <% end -%>
 </div>

@@ -20,8 +20,8 @@ module NavigationHelpers
     when /the aircraft page/
       'aircrafts'
     
-    when /the jumpers page/
-      'jumpers'
+    when /the accounts page/
+      'accounts'
     
     when /the loads page/
       'loads'
