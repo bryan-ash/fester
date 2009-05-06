@@ -2,15 +2,18 @@ In order to track customer's jumps
 As a Manifester
 I want Fester to remember who jumped
 
+  @focus
   Scenario: No loads manifested
     Given there are no loads manifested
     And   we own an aircraft named "42Z"
     And   there is a jumper named "Johnny Jumper"
+    And   there is a pilot named "Polly"
     And   there is a jump type named "AFF"
     And   there is equipment named "Wing Suit"
     When  I go to the loads page
     And   I follow "New load"
     And   I choose "42Z"
+    And   I select "Polly" from "Pilot"
     And   I select "Johnny Jumper" from "Jumper"
     And   I select "AFF" from "Jump Type"
     And   I fill in "Altitude" with "11000"
@@ -20,6 +23,7 @@ I want Fester to remember who jumped
     And   I press "Submit"
     Then  I should see "success"
     And   I should see "42Z"
+    And   I should see "Polly"
     And   I should see "Johnny Jumper"
     And   I should see "AFF"
     And   I should see "Wing Suit"

@@ -5,6 +5,8 @@ Form validations
 
 Add Jump Type management
 
+Add pilot field to Account management
+
 Refactor Manifest feature scenarios
 
 When we need authentication

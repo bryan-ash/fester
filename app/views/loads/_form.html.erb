@@ -7,6 +7,10 @@
   <%= f.date_select :date, { :order => [:day, :month, :year] }, { :class => :inputbox } %>
 </p>
 <p>
+  <%= f.label :pilot_id, 'Pilot:' %>
+  <%= f.collection_select(:pilot_id, Account.pilots, :id, :name, { :prompt => true }, :class => :inputbox) %>
+</p>
+<p>
   <%= render :partial => 'aircraft', :locals => { :f => f } %>
 </p>
 
