@@ -6,10 +6,10 @@ class Account < ActiveRecord::Base
 
   def roles
     roles = []
-    roles << "Jumper" if jumper
-    roles << "Pilot" if pilot
-    roles 
+    roles << 'Jumper' if jumper
+    roles << 'Pilot' if pilot
+    roles << 'None' unless roles.any?
+    roles
   end
-
 
 end
