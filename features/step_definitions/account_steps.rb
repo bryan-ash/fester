@@ -10,9 +10,26 @@ Given /^there is a pilot named "(.*)"$/ do |pilot|
   Account.create! :name => pilot, :pilot => true
 end
 
-When /^I create account "Johnny Jumper"$/ do
+When /^I create jumper "(.+)"$/ do |jumper|
   When 'I go to the accounts page'
   And  'I follow "New account"'
-  And  'I fill in "Name" with "Johnny Jumper"'
+  And  'I fill in "Name" with "' + jumper + '"'
+  And  'I press "Submit"'
+end
+
+When /^I create jumping pilot "(.+)"$/ do |pilot|
+  When 'I go to the accounts page'
+  And  'I follow "New account"'
+  And  'I fill in "Name" with "' + pilot + '"'
+  And  'I check "Pilot"'
+  And  'I press "Submit"'
+end
+
+When /^I create pilot "(.+)"$/ do |pilot|
+  When 'I go to the accounts page'
+  And  'I follow "New account"'
+  And  'I fill in "Name" with "' + pilot + '"'
+  And  'I check "Pilot"'
+  And  'I uncheck "Jumper"'
   And  'I press "Submit"'
 end

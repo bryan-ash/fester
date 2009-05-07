@@ -2,8 +2,16 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name, 'Name:' %>
     <%= f.text_field :name, :class => :inputbox %>
+  </p>
+  <p>
+    <%= f.label :jumper, 'Jumper:' %>
+    <%= f.check_box :jumper, :class => :checkbox %>
+  </p>
+  <p>
+    <%= f.label :pilot, 'Pilot:' %>
+    <%= f.check_box :pilot, :class => :checkbox %>
   </p>
   <p>
     <%= f.submit 'Submit', :class => :button %>

@@ -4,4 +4,12 @@ class Account < ActiveRecord::Base
     find_all_by_pilot(true)
   end
 
+  def roles
+    roles = []
+    roles << "Jumper" if jumper
+    roles << "Pilot" if pilot
+    roles 
+  end
+
+
 end

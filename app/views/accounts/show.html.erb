@@ -1,6 +1,10 @@
 <p>
   <b>Name:</b>
   <%=h @account.name %>
+  <br />
+
+  <b>Roles:</b>
+  <%= @account.roles.join ', ' %>
 </p>
 
 
