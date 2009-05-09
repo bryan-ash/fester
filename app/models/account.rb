@@ -12,4 +12,8 @@ class Account < ActiveRecord::Base
     roles
   end
 
+  def balance
+    Transaction.sum_for_account(id)
+  end
+
 end

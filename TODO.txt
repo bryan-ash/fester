@@ -1,24 +1,25 @@
+Transactions
+
 Default altitude for jump types
 Default cost for jump type
 
 Form validations
 
 Add Jump Type management
-
-Add pilot field to Account management
+Add Payment Method management
 
 Refactor Manifest feature scenarios
 
 When we need authentication
 - checkout: git://github.com/thoughtbot/clearance.git
 
-Export transactions to CSV
+Backup data
 
-Look into using Passenger to serve on Bluehost
+Export transactions to CSV
 
 Vulnerabilty tests
 
-Backup data
-
 Implement periodic log pruning
+
+Look into using Passenger to serve on Bluehost
 

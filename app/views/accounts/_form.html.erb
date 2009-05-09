@@ -14,6 +14,10 @@
     <%= f.check_box :pilot, :class => :checkbox %>
   </p>
   <p>
+    <%= f.label :balance, 'Balance:' %>
+    <%= number_to_currency(@account.balance) %>
+  </p>
+  <p>
     <%= f.submit 'Submit', :class => :button %>
   </p>
 <% end -%>

@@ -33,3 +33,9 @@ When /^I create pilot "(.+)"$/ do |pilot|
   And  'I uncheck "Jumper"'
   And  'I press "Submit"'
 end
+
+Then /^(.+)\'s balance should be (.+)$/ do |name, amount|
+  account = Account.find_by_name name
+  visit edit_account_path(account)
+  response.body.should contain(amount)
+end
