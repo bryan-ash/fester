@@ -1,7 +1,11 @@
 Transactions
+- Slot relates to transaction
+- Refactor sum_for_account
 
-Default altitude for jump types
-Default cost for jump type
+Manifesting
+- Default altitude for jump types
+- Default cost for jump type
+- Display multiple slots dependant on capacity of aircraft
 
 Form validations
 

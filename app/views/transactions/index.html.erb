@@ -12,7 +12,7 @@
 <% @transactions.each do |transaction| %>
   <tr>
     <td><%=h transaction.account_id %></td>
-    <td><%=h transaction.method_id %></td>
+    <td><%=h transaction.payment_method_id %></td>
     <td><%=h transaction.amount %></td>
     <td><%=h transaction.notes %></td>
     <td><%=h transaction.date %></td>

@@ -4,8 +4,14 @@ Feature: Transactions
   As a dropzone office worker
   I want to enter transactions
 
-  @focus
   Scenario: Jumper pays with cash
     Given there is a jumper named "Jane"
-    When  I enter Jane's payment of $250 cash
+    And   a cash payment credits an account
+    When  I enter Jane's cash payment of $250
     Then  Jane's balance should be $250.00
+
+  Scenario: Pilot gets paid
+    Given there is a pilot named "Pete"
+    And   a payroll payment debits an account
+    When  I enter Pete's payroll payment of $250
+    Then  Pete's balance should be $-250.00
