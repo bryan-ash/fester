@@ -29,6 +29,9 @@ module NavigationHelpers
     when /the new transaction page/
       'transactions/new'
       
+    when /the transactions page/
+      'transactions'
+      
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in features/support/paths.rb"

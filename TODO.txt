@@ -1,6 +1,8 @@
 Transactions
 - Slot relates to transaction
 - Refactor sum_for_account
+- Show account name and method name in place of IDs
+- Factor new and edit to use a partial
 
 Manifesting
 - Default altitude for jump types

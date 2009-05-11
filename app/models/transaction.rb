@@ -11,6 +11,10 @@ class Transaction < ActiveRecord::Base
     result
   end
 
+  def account_name
+    account.name if account
+  end
+
   def amount
     return self[:amount] unless payment_method
     payment_method.signed_amount(self[:amount])

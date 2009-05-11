@@ -8,10 +8,22 @@ Feature: Transactions
     Given there is a jumper named "Jane"
     And   a cash payment credits an account
     When  I enter Jane's cash payment of $250
-    Then  Jane's balance should be $250.00
+    And   Jane's balance should be $250.00
 
   Scenario: Pilot gets paid
     Given there is a pilot named "Pete"
     And   a payroll payment debits an account
     When  I enter Pete's payroll payment of $250
     Then  Pete's balance should be $-250.00
+
+  @focus
+  Scenario: Account names are visible on the transactions page
+    Given there is a jumper named "Jane"
+    And   a cash payment credits an account
+    When  I enter Jane's cash payment of $250
+    And   I go to the transactions page
+    Then  I should see "Jane"
+
+  Scenario: Jumper's slot creates a transaction
+    When  I go to the transactions page
+    Then  I should see Pending
