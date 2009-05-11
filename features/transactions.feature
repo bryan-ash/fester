@@ -16,13 +16,20 @@ Feature: Transactions
     When  I enter Pete's payroll payment of $250
     Then  Pete's balance should be $-250.00
 
-  @focus
   Scenario: Account names are visible on the transactions page
     Given there is a jumper named "Jane"
     And   a cash payment credits an account
     When  I enter Jane's cash payment of $250
     And   I go to the transactions page
     Then  I should see "Jane"
+
+  @focus
+  Scenario: Payment method names are visible on the transactions page
+    Given there is a jumper named "Jane"
+    And   a cash payment credits an account
+    When  I enter Jane's cash payment of $250
+    And   I go to the transactions page
+    Then  I should see "cash"
 
   Scenario: Jumper's slot creates a transaction
     When  I go to the transactions page
