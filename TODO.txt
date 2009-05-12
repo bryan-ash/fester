@@ -1,7 +1,14 @@
 Transactions
-- Slot relates to transaction
+- delete a transaction when associated slot is deleted
+- prevent a transaction from being deleted if it is for a slot
 - Refactor sum_for_account
 - Factor new and edit to use a partial
+
+Account management
+- add email, contact, gender, DOB
+- list transactions
+
+Navigation links
 
 Manifesting
 - Default altitude for jump types
@@ -9,6 +16,8 @@ Manifesting
 - Display multiple slots dependant on capacity of aircraft
 
 Form validations
+
+Account name fields should autocomplete on manifest and account pages
 
 Add Jump Type management
 Add Payment Method management

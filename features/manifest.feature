@@ -33,10 +33,8 @@ I want Fester to remember who jumped
     Then  I should see "42Z"
 
   Scenario: Change a jumper in a given slot
-    Given we own an aircraft named "42Z"
-    And   there is a jumper named "Johnny Jumper"
+    Given Johnny Jumper is manifested for a Tandem on 42Z
     And   there is a jumper named "Sally Skydiver"
-    And   "Johnny Jumper" is manifested on "42Z"
     When  I go to the loads page
     And   I follow "Edit"
     And   I select "Sally Skydiver" from "Jumper"

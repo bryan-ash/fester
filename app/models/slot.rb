@@ -3,6 +3,10 @@ class Slot < ActiveRecord::Base
   belongs_to :account
   belongs_to :jump_type
   belongs_to :equipment
+
+  has_one :transaction
+
+  before_save :associate_transaction
   
   def account_name
     account.name if account
@@ -14,6 +18,18 @@ class Slot < ActiveRecord::Base
 
   def equipment_name
     equipment.name if equipment
+  end
+
+  def date
+    return Date.today unless self[:load]
+    load.date
+  end
+
+  def associate_transaction
+    transaction = create_transaction(:account => account,
+                                     :notes   => jump_type_name,
+                                     :amount  => cost,
+                                     :date    => date)
   end
 
 end

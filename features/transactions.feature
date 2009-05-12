@@ -2,7 +2,7 @@ Feature: Transactions
 
   In Order to keep track of who owes what to whom
   As a dropzone office worker
-  I want to enter transactions
+  I want to have a history of transactions
 
   Scenario: Jumper pays with cash
     Given there is a jumper named "Jane"
@@ -23,7 +23,6 @@ Feature: Transactions
     And   I go to the transactions page
     Then  I should see "Jane"
 
-  @focus
   Scenario: Payment method names are visible on the transactions page
     Given there is a jumper named "Jane"
     And   a cash payment credits an account
@@ -32,5 +31,6 @@ Feature: Transactions
     Then  I should see "cash"
 
   Scenario: Jumper's slot creates a transaction
+    Given Jenifer is manifested for a Tandem on 42Z
     When  I go to the transactions page
-    Then  I should see Pending
+    Then  I should see an entry for Jenifer's Tandem
