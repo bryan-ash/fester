@@ -23,6 +23,9 @@ module NavigationHelpers
     when /the accounts page/
       'accounts'
     
+    when /the jump types page/
+      'jump_types'
+
     when /the loads page/
       'loads'
 

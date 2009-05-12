@@ -1,0 +1,11 @@
+<% form_for(@jump_type) do |f| -%>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name, 'Name:' %>
+    <%= f.text_field :name, :class => :inputbox %>
+  </p>
+  <p>
+    <%= f.submit 'Submit', :class => :button %>
+  </p>
+<% end -%>
