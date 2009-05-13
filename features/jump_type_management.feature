@@ -10,6 +10,6 @@ I want jump types to be remembered
 
   Scenario: Editing a jump type
     Given there is a jump type named "Tandem"
-    When  I rename "Tandem" to "Super Jump"
+    When  I rename jump type "Tandem" to "Super Jump"
     And   I go to the jump types page
     Then  I should see "Super Jump"

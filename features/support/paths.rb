@@ -32,6 +32,9 @@ module NavigationHelpers
     when /the new transaction page/
       'transactions/new'
       
+    when /the payment methods page/
+      'payment_methods'
+
     when /the transactions page/
       'transactions'
       

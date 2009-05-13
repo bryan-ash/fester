@@ -19,8 +19,6 @@ Form validations
 
 Account name fields should autocomplete on manifest and account pages
 
-Add Payment Method management
-
 Refactor Manifest feature scenarios
 
 When we need authentication
