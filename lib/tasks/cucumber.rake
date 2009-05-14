@@ -10,7 +10,7 @@ begin
   Cucumber::Rake::Task.new(:features) do |t|
     t.cucumber_opts = "--format pretty"
   end
-  task :features => 'db:test:prepare'
+  task :features => ['db:test:prepare']
 
   namespace :features do
     Cucumber::Rake::Task.new(:rcov) do |t|

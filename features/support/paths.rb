@@ -14,29 +14,32 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
     
-    when /the homepage/
+    when /the home page/
       root_path
     
     when /the aircraft page/
-      'aircrafts'
+      aircrafts_path
     
     when /the accounts page/
-      'accounts'
+      accounts_path
     
     when /the jump types page/
-      'jump_types'
+      jump_types_path
+
+    when /the equipment page/
+      '/equipment'
 
     when /the loads page/
-      'loads'
+      loads_path
 
     when /the new transaction page/
       'transactions/new'
       
     when /the payment methods page/
-      'payment_methods'
+      payment_methods_path
 
     when /the transactions page/
-      'transactions'
+      transactions_path
       
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +

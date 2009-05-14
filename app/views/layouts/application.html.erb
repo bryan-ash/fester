@@ -9,6 +9,41 @@
   <body>
     <div>
       <div id="contents">
+        <div id="column1_container">
+          <div id="column1">
+            <div class="moduletable_menu">
+              <h3>Main Menu</h3>
+              <ul class="menu">            
+                <li class="item10">
+                  <%= link_to 'Manifest', loads_path %>
+                </li>
+                <li class="item10">
+                  <%= link_to 'Transactions', transactions_path %>
+                </li>
+                <li class="item10">
+                  <%= link_to 'Accounts', accounts_path %>
+                </li>
+              </ul>
+            </div>
+            <div class="moduletable">
+              <h3>Maintenance</h3>
+              <ul class="menu">            
+                <li class="item10">
+                  <%= link_to 'Aircraft', aircrafts_path %>
+                </li>
+                <li class="item10">
+                  <%= link_to 'Equipment', :controller => :equipment, :action => :index %>
+                </li>
+                <li class="item10">
+                  <%= link_to 'Jump Types', jump_types_path %>
+                </li>
+                <li class="item10">
+                  <%= link_to 'Payment Methods', payment_methods_path %>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <div id="column2_container">
           <p style="color: green"><%= flash[:notice] %></p>
           <div class="spacer25"></div>
