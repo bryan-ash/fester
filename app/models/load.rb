@@ -4,8 +4,6 @@ class Load < ActiveRecord::Base
   belongs_to :pilot, :class_name => "Account"
   has_many   :slots, :dependent => :destroy
 
-  attr_accessor :new_aircraft_name
-
   before_save  :create_aircraft_from_name
   after_update :save_slots
   
@@ -42,6 +40,14 @@ class Load < ActiveRecord::Base
 
   def aircraft_name=(name)
     self.aircraft = Aircraft.find_or_create_by_name(name) unless name.blank?
+  end
+
+  def new_aircraft_name
+    @new_aircraft_name || aircraft_name
+  end
+
+  def new_aircraft_name=(name)
+    @new_aircraft_name = name
   end
 
   def pilot_name

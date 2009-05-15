@@ -8,7 +8,7 @@ Feature: Transactions
     Given there is a jumper named "Jane"
     And   a cash payment credits an account
     When  I enter Jane's cash payment of $250
-    And   Jane's balance should be $250.00
+    Then  Jane's balance should be $250.00
 
   Scenario: Pilot gets paid
     Given there is a pilot named "Pete"

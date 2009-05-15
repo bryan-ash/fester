@@ -1,3 +1,5 @@
+BUG: When our aircraft is used, editing the load show our aircraft name in Other
+
 Account management
 - add email, contact, gender, DOB
 - list transactions

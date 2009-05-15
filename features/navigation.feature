@@ -15,7 +15,6 @@ Feature: Navigation
   | Transactions | transactions |
   | Accounts     | accounts     |
 
-  @focus
   Scenario Outline: Maintenance functions
     Given I am on the home page
     When  I follow "<link>"

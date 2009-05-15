@@ -2,7 +2,7 @@ In order to track customer's jumps
 As a Manifester
 I want Fester to remember who jumped
 
-  Scenario: No loads manifested
+  Scenario: Manifesting an AFF
     Given there are no loads manifested
     And   we own an aircraft named "42Z"
     And   there is a jumper named "Johnny Jumper"
@@ -47,15 +47,20 @@ I want Fester to remember who jumped
     
   Scenario: Manifest on a visiting aircraft
     Given there is a jumper named "Bobby Bounce"
+
     When  I go to the loads page
     And   I follow "New load"
     And   I fill in "Other" with "visitor"
     And   I select "Bobby Bounce" from "Jumper"
     And   I press "Submit"
+
     Then  I should see "success"
     And   I should see "visitor"
     And   I should see "Bobby Bounce"
+
     When  I go to the loads page
     Then  I should see "visitor"
+
     When  I follow "Edit"
-    Then  "visitor" should not be a radio button
+    Then  the "Other" field should contain "visitor"
+    And   "visitor" should not be a radio button
