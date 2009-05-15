@@ -64,3 +64,9 @@ I want Fester to remember who jumped
     When  I follow "Edit"
     Then  the "Other" field should contain "visitor"
     And   "visitor" should not be a radio button
+
+  @focus
+  Scenario: Editing a load on our aircraft
+    Given a load manifested on our aircraft
+    When  I edit the load
+    Then  the "Other" field should be blank

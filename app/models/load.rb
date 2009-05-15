@@ -43,7 +43,7 @@ class Load < ActiveRecord::Base
   end
 
   def new_aircraft_name
-    @new_aircraft_name || aircraft_name
+    @new_aircraft_name || aircraft_name unless aircraft.ours if aircraft
   end
 
   def new_aircraft_name=(name)

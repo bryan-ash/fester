@@ -14,6 +14,14 @@ Given /^(.*) is manifested for a (.+) on (.*)$/ do |jumper, jump_type, aircraft|
   And   'I press "Submit"'
 end
 
+Given /^a load manifested on our aircraft$/ do
+  Given 'Johnny is manifested for a Tandem on 42Z'
+end
+
+When /^I edit the load$/ do
+  visit '/loads/1/edit'
+end
+
 Then /^"([^\"]*)" should not be a radio button$/ do |aircraft|
   lambda { choose(aircraft) }.should raise_error(Webrat::NotFoundError)
 end
