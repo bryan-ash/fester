@@ -43,7 +43,7 @@ class Load < ActiveRecord::Base
   end
 
   def new_aircraft_name
-    @new_aircraft_name || aircraft_name unless aircraft.ours if aircraft
+    @new_aircraft_name || other_aircraft_name
   end
 
   def new_aircraft_name=(name)
@@ -52,6 +52,14 @@ class Load < ActiveRecord::Base
 
   def pilot_name
     pilot.name if pilot
+  end
+
+  def other_aircraft_name
+    aircraft_name unless our_aircraft?
+  end
+
+  def our_aircraft?
+    aircraft.ours if aircraft
   end
 
 end

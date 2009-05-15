@@ -44,7 +44,7 @@ I want Fester to remember who jumped
     And   I should see "Sally Skydiver"
     When  I go to the loads page
     Then  I should see "42Z"
-    
+
   Scenario: Manifest on a visiting aircraft
     Given there is a jumper named "Bobby Bounce"
 
@@ -65,7 +65,6 @@ I want Fester to remember who jumped
     Then  the "Other" field should contain "visitor"
     And   "visitor" should not be a radio button
 
-  @focus
   Scenario: Editing a load on our aircraft
     Given a load manifested on our aircraft
     When  I edit the load
