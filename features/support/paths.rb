@@ -14,31 +14,31 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
     
-    when /the home page/
+    when /home/
       root_path
     
-    when /the aircraft page/
+    when /aircraft/
       aircrafts_path
     
-    when /the accounts page/
+    when /accounts/
       accounts_path
-    
-    when /the jump types page/
+
+    when /jump types/
       jump_types_path
 
-    when /the equipment page/
+    when /equipment/
       '/equipment'
 
-    when /the loads page/
+    when /loads/
       loads_path
 
-    when /the new transaction page/
+    when /new transaction/
       'transactions/new'
       
-    when /the payment methods page/
+    when /payment methods/
       payment_methods_path
 
-    when /the transactions page/
+    when /transactions/
       transactions_path
       
     else
