@@ -15,6 +15,7 @@ Manifesting
 - Entering Other should uncheck radio buttons
 
 Form validations
+- Slot must have cost
 
 Account name fields should autocomplete on manifest and account pages
 

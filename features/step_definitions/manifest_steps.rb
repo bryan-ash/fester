@@ -11,6 +11,8 @@ Given /^(.*) is manifested for a (.+) on (.*)$/ do |jumper, jump_type, aircraft|
   And   'I follow "New load"'
   And   'I choose "' + aircraft + '"'
   And   'I select "' + jumper + '" from "Jumper"'
+  And   'I select "' + jump_type + '" from "Jump Type"'
+  And   'I fill in "Cost" with "100"'
   And   'I press "Submit"'
 end
 
