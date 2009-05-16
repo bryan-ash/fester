@@ -25,3 +25,8 @@ end
 Then /^"([^\"]*)" should not be a radio button$/ do |aircraft|
   lambda { choose(aircraft) }.should raise_error(Webrat::NotFoundError)
 end
+
+Then /^I should see 6 slots$/ do
+  one_for_javascript_add_slot = 1
+  response.body.scan(/Jumper/).length.should == 6 + one_for_javascript_add_slot
+end

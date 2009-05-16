@@ -69,3 +69,8 @@ I want Fester to remember who jumped
     Given a load manifested on our aircraft
     When  I edit the load
     Then  the "Other" field should be blank
+
+  Scenario: A load has 6 slots by default
+    Given I am on the loads page
+    When  I follow "New load"
+    Then  I should see 6 slots
