@@ -20,3 +20,15 @@ I want Fester to remember account information
     Then  I should see "Handsome Joe"
     And   I should see "Pilot"
     And   I should not see "Jumper"
+
+  Scenario Outline: Accounts have details
+    Given that no accounts exist
+    When  I create an account with <field> "<value>"
+    Then  I should see "<value>"
+
+  Examples:
+  | field   | value               |
+  | Email   | jane.doe@anytown.us |
+  | Contact | 555-123-4567        |
+  | Gender  | Female              |
+  | DOB     | 04-04-1972          |

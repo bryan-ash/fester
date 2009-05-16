@@ -34,6 +34,14 @@ When /^I create pilot "(.+)"$/ do |pilot|
   And  'I press "Submit"'
 end
 
+When /^I create an account with (.+) "(.+)"$/ do |field, value|
+  When 'I go to the accounts page'
+  And  'I follow "New account"'
+  And  'I fill in "' + field + '" with "' + value + '"'
+  And  'I press "Submit"'
+end
+
+
 Then /^(.+)\'s balance should be (.+)$/ do |name, amount|
   account = Account.find_by_name(name)
   visit edit_account_path(account)

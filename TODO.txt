@@ -1,5 +1,4 @@
 Account management
-- add email, contact, gender, DOB
 - list transactions
 
 Transactions

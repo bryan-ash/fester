@@ -6,15 +6,31 @@
     <%= f.text_field :name, :class => :inputbox %>
   </p>
   <p>
-    <%= f.label :jumper, 'Jumper:' %>
+    <%= f.label :email %>:
+    <%= f.text_field :email, :class => :inputbox %>
+  </p>
+  <p>
+    <%= f.label :contact %>:
+    <%= f.text_field :contact, :class => :inputbox %>
+  </p>
+  <p>
+    <%= f.label :gender %>:
+    <%= f.text_field :gender, :class => :inputbox %>
+  </p>
+  <p>
+    <%= f.label :dob %>:
+    <%= f.text_field :dob, :class => :inputbox %>
+  </p>
+  <p>
+    <%= f.label :jumper %>:
     <%= f.check_box :jumper, :class => :checkbox %>
   </p>
   <p>
-    <%= f.label :pilot, 'Pilot:' %>
+    <%= f.label :pilot %>:
     <%= f.check_box :pilot, :class => :checkbox %>
   </p>
   <p>
-    <%= f.label :balance, 'Balance:' %>
+    <%= f.label :balance %>:
     <%= number_to_currency(@account.balance) %>
   </p>
   <p>
