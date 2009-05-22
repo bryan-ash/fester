@@ -34,3 +34,14 @@ Feature: Transactions
     Given Jenifer is manifested for a Tandem on 42Z
     When  I go to the transactions page
     Then  I should see an entry for Jenifer's Tandem
+
+  @focus
+  Scenario: Jumper's transactions are listed on their account page
+    Given PENDING a way to enter payment into a given slot on the load
+    Given Julia is manifested for a Fun Jump on 1EE
+    And   a cash payment credits an account
+    And   I enter Julia's cash payment of $20
+
+    When  I go to Julia's page
+    Then  I should see "Fun Jump"
+    And   I should see "cash"

@@ -41,6 +41,10 @@ When /^I create an account with (.+) "(.+)"$/ do |field, value|
   And  'I press "Submit"'
 end
 
+When /^I go to Julia\'s page$/ do
+  account = Account.find_by_name 'Julia'
+  visit "/accounts/#{account.id}/edit"
+end
 
 Then /^(.+)\'s balance should be (.+)$/ do |name, amount|
   account = Account.find_by_name(name)

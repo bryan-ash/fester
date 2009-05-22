@@ -36,4 +36,17 @@
   <p>
     <%= f.submit 'Submit', :class => :button %>
   </p>
+
+  <div id="transactions">
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Payment Method</th>
+        <th>Amount</th>
+        <th>Notes</th>
+        <th>Slot_id</th>
+      </tr>
+      <%= render :partial => 'transaction', :collection => @account.transactions -%>
+    </table>
+  </div>
 <% end -%>
