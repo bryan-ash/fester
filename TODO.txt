@@ -1,6 +1,3 @@
-Account management
-- list transactions
-
 Transactions
 - delete a transaction when associated slot is deleted
 - prevent a transaction from being deleted if it is for a slot

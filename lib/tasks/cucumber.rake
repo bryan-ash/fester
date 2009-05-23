@@ -17,6 +17,11 @@ begin
       t.rcov_opts = ['-o doc\/features --text-report --exclude config\/,features\/,spec\/']
     end
     task :rcov => 'db:test:prepare'
+
+    Cucumber::Rake::Task.new(:focus) do |t|
+      t.cucumber_opts = "-t focus --format pretty"
+    end
+    task :features => ['db:test:prepare']
   end
   
 rescue LoadError
