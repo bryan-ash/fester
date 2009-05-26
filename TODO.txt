@@ -5,17 +5,22 @@ Transactions
 - Factor new and edit to use a partial
 
 Manifesting
-- Remove empty slots
 - Display multiple slots dependant on capacity of aircraft
 - Default altitude for jump types
 - Default cost for jump type
 - Picking our aircraft should blank Other
 - Entering Other should uncheck radio buttons
+- On loads page, clicking icon toggles slots visible
+- Performance: editing load fetches jump types, accounts and equipment lists for each slot, should only fetch once
 
 Form validations
 - Slot must have cost
 
 Account name fields should autocomplete on manifest and account pages
+
+Link to New Transaction on Account edit page
+
+Import SkyWriter data
 
 Refactor Manifest feature scenarios
 
@@ -31,3 +36,6 @@ Vulnerabilty tests
 
 Implement periodic log pruning
 
+Manage bookings?
+- Phone operator enters booking
+- Jumper enters booking online

@@ -9,7 +9,7 @@ class Load < ActiveRecord::Base
   
   def new_slot_attributes=(slot_attributes)
     slot_attributes.each do |attributes|
-      slots.build(attributes)
+      slots.build(attributes) unless attributes[:account_id].blank?
     end
   end
 
