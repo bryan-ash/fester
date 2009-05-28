@@ -5,16 +5,25 @@ Transactions
 - Factor new and edit to use a partial
 
 Manifesting
-- Display multiple slots dependant on capacity of aircraft
 - Default altitude for jump types
 - Default cost for jump type
 - Picking our aircraft should blank Other
 - Entering Other should uncheck radio buttons
+- Display multiple slots dependant on capacity of aircraft
 - On loads page, clicking icon toggles slots visible
 - Performance: editing load fetches jump types, accounts and equipment lists for each slot, should only fetch once
 
-Form validations
-- Slot must have cost
+Vulnerabilty
+- Form validations
+  - limit all inputs to basic
+  - Slot must have cost
+- use SSL from login page onwards
+  - look at http digest?
+  - use self signed certificate
+- tests
+- RFuzz?
+- PCI DSS regulations relating to e-commerce - OWASP Top 10
+- check www.owasp.org
 
 Account name fields should autocomplete on manifest and account pages
 
@@ -27,15 +36,15 @@ Refactor Manifest feature scenarios
 When we need authentication
 - checkout: git://github.com/thoughtbot/clearance.git
 
-Backup data
+Heroku Services
+- Backup is available, need to figure out how to use
+- SSL is available
 
 Export transactions to CSV
-
-Vulnerabilty tests
-- RFuzz?
 
 Implement periodic log pruning
 
 Manage bookings?
 - Phone operator enters booking
 - Jumper enters booking online
+
