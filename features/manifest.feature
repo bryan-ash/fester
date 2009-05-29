@@ -3,6 +3,7 @@ As a Manifester
 I want Fester to remember who jumped
 
   Scenario: Manifesting an AFF
+    Given PENDING a way to enter values into a given slot on the load
     Given there are no loads manifested
     And   we own an aircraft named "42Z"
     And   there is a jumper named "Johnny Jumper"
@@ -76,7 +77,6 @@ I want Fester to remember who jumped
     Then  I should see 6 slots
 
   Scenario: Manifesting only creates transactions for filled slots
-    Given PENDING removing empty slots
     Given that no transactions exist
     And   Jenny is manifested for a Fun Jump on 1EE
     When  I go to the transactions page
