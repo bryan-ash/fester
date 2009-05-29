@@ -36,7 +36,7 @@ Feature: Transactions
     Then  I should see an entry for Jenifer's Tandem
 
   Scenario: Jumper's transactions are listed on their account page
-    Given PENDING a way to enter payment into a given slot on the load
+    Given PENDING a way to enter values into a given slot on the load
     Given Julia is manifested for a Fun Jump on 1EE
     And   a cash payment credits an account
     And   I enter Julia's cash payment of $20
@@ -44,3 +44,4 @@ Feature: Transactions
     When  I go to Julia's page
     Then  I should see "Fun Jump"
     And   I should see "cash"
+    And   I should see "20.0"
