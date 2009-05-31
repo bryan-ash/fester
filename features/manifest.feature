@@ -76,7 +76,6 @@ I want Fester to remember who jumped
     When  I follow "New load"
     Then  I should see 6 slots
 
-  @focus
   Scenario: Manifesting only creates transactions for filled slots
     Given that no transactions exist
     And   Jenny is manifested for a Fun Jump on 1EE

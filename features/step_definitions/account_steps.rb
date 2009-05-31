@@ -46,6 +46,11 @@ When /^I go to Julia\'s page$/ do
   visit "/accounts/#{account.id}/edit"
 end
 
+Given /^I am on an account page$/ do
+  Given 'there is a jumper named "Julia"'
+  And   'I go to Julia\'s page'
+end
+
 Then /^(.+)\'s balance should be (.+)$/ do |name, amount|
   account = Account.find_by_name(name)
   visit edit_account_path(account)
