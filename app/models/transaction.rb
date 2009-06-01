@@ -5,7 +5,7 @@ class Transaction < ActiveRecord::Base
   
   def self.sum_for_account(account_id)
     return 0 if account_id.nil?
-    find_all_by_account_id(account_id).sum { |transaction| transaction.amount }
+    find_all_by_account_id(account_id).sum(&:amount)
   end
 
   def account_name
