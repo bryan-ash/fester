@@ -1014,3 +1014,8 @@ a.sglink:hover {
         font-family: Tahoma, Helvetica,sans-serif;
         text-decoration:none;
 }
+
+#user_nav {
+    float: right;
+    font-size: 12px;
+}

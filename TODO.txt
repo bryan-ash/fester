@@ -1,3 +1,8 @@
+Import SkyWriter data
+
+Authentication
+- needs some feature descriptions
+
 Transactions
 - delete a transaction when associated slot is deleted
 - prevent a transaction from being deleted if it is for a slot
@@ -27,12 +32,11 @@ Account name fields should autocomplete on manifest and account pages
 
 Link to New Transaction on Account edit page
 
-Import SkyWriter data
+Styling
+- remove unused styles
+- look at horizontal menu: http://css.maxdesign.com.au/listamatic2/horizontal05.htm#
 
 Refactor Manifest feature scenarios
-
-When we need authentication
-- checkout: git://github.com/thoughtbot/clearance.git
 
 Heroku Services
 - Backup is available, need to figure out how to use
