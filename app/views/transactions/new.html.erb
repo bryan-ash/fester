@@ -1,29 +1,3 @@
 <h1>New transaction</h1>
 
-<% form_for(@transaction) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :account_id, 'Account:' %>
-    <%= f.collection_select(:account_id, Account.all, :id, :name, { :prompt => true }, :class => :inputbox) %>
-
-    <%= f.label :payment_method_id, 'Method:' %>
-    <%= f.collection_select(:payment_method_id, PaymentMethod.all, :id, :name, { :prompt => true }, :class => :inputbox) %>
-
-    <%= f.label :amount, 'Amount:' %>
-    <%= f.text_field :amount, :size => 15 %>
-  </p>
-  <p>
-    <%= f.label :notes, 'Notes:' %>
-    <%= f.text_field :notes, :size => 60 %>
-  </p>
-  <p>
-    <%= f.label :date, 'Date:' %>
-    <%= f.date_select :date %>
-  </p>
-  <p>
-    <%= f.submit 'Submit', :class => :button %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', transactions_path %>
+<%= render :partial => 'form' -%>

@@ -1,8 +1,6 @@
 Transactions
 - delete a transaction when associated slot is deleted
 - prevent a transaction from being deleted if it is for a slot
-- Refactor sum_for_account
-- Factor new and edit to use a partial
 
 Manifesting
 - Default altitude for jump types
