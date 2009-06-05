@@ -1,0 +1,104 @@
+#navlist
+{
+position: relative;
+width: 100%;
+height: 1.05em;
+margin: 0;
+padding: 0;
+border-bottom: 3px solid #f63;
+white-space: nowrap;
+}
+
+#navlist li
+{
+float: left;
+margin: 0 0 0 2px;
+border-width: 1px 1px 0 1px;
+border-style: solid;
+border-color: #aaa #555 #f63 #999;
+list-style-type: none;
+}
+
+#navlist li a
+{
+position: relative;
+width: 6em;
+display: block;
+margin: 0;
+padding: 1px 0.4em;
+border-width: 1px 1px 0 1px;
+border-style: solid;
+border-color: #ccc;
+background-color: #eee;
+color: #666;
+font: normal 0.7em/120% Verdana, Arial, Helvetica, sans-serif;
+text-align: center;
+text-decoration: none;
+}
+
+#navlist li a:hover
+{
+color: #00c;
+text-decoration: underline;
+}
+
+#navlist li#active a
+{
+font-weight: bold;
+background-color: #f63;
+color: #fff;
+border-color: #f96 #c30 #f63 #f96;
+}
+
+#navlist li#active a:hover { color: #fff; }
+
+#navlist ul#subnavlist
+{
+position: absolute;
+width: 100%;
+left: 0;
+top: 1.25em;
+height: 0.75em;
+margin: 0;
+padding: 0;
+border-bottom: 3px solid #f63;
+white-space: nowrap;
+}
+
+#navlist ul#subnavlist li
+{
+width: 14ex;
+margin: 0;
+border: 0;
+}
+
+#navlist ul#subnavlist li a
+{
+width: auto;
+padding: 0.06em 1em 0;
+border: 0;
+background-color: #fff;
+color: #000;
+font: normal normal 0.66em/110% Verdana, Arial, sans-serif;
+}
+
+#navlist ul#subnavlist li a:hover
+{
+color: #00c;
+text-decoration: underline;
+font-weight: 400;
+/* IE5/Mac disappearing item fix */
+}
+
+#navlist ul#subnavlist li#subactive a
+{
+background-color: #fc9;
+color: #000;
+}
+
+* html > body #navlist, * html > body #navlist ul#subnavlist
+{
+width: 600px;
+/* IE5/Mac fixed width fix */
+}
+
