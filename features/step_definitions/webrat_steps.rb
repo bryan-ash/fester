@@ -7,6 +7,11 @@ Given /^I am on the (.+) page$/ do |page_name|
   visit path_to(page_name)
 end
 
+Given /^I am looking at the (.+) features$/ do |page_name|
+  visit '/'
+  click_link page_name
+end
+
 When /^I go to the (.+) page$/ do |page_name|
   visit path_to(page_name)
 end

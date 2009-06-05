@@ -5,7 +5,7 @@ Feature: Navigation
   I want links available
 
   Scenario Outline: Main functions
-    Given I am on the home page
+    Given I am looking at the main features
     When  I follow "<link>"
     Then  I should be on the <page> page
 
@@ -16,7 +16,7 @@ Feature: Navigation
   | Accounts     | accounts     |
 
   Scenario Outline: Maintenance functions
-    Given I am on the home page
+    Given I am looking at the maintenance features
     When  I follow "<link>"
     Then  I should be on the <page> page
 
