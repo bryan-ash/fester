@@ -1,4 +1,4 @@
-Need to remove Register link for the time being
+Removed Register link for the time being
 - features are dependant on it though
 
 Import SkyWriter data
