@@ -2,6 +2,9 @@ In order to know who owes what
 As a Manifester
 I want Fester to remember account information
 
+  Background:
+    Given I am logged in as Mani Fester
+
   Scenario: Creating a jumper
     Given that no accounts exist
     When  I create jumper "Johnny"

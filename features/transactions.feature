@@ -4,6 +4,9 @@ Feature: Transactions
   As a dropzone office worker
   I want to have a history of transactions
 
+  Background:
+    Given I am logged in as Mani Fester
+
   Scenario: Jumper pays with cash
     Given there is a jumper named "Jane"
     And   a cash payment credits an account

@@ -2,6 +2,9 @@ In order to track customer's jumps
 As a Manifester
 I want Fester to remember who jumped
 
+  Background:
+    Given I am logged in as Mani Fester
+
   Scenario: Manifesting an AFF
     Given PENDING a way to enter values into a given slot on the load
     Given there are no loads manifested

@@ -29,7 +29,7 @@ module NavigationHelpers
     when /equipment/
       '/equipment'
 
-    when /manifest/
+    when /manifest/, /loads/
       loads_path
 
     when /new transaction/

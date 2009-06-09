@@ -2,6 +2,9 @@ In order to quickly manifest loads
 As a Manifester
 I want payment methods to be remembered
 
+  Background:
+    Given I am logged in as Mani Fester
+
   Scenario: No payment methods exist
     Given that no payment methods exist
     When  I create a payment method named "Payroll"

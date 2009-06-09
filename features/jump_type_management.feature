@@ -2,6 +2,9 @@ In order to quickly manifest loads
 As a Manifester
 I want jump types to be remembered
 
+  Background:
+    Given I am logged in as Mani Fester
+
   Scenario: No jump types exist
     Given that no jump types exist
     When  I create a jump type named "Hop and Pop"

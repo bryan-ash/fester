@@ -2,6 +2,9 @@ In order to keep only the truth stored
 As a dropzone owner
 I want Fester to be safe from attack
 
+  Background:
+    Given I am logged in as Mani Fester
+
   Scenario: Inputs are sanitized
     Given I am on an account page
     When  a div with id "injected" is entered into "Name"

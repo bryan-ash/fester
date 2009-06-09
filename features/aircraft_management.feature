@@ -2,6 +2,9 @@ In order to quickly manifest loads
 As a Manifester
 I want aircraft to be remembered
 
+  Background:
+    Given I am logged in as Mani Fester
+
   Scenario: No aircraft exist
     Given that no aircraft exist
     When  I create our aircraft "42Z" with 6 slots

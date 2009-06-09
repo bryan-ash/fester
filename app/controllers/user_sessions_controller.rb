@@ -1,5 +1,7 @@
 class UserSessionsController < ApplicationController
 
+  skip_before_filter :authorize_access
+  
   def new
     @user_session = UserSession.new
   end

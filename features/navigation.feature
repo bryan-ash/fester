@@ -4,6 +4,9 @@ Feature: Navigation
   As a manifester
   I want links available
 
+  Background:
+    Given I am logged in as Mani Fester
+
   Scenario Outline: Main functions
     Given I am looking at the main features
     When  I follow "<link>"

@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  skip_before_filter :authorize_access
+
   # GET /users/new
   def new
     @user = User.new
