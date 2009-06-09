@@ -44,7 +44,9 @@ Heroku Services
 
 Export transactions to CSV
 
-Implement periodic log pruning
+Log pruning
+- Reduce the ammount of stuff that gets logged in the first place
+- Implement periodic log pruning
 
 Manage bookings?
 - Phone operator enters booking

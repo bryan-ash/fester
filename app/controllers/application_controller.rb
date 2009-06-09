@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
+  before_filter :authorize_access
   before_filter :sanitize_params
 
   helper_method :current_user
@@ -23,6 +24,14 @@ class ApplicationController < ActionController::Base
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.record
+  end
+
+  def logged_in?
+    return true if current_user
+  end
+
+  def authorize_access
+    return redirect_to(root_path) unless logged_in?
   end
 
 end
