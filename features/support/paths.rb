@@ -23,6 +23,9 @@ module NavigationHelpers
     when /accounts/
       accounts_path
 
+    when /CSV import/
+      new_csv_import_path
+      
     when /jump types/
       jump_types_path
 

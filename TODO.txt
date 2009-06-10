@@ -1,7 +1,11 @@
+Import SkyWriter data
+- add a Transaction to capture imported balance
+- Add navigation to the import page
+- Validate input
+- Reformat name to be First Last
+
 Removed Register link for the time being
 - features are dependant on it though
-
-Import SkyWriter data
 
 Authentication
 - needs some feature descriptions

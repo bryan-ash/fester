@@ -1,0 +1,4 @@
+JumperID,Date Entered,Name(L/F),Jumper Type,JumperCategory,JumperSubCategory,Current Balance,Address,Address2,CSZ,Home,Work,E-Contact,EMail,JumperType,MailingList,NewsLetter,JumprBDAY
+PRTO-1576,7/19/2008,"Jumper, Johnny",Fun Jumper,,,-23.45,123 Main St.,,"Anytown, VT 05432",802-555-1234,, -,,1,FALSE,FALSE,
+1521,8/9/2008,"Dallas,  Debbie",Fun Jumper,,,250,,,",",,, -,,1,TRUE,TRUE,
+ABPE-634,6/9/2007,"Payer, Prompt",Fun Jumper,Tandem,,0.00,666 Elm St,,"Rutland, VT 05701",802-666-0000,, -,,1,FALSE,FALSE,12/7/1976

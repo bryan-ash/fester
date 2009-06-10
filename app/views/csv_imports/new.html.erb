@@ -1,0 +1,14 @@
+<h3>Import CSV File</h3>
+
+<% form_for(:csv_file,
+            :url  => csv_imports_path,
+            :html => { :method => :post, :multipart => true }) do |f| %>
+  <p>
+    <%= f.label      :path %>:
+    <%= f.file_field :path %>
+  </p>
+  <p>
+    <%= f.submit 'Import' %>
+  </p>
+<% end %>
+
