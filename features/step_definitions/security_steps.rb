@@ -18,5 +18,5 @@ When /^a div with id "injected" is entered into "Name"$/ do
 end
 
 Then /^I should not see a div with id "injected"$/ do
-  lambda { div_with_id('injected') }.should raise_error('Could not find div with id "injected"')
+  response.should_not have_selector('div', :id => 'injected')
 end
