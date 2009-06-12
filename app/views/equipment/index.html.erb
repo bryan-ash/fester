@@ -6,13 +6,13 @@
 
 <% @equipment.each do |equipment| %>
   <tr>
-    <td><%= link_to 'Show', equipment %></td>
-    <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
-    <td><%= link_to 'Destroy', equipment, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h equipment.name %></td>
+    <td><%= link_to 'Edit', edit_equipment_instance_path(equipment) %></td>
+    <td><%= link_to 'Delete', equipment, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New equipment', new_equipment_path %>
+<%= link_to 'New equipment', new_equipment_instance_path %>

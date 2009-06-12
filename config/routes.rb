@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :accounts
   map.resources :aircrafts
   map.resources :csv_imports, :only => [:new, :create]
-  map.resources :equipment
+  map.resources :equipment, :singular => :equipment_instance
   map.resources :jump_types
   map.resources :loads
   map.resources :payment_methods
