@@ -4,6 +4,12 @@ require 'fastercsv'
 class Account < ActiveRecord::Base
 
   has_many :transactions
+
+  Name       = 2
+  Created_At = 1
+  Email      = 13
+  Contact    = 12
+  DOB        = 17
   
   def self.pilots
     find_all_by_pilot(true)
@@ -11,11 +17,11 @@ class Account < ActiveRecord::Base
 
   def self.create_from_csv(csv_file)
     FasterCSV.parse(csv_file.read, :headers => true).each do |row|
-      create(:name       => row[2],
-             :created_at => row[1],
-             :email      => row[13],
-             :contact    => row[12],
-             :dob        => row[17])
+      create(:name       => row[Name],
+             :created_at => row[Created_At],
+             :email      => row[Email],
+             :contact    => row[Contact],
+             :dob        => row[DOB])
     end
   end
 

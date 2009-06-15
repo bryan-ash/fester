@@ -1,4 +1,5 @@
 Import SkyWriter data
+- only import data for users that do not exist
 - add a Transaction to capture imported balance
 - Add navigation to the import page
 - Validate input
@@ -28,6 +29,7 @@ Vulnerabilty
   - limit all inputs to basic
   - Slot must have cost
 - use SSL from login page onwards
+  - use http://agilewebdevelopment.com/plugins/ssl_requirement
   - look at http digest?
   - use self signed certificate
 - tests
