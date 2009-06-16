@@ -14,6 +14,5 @@ Feature: CSV import
 
   Scenario: Importing when users already exist
     Given an account to be imported already exists
-    When  I import a file with valid data for 3 new accounts
-    Then  only the new accounts should be imported
-
+    When  I import a file that contains that account
+    Then  the existing account should be updated

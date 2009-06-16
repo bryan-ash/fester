@@ -1,5 +1,4 @@
 Import SkyWriter data
-- only import data for users that do not exist
 - add a Transaction to capture imported balance
 - Add navigation to the import page
 - Validate input
