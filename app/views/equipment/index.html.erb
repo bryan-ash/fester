@@ -1,11 +1,11 @@
 <table>
   <tr>
+    <th>Name</th>
   </tr>
 
 <% @equipment.each do |equipment| %>
   <tr>
-    <td><%=h equipment.name %></td>
-    <td><%= link_to 'Edit', edit_equipment_instance_path(equipment) %></td>
+    <td><%= link_to(h(equipment.name), edit_equipment_instance_path(equipment)) %></td>
     <td><%= link_to 'Delete', equipment, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
