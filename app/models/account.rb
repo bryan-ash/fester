@@ -17,11 +17,11 @@ class Account < ActiveRecord::Base
 
   def self.create_from_csv(csv_file)
     FasterCSV.parse(csv_file.read, :headers => true).each do |row|
-      create(:name       => row[Name],
-             :created_at => row[Created_At],
-             :email      => row[Email],
-             :contact    => row[Contact],
-             :dob        => row[DOB])
+      find_or_create_by_name(:name       => row[Name], 
+                             :created_at => row[Created_At],
+                             :email      => row[Email],
+                             :contact    => row[Contact],
+                             :dob        => row[DOB])
     end
   end
 
