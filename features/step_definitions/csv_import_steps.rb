@@ -20,6 +20,7 @@ Then /^the accounts should be imported$/ do
   johnny.created_at.to_date.should == Date.parse('7/19/2008')
 #  johnny.email.should ==
 #  johnny.contact.should ==
+  johnny.balance.should == -23.45
 
   prompt = Account.find_by_name 'Payer, Prompt'
   prompt.dob.should == Date.parse('12/7/1976')

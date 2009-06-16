@@ -10,6 +10,7 @@ class Account < ActiveRecord::Base
   Email      = 13
   Contact    = 12
   DOB        = 17
+  Balance    = 6
   
   def self.pilots
     find_all_by_pilot(true)
@@ -23,6 +24,10 @@ class Account < ActiveRecord::Base
                                 :email      => row[Email],
                                 :contact    => row[Contact],
                                 :dob        => row[DOB])
+
+      account.transactions.create(:amount => row[Balance],
+                                  :date   => Date.today,
+                                  :notes  => 'Imported balance')
     end
   end
 

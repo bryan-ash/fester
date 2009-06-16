@@ -1,5 +1,4 @@
 Import SkyWriter data
-- add a Transaction to capture imported balance
 - Add navigation to the import page
 - Validate input
 - Reformat name to be First Last
