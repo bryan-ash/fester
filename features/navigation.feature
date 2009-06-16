@@ -29,3 +29,4 @@ Feature: Navigation
   | Jump Types      | jump types      |
   | Payment Methods | payment methods |
   | Equipment       | equipment       |
+  | Import CSV      | CSV import      |

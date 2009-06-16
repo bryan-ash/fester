@@ -33,12 +33,14 @@
         <li <%= 'id="active"' if current_page?(:controller => :aircrafts) or 
                                  current_page?(:controller => :equipment) or 
                                  current_page?(:controller => :jump_types) or 
-                                 current_page?(:controller => :payment_methods) %>>
+                                 current_page?(:controller => :payment_methods) or 
+                                 current_page?(:controller => :csv_imports, :action => :new) %>>
           <%= link_to 'Maintenance', aircrafts_path %>
           <% if current_page?(:controller => :aircrafts) or 
                 current_page?(:controller => :equipment) or 
                 current_page?(:controller => :jump_types) or 
-                current_page?(:controller => :payment_methods) %>
+                current_page?(:controller => :payment_methods) or 
+                current_page?(:controller => :csv_imports, :action => :new) %>
             <ul id="subnavlist">
               <li <%= 'id="subactive"' if current_page?(:controller => :aircrafts) %>>
                 <%= link_to 'Aircraft', aircrafts_path %>
@@ -51,6 +53,9 @@
               </li>
               <li <%= 'id="subactive"' if current_page?(:controller => :payment_methods) %>>
                 <%= link_to 'Payment Methods', payment_methods_path %>
+              </li>
+              <li <%= 'id="subactive"' if current_page?(:controller => :csv_imports, :action => :new) %>>
+                <%= link_to 'Import CSV', new_csv_import_path %>
               </li>
             </ul>
           <% end %>
