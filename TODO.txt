@@ -38,15 +38,10 @@ Account name fields should autocomplete on manifest and account pages
 
 Link to New Transaction on Account edit page
 
-Styling
-- remove unused styles
-- look at horizontal menu: http://css.maxdesign.com.au/listamatic2/horizontal05.htm#
-
 Refactor Manifest feature scenarios
 
 Heroku Services
 - Backup is available, need to figure out how to use
-- SSL is available
 
 Export transactions to CSV
 

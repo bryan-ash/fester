@@ -7,70 +7,8 @@
     <%= javascript_include_tag :defaults %>
   </head>
   <body>
-    <div id="navcontainer">
-      <ul id="navlist">
-        <li <%= 'id="active"' if current_controller?('loads') or 
-                                 current_controller?('transactions') or 
-                                 current_controller?('accounts') %>>
-          <%= link_to 'Main Menu', loads_path %>
-          <% if current_controller?('loads') or 
-                current_controller?('transactions') or 
-                current_controller?('accounts') %>
-            <ul id="subnavlist">
-              <li <%= 'id="subactive"' if current_controller?('loads') %>>
-                <%= link_to 'Manifest', loads_path %>
-              </li>
-              <li <%= 'id="subactive"' if current_controller?('transactions') %>>
-                <%= link_to 'Transactions', transactions_path %>
-              </li>
-              <li <%= 'id="subactive"' if current_controller?('accounts') %>>
-                <%= link_to 'Accounts', accounts_path %>
-              </li>
-            </ul>
-          <% end %>
-        </li>
+    <%= render :partial => 'navigation/topmenu' %>
 
-        <li <%= 'id="active"' if current_controller?('aircrafts') or 
-                                 current_controller?('equipment') or 
-                                 current_controller?('jump_types') or 
-                                 current_controller?('payment_methods') or 
-                                 current_controller?('csv_imports') %>>
-          <%= link_to 'Maintenance', aircrafts_path %>
-          <% if current_controller?('aircrafts') or 
-                current_controller?('equipment') or 
-                current_controller?('jump_types') or 
-                current_controller?('payment_methods') or 
-                current_controller?('csv_imports') %>
-            <ul id="subnavlist">
-              <li <%= 'id="subactive"' if current_controller?('aircrafts') %>>
-                <%= link_to 'Aircraft', aircrafts_path %>
-              </li>
-              <li <%= 'id="subactive"' if current_controller?('equipment') %>>
-                <%= link_to 'Equipment', :controller => :equipment, :action => :index %>
-              </li>
-              <li <%= 'id="subactive"' if current_controller?('jump_types') %>>
-                <%= link_to 'Jump Types', jump_types_path %>
-              </li>
-              <li <%= 'id="subactive"' if current_controller?('payment_methods') %>>
-                <%= link_to 'Payment Methods', payment_methods_path %>
-              </li>
-              <li <%= 'id="subactive"' if current_controller?('csv_imports') %>>
-                <%= link_to 'Import CSV', new_csv_import_path %>
-              </li>
-            </ul>
-          <% end %>
-        </li>
-
-        <div id="user_nav">
-          <% if current_user -%>
-            <%= link_to 'Edit Profile', edit_user_path(:current) %> |
-            <%= link_to 'Logout', logout_path %>
-          <% else -%>
-            <%= link_to 'Login', login_path %>
-          <% end -%>
-        </div>
-      </ul>
-    </div>
     <div id="contents">
       <p style="color: green"><%= flash[:notice] %></p>
       <%= yield -%>
