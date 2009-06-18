@@ -18,7 +18,7 @@
       <br />
 
       <%= slot_form.label :equipment_id, 'Equipment:' %>
-      <%= slot_form.collection_select(:equipment_id, Equipment.find(:all), :id, :name, { }, :class => :inputbox) %>
+      <%= slot_form.collection_select :equipment_id, Equipment.find(:all), :id, :name, { :prompt =>  true } %>
 
       <%= slot_form.label :cost, 'Cost:' %>
       <%= slot_form.text_field :cost, :size => 6 %>
