@@ -13,6 +13,18 @@ Given /^I am logged in as Mani Fester$/ do
   Then 'I should see "Successfully logged in."'
 end
 
+Given /^I am logged in$/ do
+  Given 'I am logged in as Mani Fester'
+end
+
+When /^I login$/ do
+  Given 'I am logged in as Mani Fester'
+end
+
+When /^I logout$/ do
+  visit 'logout'
+end
+
 When /^a div with id "injected" is entered into "Name"$/ do
   fill_in 'Name', :with => '<div id="injected">Hey!</div>'
 end

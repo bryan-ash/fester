@@ -29,6 +29,9 @@ module NavigationHelpers
     when /jump types/
       jump_types_path
 
+    when /entry/
+      entry_page_path
+      
     when /equipment/
       '/equipment'
 

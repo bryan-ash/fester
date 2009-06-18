@@ -1,3 +1,13 @@
+Bugs
+- Equipment drop down needs a default other than the first available (prompt)
+- editing a load creates extra transactions
+- jumper slot gets 2 transactions when slot is added to a load
+
+Authentication
+- Display logged in user name on menu bar
+- forgotten username
+- forgotten password
+
 Import SkyWriter data
 - Validate input
 - Reformat name to be First Last
@@ -11,10 +21,15 @@ Authentication
 Transactions
 - delete a transaction when associated slot is deleted
 - prevent a transaction from being deleted if it is for a slot
+- Transactions should list in date reverse order
+- Put "New" link at top of page
+- Transactions (and slot) should be links on Account/edit page
+- ? link to new transaction from Account/edit page
 
 Manifesting
 - Default altitude for jump types
 - Default cost for jump type
+- Default cost for Equipment?
 - Picking our aircraft should blank Other
 - Entering Other should uncheck radio buttons
 - Display multiple slots dependant on capacity of aircraft

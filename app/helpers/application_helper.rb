@@ -30,7 +30,7 @@ module ApplicationHelper
   end
 
   def main_submenu_items
-    [{ :label => 'Mainfest',     :controller => 'loads',        :path => loads_path },
+    [{ :label => 'Manifest',     :controller => 'loads',        :path => loads_path },
      { :label => 'Transactions', :controller => 'transactions', :path => transactions_path },
      { :label => 'Accounts',     :controller => 'accounts',     :path => accounts_path }]
   end

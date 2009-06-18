@@ -4,7 +4,7 @@
       <%= link_to 'Main Menu', loads_path %>
       <% if controller_for?('Main Menu') %>
         <ul id="subnavlist">
-          <%= render :layout => 'navigation/submenu', :collection => main_submenu_items %>
+          <%= render :partial => 'navigation/submenu', :collection => main_submenu_items %>
         </ul>
       <% end %>
     </li>
@@ -13,7 +13,7 @@
       <%= link_to 'Maintenance', aircrafts_path %>
       <% if controller_for?('Maintenance') %>
         <ul id="subnavlist">
-          <%= render :layout => 'navigation/submenu', :collection => maintenance_submenu_items %>
+          <%= render :partial => 'navigation/submenu', :collection => maintenance_submenu_items %>
         </ul>
       <% end %>
     </li>
@@ -22,8 +22,6 @@
       <% if current_user -%>
         <%= link_to 'Edit Profile', edit_user_path(:current) %> |
         <%= link_to 'Logout', logout_path %>
-      <% else -%>
-        <%= link_to 'Login', login_path %>
       <% end -%>
     </div>
   </ul>
