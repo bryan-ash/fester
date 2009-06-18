@@ -3,9 +3,9 @@ Bugs
 - jumper slot gets 2 transactions when slot is added to a load
 
 Authentication
-- Display logged in user name on menu bar
 - forgotten username
 - forgotten password
+- needs some more feature descriptions
 
 Import SkyWriter data
 - Validate input
@@ -13,9 +13,6 @@ Import SkyWriter data
 
 Removed Register link for the time being
 - features are dependant on it though
-
-Authentication
-- needs some feature descriptions
 
 Transactions
 - delete a transaction when associated slot is deleted

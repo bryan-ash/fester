@@ -29,6 +29,10 @@ When /^a div with id "injected" is entered into "Name"$/ do
   fill_in 'Name', :with => '<div id="injected">Hey!</div>'
 end
 
+Then /^I should know that I\'m logged in$/ do
+  Then 'I should see "Logged in as Mani Fester"'
+end
+
 Then /^I should not see a div with id "injected"$/ do
   response.should_not have_selector('div', :id => 'injected')
 end
