@@ -1,0 +1,8 @@
+<li <%= 'id="active"' if controller_for?(menu) %>>
+  <%= link_to menu, path %>
+  <% if controller_for?(menu) %>
+    <ul id="subnavlist">
+      <%= render :partial => 'navigation/submenu', :collection => submenu_items %>
+    </ul>
+  <% end %>
+</li>

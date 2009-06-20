@@ -1,22 +1,10 @@
 <div id="navcontainer">
   <ul id="navlist">
-    <li <%= 'id="active"' if controller_for?('Main Menu') %>>
-      <%= link_to 'Main Menu', loads_path %>
-      <% if controller_for?('Main Menu') %>
-        <ul id="subnavlist">
-          <%= render :partial => 'navigation/submenu', :collection => main_submenu_items %>
-        </ul>
-      <% end %>
-    </li>
+    <%= render :partial => 'navigation/topmenu_item', 
+        :locals => { :menu => 'Main Menu', :path => loads_path, :submenu_items => main_submenu_items } %>
 
-    <li <%= 'id="active"' if controller_for?('Maintenance') %>>
-      <%= link_to 'Maintenance', aircrafts_path %>
-      <% if controller_for?('Maintenance') %>
-        <ul id="subnavlist">
-          <%= render :partial => 'navigation/submenu', :collection => maintenance_submenu_items %>
-        </ul>
-      <% end %>
-    </li>
+    <%= render :partial => 'navigation/topmenu_item', 
+        :locals => { :menu => 'Maintenance', :path => aircrafts_path, :submenu_items => maintenance_submenu_items } %>
 
     <div id="user_nav">
       <% if current_user -%>
