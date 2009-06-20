@@ -38,36 +38,23 @@ I want Fester to remember who jumped
 
   Scenario: Change a jumper in a given slot
     Given Johnny Jumper is manifested for a Tandem on 42Z
-    And   there is a jumper named "Sally Skydiver"
-    When  I go to the loads page
-    And   I follow "Edit"
-    And   I select "Sally Skydiver" from "Jumper"
-    And   I press "Submit"
-    Then  I should see "success"
-    And   I should see "42Z"
-    And   I should see "Sally Skydiver"
-    When  I go to the loads page
-    Then  I should see "42Z"
+    When  Sally Skydiver takes the slot
+    Then  Sally Skydiver should be manifested for a Tandem on our aircraft "42Z"
 
   Scenario: Manifest on a visiting aircraft
     Given there is a jumper named "Bobby Bounce"
+    And   there is a jump type named "Tandem"
 
     When  I go to the loads page
     And   I follow "New load"
     And   I fill in "Other" with "visitor"
     And   I select "Bobby Bounce" from "Jumper"
+    And   I select "Tandem" from "Jump Type"
     And   I press "Submit"
 
-    Then  I should see "success"
-    And   I should see "visitor"
-    And   I should see "Bobby Bounce"
-
+    Then  Bobby Bounce should be manifested for a Tandem on other aircraft "visitor"
     When  I go to the loads page
     Then  I should see "visitor"
-
-    When  I follow "Edit"
-    Then  the "Other" field should contain "visitor"
-    And   "visitor" should not be a radio button
 
   Scenario: Editing a load on our aircraft
     Given a load manifested on our aircraft
