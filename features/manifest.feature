@@ -32,6 +32,12 @@ I want Fester to remember who jumped
 
   Scenario: Manifesting only creates transactions for filled slots
     Given that no transactions exist
+    When  Jenny is manifested for a Fun Jump on our aircraft "1EE"
+    Then  1 transaction should exist
+
+  Scenario: Fixing bug that created additional transactions when editing a load
+    Given that no transactions exist
     And   Jenny is manifested for a Fun Jump on our aircraft "1EE"
-    When  I go to the transactions page
+    When  I edit the load
+    And   I press "Submit"
     Then  1 transaction should exist

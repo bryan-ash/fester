@@ -1,5 +1,4 @@
 Bugs
-- editing a load creates extra transactions
 - jumper slot gets 2 transactions when slot is added to a load
 
 Authentication

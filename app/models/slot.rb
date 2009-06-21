@@ -6,7 +6,7 @@ class Slot < ActiveRecord::Base
 
   has_one :transaction
 
-  before_save :associate_transaction
+  after_save :associate_transaction
   
   def account_name
     account.name if account
@@ -26,10 +26,11 @@ class Slot < ActiveRecord::Base
   end
 
   def associate_transaction
-    transaction = create_transaction(:account => account,
-                                     :notes   => jump_type_name,
-                                     :amount  => cost,
-                                     :date    => date)
+    Transaction.find_or_create_by_slot_id(:slot_id => id,
+                                          :account => account,
+                                          :notes   => jump_type_name,
+                                          :amount  => cost,
+                                          :date    => date)
   end
 
 end
