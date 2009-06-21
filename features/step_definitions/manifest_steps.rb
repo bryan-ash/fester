@@ -2,25 +2,47 @@ Given /^there are no loads manifested$/ do
   Load.delete_all
 end
 
-Given /^(.*) is manifested for a (.+) on (.*)$/ do |jumper, jump_type, aircraft|
+Given /^(.*) is manifested for an? (.+) on our aircraft \"(.*)\"$/ do |jumper, jump_type, aircraft|
   Given 'there are no loads manifested'
   And   'we own an aircraft named "' + aircraft + '"'
   And   'there is a jumper named "' + jumper + '"'
   And   'there is a jump type named "' + jump_type + '"'
+  And   'there is a pilot named "Polly"'
+  And   'there is equipment named "Wing Suit"'
 
   When  'I go to the loads page'
   And   'I follow "New load"'
   And   'I choose "' + aircraft + '"'
   And   'I select "' + jumper + '" from "Jumper"'
   And   'I select "' + jump_type + '" from "Jump Type"'
-  And   'I fill in "Cost" with "100"'
-  And   'I press "Submit"'
 
+  And   'I select "Polly" from "Pilot"'
+  And   'I fill in "Cost" with "100"'
+  And   'I fill in "Altitude" with "11000"'
+  And   'I select "Wing Suit" from "Equipment"'
+  And   'I fill in "Cost" with "123.45"'
+  And   'I fill in "Notes" with "Level 4"'
+  
+  When  'I press "Submit"'
+  Then  'I should see "success"'
+end
+
+Given /^(.*) is manifested for an? (.+) on other aircraft \"(.*)\"$/ do |jumper, jump_type, aircraft|
+  Given 'there is a jumper named "Bobby Bounce"'
+  And   'there is a jump type named "Tandem"'
+
+  When  'I go to the loads page'
+  And   'I follow "New load"'
+  And   'I fill in "Other" with "visitor"'
+  And   'I select "Bobby Bounce" from "Jumper"'
+  And   'I select "Tandem" from "Jump Type"'
+
+  When  'I press "Submit"'
   Then  'I should see "success"'
 end
 
 Given /^a load manifested on our aircraft$/ do
-  Given 'Johnny is manifested for a Tandem on 42Z'
+  Given 'Johnny is manifested for a Tandem on our aircraft "42Z"'
 end
 
 When /^I edit the load$/ do
@@ -35,19 +57,31 @@ When /^(.+) takes the slot$/ do |jumper|
   And   'I press "Submit"'
 end
 
-Then /^(.*) should be manifested for a (.+) on our aircraft \"(.*)\"$/ do |jumper, jump_type, aircraft|
+Then /^(.*) should be manifested for an? (.+) on our aircraft \"(.*)\"$/ do |jumper, jump_type, aircraft|
   When 'I edit the load'
   Then 'I should see "' + aircraft + '"'
+  And  'I should see "Polly"'
   And  'I should see "' + jumper + '"'
   And  'I should see "' + jump_type + '"'
+
+  And  'I should see "Wing Suit"'
+  And  'I should see "Level 4"'
+  And  'I should see "11000"'
+  And  'I should see "123.45"'
+  
+  When 'I go to the loads page' 
+  Then 'I should see "' + aircraft + '"' 
 end
 
-Then /^(.*) should be manifested for a (.+) on other aircraft \"(.*)\"$/ do |jumper, jump_type, aircraft|
+Then /^(.*) should be manifested for an? (.+) on other aircraft \"(.*)\"$/ do |jumper, jump_type, aircraft|
   When 'I edit the load'
   Then 'the "Other" field should contain "' + aircraft + '"'
   And  '"' + aircraft + '" should not be a radio button'
   And  'I should see "' + jumper + '"'
   And  'I should see "' + jump_type + '"'
+
+  When 'I go to the loads page' 
+  Then 'I should see "' + aircraft + '"' 
 end
 
 Then /^"([^\"]*)" should not be a radio button$/ do |aircraft|

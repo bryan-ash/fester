@@ -34,13 +34,13 @@ Feature: Transactions
     Then  I should see "cash"
 
   Scenario: Jumper's slot creates a transaction
-    Given Jenifer is manifested for a Tandem on 42Z
+    Given Jenifer is manifested for a Tandem on our aircraft "42Z"
     When  I go to the transactions page
     Then  I should see an entry for Jenifer's Tandem
 
   Scenario: Jumper's transactions are listed on their account page
     Given PENDING a way to enter values into a given slot on the load
-    Given Julia is manifested for a Fun Jump on 1EE
+    Given Julia is manifested for a Fun Jump on our aircraft "1EE"
     And   a cash payment credits an account
     And   I enter Julia's cash payment of $20
 
