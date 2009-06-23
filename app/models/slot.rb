@@ -4,7 +4,7 @@ class Slot < ActiveRecord::Base
   belongs_to :jump_type
   belongs_to :equipment
 
-  has_one :transaction
+  has_one :transaction, :dependent => :destroy
 
   after_save :associate_transaction
   
