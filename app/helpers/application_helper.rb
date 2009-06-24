@@ -35,4 +35,14 @@ module ApplicationHelper
      { :label => 'Accounts',     :controller => 'accounts',     :path => accounts_path }]
   end
 
+  def set_focus_to_id(id)
+    <<-EMBED_SCRIPT
+      <script type="text/javascript">
+        window.onload = function() {
+          document.getElementById('#{id}').focus();
+      }
+      </script>
+    EMBED_SCRIPT
+  end
+
 end
