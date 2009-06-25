@@ -2,6 +2,7 @@ class Transaction < ActiveRecord::Base
 
   belongs_to :account
   belongs_to :payment_method
+  belongs_to :slot
   
   def self.sum_for_account(account_id)
     return 0 if account_id.nil?

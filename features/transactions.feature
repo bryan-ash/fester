@@ -48,3 +48,9 @@ Feature: Transactions
     Then  I should see "Fun Jump"
     And   I should see "cash"
     And   I should see "20.0"
+
+  Scenario: Transactions for slots may not be deleted or edited
+    Given Julia is manifested for a Fun Jump on our aircraft "1EE"
+    When  I go to the transactions page
+    Then  the transaction should not be deletable
+    And   the transaction should not be editable

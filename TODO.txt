@@ -11,7 +11,6 @@ Removed Register link for the time being
 - features are dependant on it though
 
 Transactions
-- prevent a transaction from being deleted if it is for a slot
 - Transactions should list in date reverse order
 - Put "New" link at top of page
 - Transactions (and slot) should be links on Account/edit page

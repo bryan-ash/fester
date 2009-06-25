@@ -19,3 +19,11 @@ end
 Then /^1 transaction should exist$/ do
   Transaction.count.should == 1
 end
+
+Then /^the transaction should not be deletable$/ do
+  Then 'I should not see "Delete"'
+end
+
+Then /^the transaction should not be editable$/ do
+  Then 'I should not see "Edit"'
+end

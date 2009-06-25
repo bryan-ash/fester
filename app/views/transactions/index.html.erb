@@ -14,8 +14,10 @@
     <td><%=h transaction.amount %></td>
     <td><%=h transaction.notes %></td>
     <td><%=h transaction.date %></td>
-    <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-    <td><%= link_to 'Delete', transaction, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% unless transaction.slot %>
+      <td><%= link_to('Edit', edit_transaction_path(transaction)) %></td>
+      <td><%= link_to('Delete', transaction, :confirm => 'Are you sure?', :method => :delete) %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
