@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'Registration successful.'
       redirect_to root_url
     else
-      render :action => 'new'
+      render :action => :new
     end
   end
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'Successfully updated profile.'
       redirect_to root_url
     else
-      render :action => "edit"
+      render :action => :edit
     end
   end
 
