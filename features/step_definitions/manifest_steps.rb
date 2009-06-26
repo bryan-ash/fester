@@ -13,7 +13,10 @@ Given /^(.*) is manifested for an? (.+) on our aircraft \"(.*)\"$/ do |jumper, j
   When  'I go to the loads page'
   And   'I follow "New load"'
   And   'I choose "' + aircraft + '"'
-  And   'I select "' + jumper + '" from "Jumper"'
+  And   'I fill in "Jumper" with "' + jumper + '"'
+  When  'I press "Submit"'
+  When  'I follow "Edit"'
+  
   And   'I select "' + jump_type + '" from "Jump Type"'
 
   And   'I select "Polly" from "Pilot"'
@@ -28,14 +31,18 @@ Given /^(.*) is manifested for an? (.+) on our aircraft \"(.*)\"$/ do |jumper, j
 end
 
 Given /^(.*) is manifested for an? (.+) on other aircraft \"(.*)\"$/ do |jumper, jump_type, aircraft|
-  Given 'there is a jumper named "Bobby Bounce"'
-  And   'there is a jump type named "Tandem"'
+  Given 'there are no loads manifested'
+  And   'there is a jumper named "' + jumper + '"'
+  And   'there is a jump type named "' + jump_type + '"'
 
   When  'I go to the loads page'
   And   'I follow "New load"'
-  And   'I fill in "Other" with "visitor"'
-  And   'I select "Bobby Bounce" from "Jumper"'
-  And   'I select "Tandem" from "Jump Type"'
+  And   'I fill in "Jumper" with "' + jumper + '"'
+  When  'I press "Submit"'
+  When  'I follow "Edit"'
+  
+  And   'I fill in "Other" with "' + aircraft + '"'
+  And   'I select "' + jump_type + '" from "Jump Type"'
 
   When  'I press "Submit"'
   Then  'I should see "success"'
@@ -77,7 +84,7 @@ Then /^(.*) should be manifested for an? (.+) on other aircraft \"(.*)\"$/ do |j
   When 'I edit the load'
   Then 'the "Other" field should contain "' + aircraft + '"'
   And  '"' + aircraft + '" should not be a radio button'
-  And  'I should see "' + jumper + '"'
+  And  'the "Jumper" field should contain "' + jumper + '"'
   And  'I should see "' + jump_type + '"'
 
   When 'I go to the loads page' 

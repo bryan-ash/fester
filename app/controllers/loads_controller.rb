@@ -1,4 +1,5 @@
 class LoadsController < ApplicationController
+
   # GET /loads
   # GET /loads.xml
   def index

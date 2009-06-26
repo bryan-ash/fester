@@ -1,3 +1,5 @@
+Feature: Manifesting
+
 In order to track customer's jumps
 As a Manifester
 I want Fester to remember who jumped
@@ -16,9 +18,10 @@ I want Fester to remember who jumped
     When  Sally Skydiver takes the slot
     Then  Sally Skydiver should be manifested for a Tandem on our aircraft "42Z"
 
+  @focus
   Scenario: Manifest on a visiting aircraft
     Given Bobby Bounce is manifested for an AFF on other aircraft "visitor"
-    Then  Bobby Bounce should be manifested for a Tandem on other aircraft "visitor"
+    Then  Bobby Bounce should be manifested for an AFF on other aircraft "visitor"
 
   Scenario: Editing a load on our aircraft
     Given a load manifested on our aircraft

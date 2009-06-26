@@ -1,3 +1,7 @@
+Account name fields should autocomplete on manifest and account pages
+- slot Jumper field finds or creates Account
+- need to autocomplete
+
 Authentication
 - forgotten username
 - forgotten password
@@ -38,8 +42,6 @@ Vulnerabilty
 - RFuzz?
 - PCI DSS regulations relating to e-commerce - OWASP Top 10
 - check www.owasp.org
-
-Account name fields should autocomplete on manifest and account pages
 
 Link to New Transaction on Account edit page
 
