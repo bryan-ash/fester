@@ -8,7 +8,7 @@
       <%= slot_form.collection_select(:jump_type_id, JumpType.find(:all), :id, :name, { }, :class => :inputbox) %>
 
       <%= slot_form.label :account_name, 'Jumper:' %>
-      <%= slot_form.text_field :account_name, :class => :inputbox %>
+      <%= slot_form.text_field :account_name, :class => 'autocomplete', :autocomplete_url => autocomplete_for_account_name_slots_path %>
 
       <%= slot_form.label :altitude, 'Altitude:' %>
       <%= slot_form.text_field :altitude, :size => 6 %>
