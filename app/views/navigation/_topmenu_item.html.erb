@@ -1,4 +1,4 @@
-<li <%= 'id="current"' if current_controller?(topmenu_item[:controller]) %>>
+<li <%= 'id="current"' if controller_for?(topmenu_item[:label]) %>>
   <% link_to(topmenu_item[:path]) do %>
     <span><%= topmenu_item[:label] %></span>
   <% end -%>
