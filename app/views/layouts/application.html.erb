@@ -3,15 +3,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>Fester - Manifest System</title>
-    <%= stylesheet_link_tag 'site', 'jquery.autocomplete' %>
+    <%= stylesheet_link_tag 'style', 'jquery.autocomplete' %>
     <%= javascript_include_tag 'jquery', 'jquery.autocomplete', 'application', 'prototype' %>
   </head>
   <body>
-    <%= render :partial => 'navigation/topmenu' %>
+    <div id="dvmaincontainer">
+      <%= render :partial => 'navigation/topmenu' %>
 
-    <div id="contents">
-      <p style="color: green"><%= flash[:notice] %></p>
-      <%= yield -%>
+      <div id="dvbodycontainer">
+        <% if controller_for?('Maintenance') then %>
+          <%= render :partial => 'navigation/maintenance_submenu' %>
+        <% end -%>
+
+        <div id="dvrightpanel">
+          <p style="color: green"><%= flash[:notice] %></p>
+          <%= yield -%>
+        </div>
+      </div>
+      <div id="dvfootercontainer">
+        <div id="foottop">
+          <p><span>Copyright © 2009 Bryan Ash</span>
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

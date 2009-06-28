@@ -1,16 +1,30 @@
-<div id="navcontainer">
-  <ul id="navlist">
-    <%= render :partial => 'navigation/topmenu_item', 
-        :locals => { :menu => 'Main Menu', :path => loads_path, :submenu_items => main_submenu_items } %>
+<div id="dvtopcontainer">
+  <div id="dvlogocontainer">
+    <h1>Fester</h1>
+    <h4>Taking the pain out of dropzone management</h4>
+  </div>
+  <div id="dvnavicontainer">
+    <img src="images/navi_left.jpg" alt="" />
+    <div id="tabs1" >
+      <ul>
+        <%= render :partial => 'navigation/topmenu_item', 
+            :locals => { :menu => 'Manifest', :path => loads_path } %>
+        <%= render :partial => 'navigation/topmenu_item', 
+            :locals => { :menu => 'Transactions', :path => transactions_path } %>
+        <%= render :partial => 'navigation/topmenu_item', 
+            :locals => { :menu => 'Accounts', :path => accounts_path } %>
+        <%= render :partial => 'navigation/topmenu_item', 
+            :locals => { :menu => 'Maintenance', :path => aircrafts_path } %>
 
-    <%= render :partial => 'navigation/topmenu_item', 
-        :locals => { :menu => 'Maintenance', :path => aircrafts_path, :submenu_items => maintenance_submenu_items } %>
-
-    <div id="user_nav">
-      <% if current_user -%>
-        Logged in as <%= link_to current_user.username, edit_user_path(:current) %> |
-        <%= link_to 'Logout', logout_path %>
-      <% end -%>
+        <% if current_user -%>
+          <%= render :partial => 'navigation/topmenu_item', 
+              :locals => { :menu => current_user.username, :path => edit_user_path(:current) } %>
+        <% else %>
+          <%= render :partial => 'navigation/topmenu_item', 
+              :locals => { :menu => 'Login', :path => login_path } %>
+        <% end -%>
+      </ul>
     </div>
-  </ul>
+    <img src="images/navi_right.jpg" alt="" />
+  </div>
 </div>

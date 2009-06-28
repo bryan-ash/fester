@@ -1,3 +1,9 @@
+User can create a User
+
+Roles
+- Delete account
+- 
+
 Authentication
 - forgotten username
 - forgotten password

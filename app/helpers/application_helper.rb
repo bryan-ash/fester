@@ -7,17 +7,21 @@ module ApplicationHelper
 
   def controller_for?(menu)
     case menu
-    when /Main Menu/
-      current_controller?('loads') or 
-        current_controller?('transactions') or 
-        current_controller?('accounts')
+    when 'Maintenance'
+      [ 'aircrafts',
+        'equipment',
+        'jump_types',
+        'payment_methods',
+        'csv_imports' ].include? controller.controller_name
+
+    when 'Manifest'
+      current_controller? 'loads'
       
-    when /Maintenance/
-      current_controller?('aircrafts') or 
-        current_controller?('equipment') or 
-        current_controller?('jump_types') or 
-        current_controller?('payment_methods') or 
-        current_controller?('csv_imports')
+    when 'Import CSV'
+      current_controller? 'csv_imports'
+      
+    else
+      current_controller?(menu.downcase.gsub(/ /,'_').pluralize)
     end
   end
 

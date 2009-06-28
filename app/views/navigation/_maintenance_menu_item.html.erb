@@ -1,4 +1,4 @@
-<li <%= 'id="current"' if controller_for?(menu) %>>
+<li <%= 'class="current_page_item"' if controller_for?(menu) %>>
   <% link_to(path) do %>
     <span><%= menu %></span>
   <% end -%>
