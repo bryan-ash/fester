@@ -13,6 +13,8 @@ Import SkyWriter data
 - Validate input
 - Reformat name to be First Last
 
+Show something sensible when no data found (equipment, aircraft, etc)
+
 Removed Register link for the time being
 - features are dependant on it though
 

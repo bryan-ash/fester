@@ -3,15 +3,7 @@
     <img src="images/top.jpg" width="202" height="4" alt="" class="top flt" />
     <ul class="menu flt">
       <%= render :partial => 'navigation/maintenance_menu_item', 
-          :locals => { :menu => 'Aircraft', :path => aircrafts_path } %>
-      <%= render :partial => 'navigation/maintenance_menu_item', 
-          :locals => { :menu => 'Equipment', :path => {:controller => :equipment, :action => :index} } %>
-      <%= render :partial => 'navigation/maintenance_menu_item', 
-          :locals => { :menu => 'Jump Types', :path => jump_types_path } %>
-      <%= render :partial => 'navigation/maintenance_menu_item', 
-          :locals => { :menu => 'Payment Methods', :path => payment_methods_path } %>
-      <%= render :partial => 'navigation/maintenance_menu_item', 
-          :locals => { :menu => 'Import CSV', :path => new_csv_import_path } %>
+          :collection => maintenance_submenu_items %>
     </ul>
     <img src="images/bot.jpg" width="202" height="3" alt="" class="bot flt" />
   </div>

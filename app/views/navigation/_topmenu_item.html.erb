@@ -1,5 +1,5 @@
-<li <%= 'id="current"' if controller_for?(menu) %>>
-  <% link_to(path) do %>
-    <span><%= menu %></span>
+<li <%= 'id="current"' if current_controller?(topmenu_item[:controller]) %>>
+  <% link_to(topmenu_item[:path]) do %>
+    <span><%= topmenu_item[:label] %></span>
   <% end -%>
 </li>

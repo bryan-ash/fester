@@ -27,16 +27,17 @@ module ApplicationHelper
 
   def maintenance_submenu_items
     [{ :label => 'Aircraft',        :controller => 'aircrafts',       :path => aircrafts_path },
-     { :label => 'Equipment',       :controller => 'equipment',       :path => {:controller => :equipment, :action => :index} },
+     { :label => 'Equipment',       :controller => 'equipment',       :path => { :controller => :equipment, :action => :index} },
      { :label => 'Jump Types',      :controller => 'jump_types',      :path => jump_types_path },
      { :label => 'Payment Methods', :controller => 'payment_methods', :path => payment_methods_path },
      { :label => 'Import CSV',      :controller => 'csv_imports',     :path => new_csv_import_path }]
   end
 
-  def main_submenu_items
+  def topmenu_items
     [{ :label => 'Manifest',     :controller => 'loads',        :path => loads_path },
      { :label => 'Transactions', :controller => 'transactions', :path => transactions_path },
-     { :label => 'Accounts',     :controller => 'accounts',     :path => accounts_path }]
+     { :label => 'Accounts',     :controller => 'accounts',     :path => accounts_path },
+     { :label => 'Maintenance',  :controller => 'aircrafts',    :path => aircrafts_path }]
   end
 
   def set_focus_to_id(id)
