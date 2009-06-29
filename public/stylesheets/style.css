@@ -607,7 +607,7 @@ img {
 *html .menu a, .menu a:visited {
     width:186px;
     height:22px;
-    margin:0px 0px 2px -32px;
+    margin:0px 0px 2px 7px;
     position:relative;
     display:block;
     color:#fff;
