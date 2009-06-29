@@ -69,3 +69,6 @@ Business Names
 - softwarethathelps
 - softwareforfun
 - plainanduseful
+
+Kuler colors:
+- Blue Sky Day: 56797F, 87A0A4, FCFBDC, F2DDB6, A6937C
