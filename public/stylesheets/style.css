@@ -370,6 +370,31 @@ body {
     padding:10px 0px 15px 15px;
 }
 
+#dvrightpanel .link_to_new {
+    float:left;
+    background:url(../images/learnright.gif) no-repeat right -40px;
+    margin:0;
+    padding:0;
+}
+
+#dvrightpanel .link_to_new span {
+    display:block;
+    background:url(../images/learnleft.gif) no-repeat left -40px;
+    padding:5px 15px;
+}
+
+#dvrightpanel .link_to_new span a {
+    color:#FFFFFF;
+    text-decoration:none;
+    voice-family:"\"}\"";
+    line-height:17px;
+}
+
+#dvrightpanel .link_to_new span a:hover {
+    color:#888888;
+    text-decoration:none;
+}
+
 #dvrightpanel .learn {
     float:left;
     text-align:left;
