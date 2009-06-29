@@ -1,3 +1,5 @@
+Auto-created account appears to have nil balance
+
 User can create a User
 
 Roles

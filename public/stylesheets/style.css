@@ -136,6 +136,112 @@ body {
     padding:0px 0px 0px 35px;
 }
 
+#dvbodycontainer #dvfullpanel {
+    float:left;
+    width:826px;
+    margin:0px 0px 0px 20px;
+    padding:18px 0px 4px 3px;
+}
+
+#dvfullpanel h1 {
+    float:left;
+    width:826px;
+    font-size:20px;
+    text-align:left;
+    color:#2C1B11;
+    margin:0px;
+    padding:10px 0px 0px 15px;
+}
+
+#dvfullpanel p {
+    float:left;
+    width:826xpx;
+    font-size:13px;
+    text-align:left;
+    voice-family:"\"}\"";
+    line-height:16px;
+    color:#513D2C;
+    margin:0px;
+    padding:10px 0px 10px 15px;
+}
+
+#dvfullpanel .line {
+    float:left;
+    width:826px;
+    font-size:0px;
+    margin:0px;
+    padding:10px 0px 15px 15px;
+}
+
+#dvfullpanel .submit {
+    float:left;
+    text-align:left;
+    font-size:0px;
+    margin:0px;
+    padding:0px 0px 14px 14px;
+}
+
+#dvfullpanel .learn {
+    float:left;
+    text-align:left;
+    font-size:0px;
+    margin:0px;
+    padding:0px 0px 14px 445px;
+}
+
+#dvfullpanel .learn span {
+    height:20px;
+    width:140px;
+    font-size:10px;
+    color:#FFFFFF;
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+}
+
+#dvfullpanel .learn span a {
+    background-image:url(../images/learn.jpg);
+    background-repeat:no-repeat;
+    width:140px;
+    height:30px;
+    font-size:10px;
+    color:#FFFFFF;
+    padding-right:20px;
+    text-decoration:none;
+    padding-top:8px;
+    voice-family:"\"}\"";
+    line-height:17px;
+}
+
+#dvfullpanel .learn span a:hover {
+    background-image:url(../images/learn_over.jpg);
+    background-repeat:no-repeat;
+    width:130px;
+    color:#FFFFFF;
+    text-decoration:none;
+}
+
+#dvfullpanel .learn a {
+    background-image:url(../images/learn.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    height:20px;
+    width:97px;
+    font-size:11px;
+    color:#FFFFFF;
+    padding-bottom:10px;
+    padding-left:11px;
+    padding-top:3px;
+}
+
+#dvfullpanel .learn a:hover {
+    background-image:url(../images/learn_over.jpg);
+    background-repeat:no-repeat;
+    height:20px;
+    width:97px;
+    padding-bottom:10px;
+    color:#FFFFFF;
+}
+
 #dvbodycontainer #dvleftpanel {
     float:left;
     width:274px;

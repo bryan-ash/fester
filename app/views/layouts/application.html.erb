@@ -13,11 +13,13 @@
       <div id="dvbodycontainer">
         <% if controller_for?('Maintenance') then %>
           <%= render :partial => 'navigation/maintenance_submenu' %>
+          <div id="dvrightpanel">
+        <% else -%>
+          <div id="dvfullpanel">
         <% end -%>
 
-        <div id="dvrightpanel">
-          <p style="color: green"><%= flash[:notice] %></p>
-          <%= yield -%>
+        <p style="color: green"><%= flash[:notice] %></p>
+        <%= yield -%>
         </div>
       </div>
       <div id="dvfootercontainer">
