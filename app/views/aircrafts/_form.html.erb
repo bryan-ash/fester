@@ -9,10 +9,12 @@
     <%= f.label :capacity %><br />
     <%= f.text_field :capacity, :class => :inputbox %>
   </p>
-  <div id="ours">
-    <%= f.check_box :ours %>
-    <%= f.label :ours %>
-  </div>
+  <p>
+    <span>
+      <%= f.check_box :ours %>
+      <%= f.label :ours %>
+    </span>
+  </p>
   <p>
     <%= f.submit 'Submit', :class => :button %>
   </p>
