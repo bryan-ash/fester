@@ -50,4 +50,12 @@ module ApplicationHelper
     EMBED_SCRIPT
   end
 
+  def link_to_new(label, path)
+    content_tag :div, :class => 'link_to_new_block' do
+      content_tag :span, :class => 'link_to_new_button' do
+        link_to label, path, :class => 'link_to_new_content'
+      end
+    end
+  end
+
 end
