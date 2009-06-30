@@ -26,18 +26,18 @@ module ApplicationHelper
   end
 
   def maintenance_submenu_items
-    [{ :label => 'Aircraft',        :controller => 'aircrafts',       :path => aircrafts_path },
-     { :label => 'Equipment',       :controller => 'equipment',       :path => { :controller => :equipment, :action => :index} },
-     { :label => 'Jump Types',      :controller => 'jump_types',      :path => jump_types_path },
-     { :label => 'Payment Methods', :controller => 'payment_methods', :path => payment_methods_path },
-     { :label => 'Import CSV',      :controller => 'csv_imports',     :path => new_csv_import_path }]
+    [{ :label => 'Aircraft',        :path => aircrafts_path },
+     { :label => 'Equipment',       :path => { :controller => :equipment, :action => :index} },
+     { :label => 'Jump Types',      :path => jump_types_path },
+     { :label => 'Payment Methods', :path => payment_methods_path },
+     { :label => 'Import CSV',      :path => new_csv_import_path }]
   end
 
   def topmenu_items
-    [{ :label => 'Manifest',     :controller => 'loads',        :path => loads_path },
-     { :label => 'Transactions', :controller => 'transactions', :path => transactions_path },
-     { :label => 'Accounts',     :controller => 'accounts',     :path => accounts_path },
-     { :label => 'Maintenance',  :controller => 'aircrafts',    :path => aircrafts_path }]
+    [{ :label => 'Manifest',     :path => loads_path },
+     { :label => 'Transactions', :path => transactions_path },
+     { :label => 'Accounts',     :path => accounts_path },
+     { :label => 'Maintenance',  :path => aircrafts_path }]
   end
 
   def set_focus_to_id(id)
