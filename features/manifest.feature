@@ -29,7 +29,7 @@ I want Fester to remember who jumped
 
   Scenario: A load has 6 slots by default
     Given I am on the loads page
-    When  I follow "New load"
+    When  I follow "New"
     Then  I should see 6 slots
 
   Scenario: Manifesting only creates transactions for filled slots

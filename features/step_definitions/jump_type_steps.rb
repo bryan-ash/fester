@@ -8,7 +8,7 @@ end
 
 When /^I create a jump type named "(.+)"$/ do |name|
   When 'I go to the jump types page'
-  And  'I follow "New jump type"'
+  And  'I follow "New"'
   And  'I fill in "Name" with "' + name + '"'
   And  'I press "Submit"'
 end

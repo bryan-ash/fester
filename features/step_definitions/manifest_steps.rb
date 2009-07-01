@@ -11,7 +11,7 @@ Given /^(.*) is manifested for an? (.+) on our aircraft \"(.*)\"$/ do |jumper, j
   And   'there is equipment named "Wing Suit"'
 
   When  'I go to the loads page'
-  And   'I follow "New load"'
+  And   'I follow "New"'
   And   'I choose "' + aircraft + '"'
   And   'I fill in "Jumper" with "' + jumper + '"'
   When  'I press "Submit"'
@@ -36,7 +36,7 @@ Given /^(.*) is manifested for an? (.+) on other aircraft \"(.*)\"$/ do |jumper,
   And   'there is a jump type named "' + jump_type + '"'
 
   When  'I go to the loads page'
-  And   'I follow "New load"'
+  And   'I follow "New"'
   And   'I fill in "Jumper" with "' + jumper + '"'
   When  'I press "Submit"'
   When  'I follow "Edit"'

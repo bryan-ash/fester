@@ -12,14 +12,14 @@ end
 
 When /^I create jumper "(.+)"$/ do |jumper|
   When 'I go to the accounts page'
-  And  'I follow "New account"'
+  And  'I follow "New"'
   And  'I fill in "Name" with "' + jumper + '"'
   And  'I press "Submit"'
 end
 
 When /^I create jumping pilot "(.+)"$/ do |pilot|
   When 'I go to the accounts page'
-  And  'I follow "New account"'
+  And  'I follow "New"'
   And  'I fill in "Name" with "' + pilot + '"'
   And  'I check "Pilot"'
   And  'I press "Submit"'
@@ -27,7 +27,7 @@ end
 
 When /^I create pilot "(.+)"$/ do |pilot|
   When 'I go to the accounts page'
-  And  'I follow "New account"'
+  And  'I follow "New"'
   And  'I fill in "Name" with "' + pilot + '"'
   And  'I check "Pilot"'
   And  'I uncheck "Jumper"'
@@ -36,7 +36,7 @@ end
 
 When /^I create an account with (.+) "(.+)"$/ do |field, value|
   When 'I go to the accounts page'
-  And  'I follow "New account"'
+  And  'I follow "New"'
   And  'I fill in "' + field + '" with "' + value + '"'
   And  'I press "Submit"'
 end

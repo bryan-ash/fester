@@ -13,7 +13,7 @@ end
 
 When /^I create a payment method named "(.+)"$/ do |name|
   When 'I go to the payment methods page'
-  And  'I follow "New payment method"'
+  And  'I follow "New"'
   And  'I fill in "Name" with "' + name + '"'
   And  'I press "Submit"'
 end
