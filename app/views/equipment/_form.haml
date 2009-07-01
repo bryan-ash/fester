@@ -1,4 +1,4 @@
-- form_for @equipment, :html => { :method => :post } do |f|
+- form_for @equipment, :url => (@equipment.new_record? ? equipment_path : equipment_instance_path(@equipment)), :html => (@equipment.new_record? ? { :method => :post } : { :method => :put }) do |f|
   = f.error_messages
   %p
     = f.label :name

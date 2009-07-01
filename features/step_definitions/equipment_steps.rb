@@ -18,8 +18,21 @@ When /^I delete "(.+)"$/ do |equipment|
   And  'I follow "delete"'
 end
 
-Then /^"(.+)" should no longer be available$/ do |equipment|
+When /^I rename "(.+)" to "(.+)"$/ do |from, to|
+  When 'I go to the equipment page'
+  And  'I follow "' + from + '"'
+  
+  When 'I fill in "Name" with "' + to + '"'
+  And  'I press "Submit"'
+end
+
+Then /^equipment "(.+)" should no longer be available$/ do |equipment|
   When 'I go to the equipment page'
   Then 'I should not see "' + equipment + '"'
+end
+
+Then /^equipment "(.+)" should be available$/ do |equipment|
+  When 'I go to the equipment page'
+  Then 'I should see "' + equipment + '"'
 end
 

@@ -13,4 +13,9 @@ I want Fester to remember equipment information
   Scenario: Deleting equipment
     Given there is equipment named "Shiny gear"
     When  I delete "Shiny gear"
-    Then  "Shiny gear" should no longer be available
+    Then  equipment "Shiny gear" should no longer be available
+
+  Scenario: Editing equipment
+    Given there is equipment named "Shiny gear"
+    When  I rename "Shiny gear" to "Fancy kit"
+    Then  equipment "Fancy kit" should be available

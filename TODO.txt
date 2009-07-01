@@ -1,3 +1,5 @@
+Equipment _form partial has an ugly method for getting the right path and action
+
 User can create a User
 
 Roles

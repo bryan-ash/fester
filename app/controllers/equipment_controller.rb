@@ -62,7 +62,7 @@ class EquipmentController < ApplicationController
     respond_to do |format|
       if @equipment.update_attributes(params[:equipment])
         flash[:notice] = "Equipment '#{@equipment.name}' was updated."
-        format.html { redirect_to equipment_path }
+        format.html { redirect_to(equipment_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
