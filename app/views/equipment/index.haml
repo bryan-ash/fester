@@ -1,0 +1,12 @@
+%table
+  %tr
+    %th Name
+
+- @equipment.each do |equipment|
+  %tr
+    %td= link_to(h(equipment.name), edit_equipment_instance_path(equipment))
+    %td= link_to 'Delete', equipment, :confirm => 'Are you sure?', :method => :delete
+
+%br/
+
+= link_to_new 'New equipment', new_equipment_instance_path
