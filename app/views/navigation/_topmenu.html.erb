@@ -21,4 +21,10 @@
     </div>
     <img src="/images/navi_right.jpg" alt="" width="11" height="41" />
   </div>
+        <% if flash[:notice] then %>
+          <div class="flash_notice">
+            <%= flash[:notice] %>
+          </div>
+        <% end -%>
+
 </div>

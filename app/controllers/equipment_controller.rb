@@ -44,7 +44,7 @@ class EquipmentController < ApplicationController
 
     respond_to do |format|
       if @equipment.save
-        flash[:notice] = 'Equipment was successfully created.'
+        flash[:notice] = "Equipment '#{@equipment.name}' was created."
         format.html { redirect_to equipment_path }
         format.xml  { render :xml => @equipment, :status => :created, :location => @equipment }
       else
@@ -61,7 +61,7 @@ class EquipmentController < ApplicationController
 
     respond_to do |format|
       if @equipment.update_attributes(params[:equipment])
-        flash[:notice] = 'Equipment was successfully updated.'
+        flash[:notice] = "Equipment '#{@equipment.name}' was updated."
         format.html { redirect_to equipment_path }
         format.xml  { head :ok }
       else
@@ -77,6 +77,8 @@ class EquipmentController < ApplicationController
     @equipment = Equipment.find(params[:id])
     @equipment.destroy
 
+    flash[:notice] = "Equipment '#{@equipment.name}' was deleted"
+    
     respond_to do |format|
       format.html { redirect_to(equipment_url) }
       format.xml  { head :ok }

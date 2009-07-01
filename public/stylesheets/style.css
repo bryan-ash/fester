@@ -241,99 +241,14 @@ body {
     color:#FFFFFF;
 }
 
-#dvbodycontainer #dvleftpanel {
+#dvleftpanel {
     float:left;
     width:274px;
     margin:0px;
-    padding:26px 0px 4px 25px;
+    padding:15px 0px 4px 25px;
 }
 
-#dvleftpanel #topimage {
-    float:left;
-    width:259px;
-    font-size:17px;
-    margin:0px;
-    padding:8px 0px 0px 15px;
-    height:23px;
-    background-color:#A4051B;
-    color:#FFFFFF;
-    text-align:center;
-    font-weight:bold;
-    font-family:'Helvetica', Arial, Verdana;
-    voice-family:"\"}\"";
-    line-height:18px;
-}
-
-#dvleftpanel #midcont {
-    float:left;
-    width:247px;
-    margin:0px;
-    padding:25px 0px 4px 25px;
-    border-bottom:1px solid #F3F3F3;
-    border-left:1px solid #F3F3F3;
-    border-right:1px solid #F3F3F3;
-}
-
-#midcont p {
-    float:left;
-    width:223px;
-    font-size:15px;
-    text-align:left;
-    line-height:18px;
-    voice-family:"\"}\"";
-    line-height:17px;
-    color:#513D2C;
-    margin:0px;
-    padding:0px;
-    padding-bottom:25px;
-}
-
-#midcont p span {
-    float:right;
-    text-align:right;
-    color:#A5051A;
-    font-weight:bold;
-}
-
-#dvleftpanel #leftfoot {
-    float:left;
-    width:258px;
-    background-image:url(../images/left_foot.jpg);
-    background-repeat:no-repeat;
-    background-position:top;
-    margin:12px 0px 0px 0px;
-    padding:11px 0px 13px 16px;
-}
-
-#leftfoot img {
-    float:left;
-    width:46px;
-    margin:0px;
-    padding:0px 0px 0px 0px;
-}
-
-#leftfoot p {
-    float:left;
-    width:160px;
-    font-size:12px;
-    text-align:left;
-    color:#6B5F58;
-    margin:0px;
-    padding:0px 0px 0px 15px;
-}
-
-#leftfoot span {
-    float:left;
-    width:156px;
-    font-size:15px;
-    text-align:left;
-    font-weight:bold;
-    color:#6B5F58;
-    margin:0px;
-    padding:5px 0px 5px 15px;
-}
-
-#dvbodycontainer #dvrightpanel {
+#dvrightpanel {
     float:left;
     width:552px;
     margin:0px 0px 0px 20px;
@@ -368,6 +283,15 @@ body {
     font-size:0px;
     margin:0px;
     padding:10px 0px 15px 15px;
+}
+
+.flash_notice {
+    float:right;
+    background:#99FF99 none repeat scroll 0 0;
+    border:2px solid #00CC00;
+    font-size:14px;
+    padding:10px;
+    margin:17px 0 0 0;
 }
 
 .link_to_new_block {
