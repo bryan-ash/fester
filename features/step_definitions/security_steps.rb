@@ -30,7 +30,7 @@ When /^a div with id "injected" is entered into "Name"$/ do
 end
 
 Then /^I should know that I\'m logged in$/ do
-  Then 'I should see "Logged in as Mani Fester"'
+  Then 'I should see "Mani Fester"'
 end
 
 Then /^I should not see a div with id "injected"$/ do

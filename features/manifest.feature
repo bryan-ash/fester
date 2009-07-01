@@ -18,7 +18,6 @@ I want Fester to remember who jumped
     When  Sally Skydiver takes the slot
     Then  Sally Skydiver should be manifested for a Tandem on our aircraft "42Z"
 
-  @focus
   Scenario: Manifest on a visiting aircraft
     Given Bobby Bounce is manifested for an AFF on other aircraft "visitor"
     Then  Bobby Bounce should be manifested for an AFF on other aircraft "visitor"

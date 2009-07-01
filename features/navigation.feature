@@ -7,8 +7,8 @@ Feature: Navigation
   Background:
     Given I am logged in as Mani Fester
 
-  Scenario Outline: Main functions
-    Given I am looking at the main features
+  Scenario Outline: Main functions are available from home page
+    Given I am on the home page
     When  I follow "<link>"
     Then  I should be on the <page> page
 

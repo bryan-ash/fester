@@ -12,7 +12,7 @@ end
 
 When /^I create (.+) aircraft "(.+)" with (.+) slots$/ do |ownership, aircraft, slots|
   When 'I go to the aircraft page'
-  And  'I follow "New aircraft"'
+  And  'I follow "New"'
   And  'I fill in "Name" with "' + aircraft + '"'
   And  'I fill in "Capacity" with "' + slots + '"'
   check 'Ours' if ownership == 'our'
