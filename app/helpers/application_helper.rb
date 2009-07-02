@@ -20,6 +20,9 @@ module ApplicationHelper
     when 'Import CSV'
       current_controller? 'csv_imports'
       
+    when 'Login'
+      current_controller? 'user_sessions'
+      
     else
       current_controller?(menu.downcase.gsub(/ /,'_').pluralize)
     end
