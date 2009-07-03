@@ -122,3 +122,12 @@ end
 Then /^I should be on (.+)$/ do |page_name|
   URI.parse(current_url).path.should == path_to(page_name)
 end
+
+Then /^the "(.+)" link should be visible$/ do |link|
+  click_link(link)
+end
+
+Then /^the "(.+)" link should not be visible$/ do |link|
+  lambda { click_link(link) }.should raise_error  
+end
+

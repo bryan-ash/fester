@@ -1,13 +1,13 @@
-Given /^I am logged in as Mani Fester$/ do
+Given /^I am logged in as (.+)$/ do |user|
   visit '/users/new'
-  fill_in 'username', :with => 'Mani Fester'
-  fill_in 'email', :with => 'mani@fester.com'
+  fill_in 'username', :with => user
+  fill_in 'email', :with => 'user@fester.com'
   fill_in 'password', :with => 'secret'
   fill_in 'password confirmation', :with => 'secret'
   click_button 'Create'
   
   visit '/login'
-  fill_in 'username', :with => 'Mani Fester'
+  fill_in 'username', :with => user
   fill_in 'password', :with => 'secret'
   click_button 'Submit'
   Then 'I should see "Successfully logged in."'

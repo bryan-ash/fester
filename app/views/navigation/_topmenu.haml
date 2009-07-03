@@ -12,8 +12,9 @@
           = render :partial => 'navigation/topmenu_item', :locals => { |
           :topmenu_item => { :label => current_user.username, :controller => 'users', :path => edit_user_path(:current) } } |
         - else
-          = render :partial => 'navigation/topmenu_item', :locals => { |
-          :topmenu_item => { :label => 'Login', :controller => 'user_sessions', :path => login_path } } |
+          %li#current
+            - link_to login_path do
+              %span Login
     %img{ :src => "/images/navi_right.jpg" :alt => "" :width => "11" :height => "41" }
 
   - if flash[:notice] then
