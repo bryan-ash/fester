@@ -8,7 +8,7 @@ begin
   Cucumber::Rake::Task.new(:features) do |t|
     t.cucumber_opts = "--format pretty"
   end
-  task :features => ['db:test:prepare']
+  task :features => ['db:test:prepare', 'fester:load_default_data']
 
   namespace :features do
     Cucumber::Rake::Task.new(:rcov) do |t|
@@ -16,12 +16,12 @@ begin
       t.rcov_opts = %w{--rails --exclude osx\/objc,gems\/,spec\/}
       t.rcov_opts = ['-o doc\/features --text-report --exclude config\/,features\/,spec\/']
     end
-    task :rcov => 'db:test:prepare'
+    task :rcov => ['db:test:prepare', 'fester:load_default_data']
 
     Cucumber::Rake::Task.new(:focus) do |t|
       t.cucumber_opts = "-t focus --format pretty"
     end
-    task :features => ['db:test:prepare']
+    task :features => ['db:test:prepare', 'fester:load_default_data']
   end
   
 rescue LoadError

@@ -1,4 +1,4 @@
-Given /^I am logged in as (.+)$/ do |user|
+Given /^I am logged in as "(.+)"$/ do |user|
   visit '/users/new'
   fill_in 'username', :with => user
   fill_in 'email', :with => 'user@fester.com'
@@ -11,6 +11,16 @@ Given /^I am logged in as (.+)$/ do |user|
   fill_in 'password', :with => 'secret'
   click_button 'Submit'
   Then 'I should see "Successfully logged in."'
+end
+
+Given /^I am logged in as Mani Fester$/ do
+  Given 'I am logged in as "Mani Fester"'
+  User.find_by_username('Mani Fester').
+    update_attribute :role, Role.find_by_name('Manager')
+end
+
+Given /^I am logged in as Bobby Basic$/ do
+  Given 'I am logged in as "Bobby Basic"'
 end
 
 Given /^I am logged in$/ do
