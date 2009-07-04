@@ -3,7 +3,7 @@
     %h1 Fester
     %h4 Taking the pain out of dropzone management
   #dvnavicontainer
-    %img{ :src => "/images/navi_left.jpg" :alt => "" :width => "17" :height => "41" }
+    %img{ :src => "/images/navi_left.jpg", :alt => "", :width => "17", :height => "41" }
     #tabs1
       %ul
         = render :partial => 'navigation/topmenu_item', :collection => topmenu_items
@@ -15,7 +15,7 @@
           %li#current
             - link_to login_path do
               %span Login
-    %img{ :src => "/images/navi_right.jpg" :alt => "" :width => "11" :height => "41" }
+    %img{ :src => "/images/navi_right.jpg", :alt => "", :width => "11", :height => "41" }
 
   - if flash[:notice] then
     .flash_notice
