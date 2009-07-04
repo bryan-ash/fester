@@ -23,6 +23,9 @@ module ApplicationHelper
     when 'Login'
       current_controller? 'user_sessions'
       
+    when 'My Account'
+      current_controller? 'users'
+      
     else
       current_controller?(menu.downcase.gsub(/ /,'_').pluralize)
     end

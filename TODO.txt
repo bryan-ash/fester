@@ -1,10 +1,20 @@
 Equipment _form partial has an ugly method for getting the right path and action
+- suggestion from Rails mailing list was to rename Equipment model to something that has a singular and plural that are different
 
-User can create a User
+Put Signup link on Login page
 
 Roles
-- Delete account
-- 
+- Manager
+  - can do everything a Manifester can
+  - can change a user role
+  - can perform Maintenance functions
+- Manifester
+  - can do everything a Default user can
+  - can edit manifests
+  - can edit transactions
+  - can edit accounts
+- Default
+  - can view own account
 
 Authentication
 - forgotten username
@@ -16,9 +26,6 @@ Import SkyWriter data
 - Reformat name to be First Last
 
 Show something sensible when no data found (equipment, aircraft, etc)
-
-Removed Register link for the time being
-- features are dependant on it though
 
 Transactions
 - Transactions should list in date reverse order
@@ -67,10 +74,11 @@ Manage bookings?
 - Jumper enters booking online
 
 Business Names
-- ishelpful
-- softwarethathelps
-- softwareforfun
-- plainanduseful
+- ishelpful.com
+- softwarethathelps.com
+- softwareforfun.com
+- plainanduseful.com
+- workhappily.com
 
 Kuler colors:
 - Blue Sky Day: 56797F, 87A0A4, FCFBDC, F2DDB6, A6937C

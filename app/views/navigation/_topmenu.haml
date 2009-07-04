@@ -10,7 +10,7 @@
 
         - if current_user
           = render :partial => 'navigation/topmenu_item', :locals => { |
-          :topmenu_item => { :label => current_user.username, :controller => 'users', :path => edit_user_path(:current) } } |
+          :topmenu_item => { :label => 'My Account', :controller => 'users', :path => edit_user_path(:current) } } |
         - else
           %li#current
             - link_to login_path do
