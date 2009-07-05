@@ -29,6 +29,9 @@ module NavigationHelpers
     when /jump types/
       jump_types_path
 
+    when /edit my profile/
+      edit_user_path(:current)
+      
     when /entry/
       entry_page_path
       

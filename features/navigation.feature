@@ -30,3 +30,13 @@ Feature: Navigation
   | Payment Methods | payment methods |
   | Equipment       | equipment       |
   | Import CSV      | CSV import      |
+
+  Scenario Outline: My Account function
+    Given I am looking at My Account
+    When  I follow "<link>"
+    Then  I should be on the <page> page
+
+  Examples:
+  | link         | page            |
+  | Edit Profile | edit my profile |
+  | Logout       | home            |

@@ -12,6 +12,11 @@ Given /^I am looking at the (.+) features$/ do |page_name|
   click_link page_name
 end
 
+Given /^I am looking at My Account$/ do
+  visit '/'
+  click_link 'My Account'
+end
+
 When /^I go to the (.+) page$/ do |page_name|
   visit path_to(page_name)
 end

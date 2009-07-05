@@ -1,0 +1,3 @@
+%li{ :class => ("current_page_item" if controller_for?(submenu_item[:label])) }
+  - link_to submenu_item[:path] do
+    %span= submenu_item[:label]

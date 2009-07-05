@@ -23,12 +23,19 @@ module ApplicationHelper
     when 'Login'
       current_controller? 'user_sessions'
       
-    when 'My Account'
+    when 'Edit Profile', 'My Account'
       current_controller? 'users'
       
     else
       current_controller?(menu.downcase.gsub(/ /,'_').pluralize)
     end
+  end
+
+  def topmenu_items
+    [{ :label => 'Manifest',     :path => loads_path },
+     { :label => 'Transactions', :path => transactions_path },
+     { :label => 'Accounts',     :path => accounts_path },
+     { :label => 'Maintenance',  :path => aircrafts_path }]
   end
 
   def maintenance_submenu_items
@@ -39,11 +46,8 @@ module ApplicationHelper
      { :label => 'Import CSV',      :path => new_csv_import_path }]
   end
 
-  def topmenu_items
-    [{ :label => 'Manifest',     :path => loads_path },
-     { :label => 'Transactions', :path => transactions_path },
-     { :label => 'Accounts',     :path => accounts_path },
-     { :label => 'Maintenance',  :path => aircrafts_path }]
+  def my_account_submenu_items
+    [{ :label => 'Edit Profile', :path => edit_user_path(:current) }]
   end
 
   def set_focus_to_id(id)
