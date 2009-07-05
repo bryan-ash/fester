@@ -3,8 +3,6 @@ Equipment _form partial has an ugly method for getting the right path and action
 
 Default user login should redirect to My Account page
 
-"Successfully logged out" flash message displayed in wrong place 
-
 My Account page should include:
 - account
 

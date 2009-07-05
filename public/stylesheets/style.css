@@ -286,8 +286,9 @@ body {
 }
 
 .flash_notice {
+    clear: right;
     float:right;
-    background:#99FF99 none repeat scroll 0 0;
+    background:#99FF99;
     border:2px solid #00CC00;
     font-size:14px;
     padding:10px;
