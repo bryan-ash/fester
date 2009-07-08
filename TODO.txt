@@ -1,14 +1,13 @@
 Equipment _form partial has an ugly method for getting the right path and action
 - suggestion from Rails mailing list was to rename Equipment model to something that has a singular and plural that are different
 
-Default user login should redirect to My Account page
-
 My Account page should include:
 - account
 
 Put Signup link on Login page
 
 Roles
+- Controller actions should be provided only to those with sufficient permission
 - Manager
   - can do everything a Manifester can
   - can change a user role

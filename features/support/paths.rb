@@ -32,9 +32,6 @@ module NavigationHelpers
     when /edit my profile/
       edit_user_path(:current)
       
-    when /entry/
-      entry_page_path
-      
     when /equipment/
       '/equipment'
 

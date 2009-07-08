@@ -14,7 +14,14 @@ class User < ActiveRecord::Base
     else
       true
     end
+  end
 
+  def entry_page_path
+    if role.name == 'Default' then
+      '/users/current/edit'
+    else
+      '/loads'
+    end
   end
 
   private

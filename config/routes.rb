@@ -5,8 +5,6 @@ ActionController::Routing::Routes.draw do |map|
   map.login  'login',  :controller => 'user_sessions', :action => 'new'
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
   
-  map.entry_page 'entry_page', :controller => 'loads', :action => 'index'
-
   map.resources :accounts
   map.resources :aircrafts
   map.resources :csv_imports, :only => [:new, :create]

@@ -16,7 +16,6 @@ Feature: Authorization
   | manifest     |
   | transactions |
 
-  @focus
   Scenario Outline: Basic user has limited access
     Given I am logged in as Bobby Basic
     When  I go to the home page
