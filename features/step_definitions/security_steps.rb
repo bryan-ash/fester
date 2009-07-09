@@ -27,6 +27,11 @@ Given /^I am logged in$/ do
   Given 'I am logged in as Mani Fester'
 end
 
+Given /^I am logged out$/ do
+  session = UserSession.find
+  session.destroy if session
+end
+
 When /^I login$/ do
   Given 'I am logged in as Mani Fester'
 end
