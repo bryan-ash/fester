@@ -1,4 +1,4 @@
 - if current_user.permitted_to_see? topmenu_item[:label]
-  %li{ :id => ("current" if controller_for? topmenu_item[:label]) }
+  %li{ :id => ("current" if current_page_for_top_menu_item? topmenu_item[:label]) }
     - link_to topmenu_item[:path] do
       %span= topmenu_item[:label]

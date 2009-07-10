@@ -3,8 +3,9 @@ require 'fastercsv'
 
 class Account < ActiveRecord::Base
 
-  has_many :transactions
-
+  has_many   :transactions
+  belongs_to :user
+  
   Name       = 2
   Created_At = 1
   Email      = 13

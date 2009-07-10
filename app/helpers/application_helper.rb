@@ -1,34 +1,37 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
-  def current_controller?(name)
-    controller.controller_name == name
-  end
-
-  def controller_for?(menu)
-    case menu
+  def current_page_for_top_menu_item?(label)
+    case label
     when 'Maintenance'
-      [ 'aircrafts',
-        'equipment',
-        'jump_types',
-        'payment_methods',
-        'csv_imports' ].include? controller.controller_name
+      maintenance_topmenu_active?
 
     when 'Manifest'
-      current_controller? 'loads'
+      current_page? loads_path
       
-    when 'Import CSV'
-      current_controller? 'csv_imports'
+    when 'Transactions'
+      current_page? transactions_path
       
-    when 'Login'
-      current_controller? 'user_sessions'
+    when 'Accounts'
+      current_page? accounts_path
       
-    when 'Edit Profile', 'My Account'
-      current_controller? 'users'
+    when 'My Account'
+      my_account_topmenu_active?
       
-    else
-      current_controller?(menu.downcase.gsub(/ /,'_').pluralize)
     end
+  end
+  
+  def topmenu_active?(submenu_items)
+    submenu_items.collect { |item| item[:path] }.each { |path| return true if current_page?(path) }
+    return false
+  end
+
+  def my_account_topmenu_active?
+    topmenu_active? my_account_submenu_items
+  end
+
+  def maintenance_topmenu_active?
+    topmenu_active? maintenance_submenu_items
   end
 
   def topmenu_items
@@ -47,7 +50,8 @@ module ApplicationHelper
   end
 
   def my_account_submenu_items
-    [{ :label => 'Edit Profile', :path => edit_user_path(:current) }]
+    [{ :label => 'Account Status', :path => { :controller => :accounts, :action => :my_accounts } },
+     { :label => 'Edit Profile',   :path => edit_user_path(:current) }]
   end
 
   def set_focus_to_id(id)

@@ -10,6 +10,12 @@ class AccountsController < ApplicationController
     end
   end
 
+  # GET /my_accounts
+  def my_accounts
+    @account = current_user.account
+    render :action => 'show' if @account
+  end
+
   # GET /accounts/1
   # GET /accounts/1.xml
   def show

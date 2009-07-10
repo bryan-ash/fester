@@ -12,10 +12,10 @@
       <%= render :partial => 'navigation/topmenu' %>
 
       <div id="dvbodycontainer">
-        <% if controller_for?('Maintenance') then %>
+        <% if maintenance_topmenu_active? then %>
           <%= render :partial => 'navigation/maintenance_submenu' %>
           <div id="dvrightpanel">
-        <% elsif controller_for?('My Account') then %>
+        <% elsif my_account_topmenu_active? then %>
           <%= render :partial => 'navigation/my_account_submenu' %>
           <div id="dvrightpanel">
         <% else -%>

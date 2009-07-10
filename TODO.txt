@@ -1,8 +1,10 @@
 Equipment _form partial has an ugly method for getting the right path and action
 - suggestion from Rails mailing list was to rename Equipment model to something that has a singular and plural that are different
 
-My Account page should include:
-- account
+My Accounts page should:
+- allow association with accounts
+  - pick account 
+  - email is sent to that account with link to association confirmation url
 
 Put Signup link on Login page
 

@@ -44,6 +44,9 @@ module NavigationHelpers
     when /payment methods/
       payment_methods_path
 
+    when /show my account/
+      my_accounts_path
+      
     when /transactions/
       transactions_path
       

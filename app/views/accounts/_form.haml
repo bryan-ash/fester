@@ -1,0 +1,31 @@
+- form_for(@account) do |f|
+  = f.error_messages
+
+  %p
+    = f.label :name, 'Name:'
+    = f.text_field :name 
+  %p
+    = f.label :email, 'Email:'
+    = f.text_field :email 
+  %p
+    = f.label :contact, 'Contact:'
+    = f.text_field :contact 
+  %p
+    = f.label :gender, 'Gender:'
+    = f.text_field :gender 
+  %p
+    = f.label :dob, 'DOB:'
+    = f.text_field :dob 
+  %p
+    = f.label :jumper, 'Jumper:'
+    = f.check_box :jumper 
+  %p
+    = f.label :pilot, 'Pilot:'
+    = f.check_box :pilot, :class => :checkbox 
+  %p
+    = f.label :balance, 'Balance:'
+    = number_to_currency(@account.balance) 
+  %p
+    = f.submit 'Submit', :class => :button 
+
+  = render :partial => 'account_transactions', :object => @account.transactions

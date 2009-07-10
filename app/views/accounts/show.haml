@@ -1,0 +1,28 @@
+%b Name:
+= @account.name
+%br
+
+%b Email:
+=h @account.email
+%br
+
+%b Contact:
+=h @account.contact
+%br
+
+%b Gender:
+=h @account.gender
+%br
+
+%b DOB:
+=h @account.dob
+%br
+
+%b Roles:
+= @account.roles.join ', '
+%br
+
+%b Balance:
+= @account.balance
+
+= render :partial => 'account_transactions', :object => @account.transactions

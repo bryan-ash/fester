@@ -37,6 +37,7 @@ Feature: Navigation
     Then  I should be on the <page> page
 
   Examples:
-  | link         | page            |
-  | Edit Profile | edit my profile |
-  | Logout       | home            |
+  | link           | page            |
+  | Account Status | show my account |
+  | Edit Profile   | edit my profile |
+  | Logout         | home            |

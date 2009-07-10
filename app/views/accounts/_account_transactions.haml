@@ -1,0 +1,9 @@
+#transactions
+  %table
+    %tr
+      %th Date
+      %th Payment Method
+      %th Amount
+      %th Notes
+      %th Slot_id
+    = render :partial => 'transaction', :collection => account_transactions 
