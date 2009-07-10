@@ -1,23 +1,43 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
+  def current_controller?(name)
+    controller.controller_name == name
+  end
+
   def current_page_for_top_menu_item?(label)
     case label
+    when 'Manifest'
+      current_controller? 'loads'
+      
+    when 'Transactions'
+      current_controller? 'transactions'
+      
+    when 'Accounts'
+      current_controller? 'accounts' unless my_account_topmenu_active?
+      
     when 'Maintenance'
       maintenance_topmenu_active?
 
-    when 'Manifest'
-      current_page? loads_path
-      
-    when 'Transactions'
-      current_page? transactions_path
-      
-    when 'Accounts'
-      current_page? accounts_path
-      
     when 'My Account'
       my_account_topmenu_active?
       
+    end
+  end
+  
+  def current_page_for_submenu_item?(label)
+    case label
+    when 'Account Status'
+      current_controller? 'accounts'
+
+    when 'Edit Profile'
+      current_controller? 'users'
+
+    when 'Import CSV'
+      current_controller? 'csv_imports'
+
+    else
+      current_controller? label.downcase.gsub(/ /, '_').pluralize
     end
   end
   
@@ -31,7 +51,11 @@ module ApplicationHelper
   end
 
   def maintenance_topmenu_active?
-    topmenu_active? maintenance_submenu_items
+    topmenu_active?(maintenance_submenu_items) ||
+      current_controller?('aircrafts') ||
+      current_controller?('equipment') ||
+      current_controller?('jump_types') ||
+      current_controller?('payment_methods')
   end
 
   def topmenu_items
