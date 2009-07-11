@@ -37,7 +37,7 @@ I want Fester to remember who jumped
     When  Jenny is manifested for a Fun Jump on our aircraft "1EE"
     Then  1 transaction should exist
 
-  Scenario: Fixing bug that created additional transactions when editing a load
+  Scenario: Editing a load does not create additional transactions (bug)
     Given that no transactions exist
     And   Jenny is manifested for a Fun Jump on our aircraft "1EE"
     When  I edit the load

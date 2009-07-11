@@ -1,0 +1,32 @@
+.slot
+  - new_or_existing = slot.new_record? ? 'new' : 'existing'
+  - prefix = "load[#{new_or_existing}_slot_attributes][]"
+
+  - fields_for prefix, slot do |slot_form|
+    %p
+      = slot_form.label :jump_type_id, 'Jump Type:'
+      = slot_form.collection_select(:jump_type_id, JumpType.find(:all), :id, :name)
+
+      = slot_form.label :account_name, 'Jumper:'
+      = slot_form.text_field :account_name, :class => 'autocomplete', :autocomplete_url => autocomplete_for_account_name_slots_path
+
+      = slot_form.label :altitude, 'Altitude:'
+      = slot_form.text_field :altitude, :size => 6
+
+      = link_to_function "remove", "$(this).up('.slot').remove()"
+
+      %br
+
+      = slot_form.label :equipment_id, 'Equipment:'
+      = slot_form.collection_select :equipment_id, Equipment.find(:all), :id, :name, { :prompt =>  true }
+
+      = slot_form.label :cost, 'Cost:'
+      = slot_form.text_field :cost, :size => 6
+      
+      %br
+
+      = slot_form.label :notes, 'Notes:'
+      = slot_form.text_field :notes, :size => 60
+
+      .line
+        %hr

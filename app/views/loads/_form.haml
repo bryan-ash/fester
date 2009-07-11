@@ -1,0 +1,30 @@
+= error_messages_for :load
+
+- form_for @load do |f|
+
+  %p
+    = f.label :date, 'Date:'
+    = f.date_select :date, { :order => [:day, :month, :year] }
+
+    %br
+
+    = render :partial => 'aircraft', :locals => { :f => f }
+
+    %br
+
+    = f.label :pilot_id, 'Pilot:'
+    = f.collection_select(:pilot_id, Account.pilots, :id, :name)
+
+  .line
+    %hr
+
+  .slots
+    = render :partial => 'slot', :collection => @load.slots
+
+  .submit
+    = f.submit "Submit"
+
+  .learn
+    %span= add_slot_link "ADD A SLOT"
+
+= set_focus_to_id 'load_pilot_id'

@@ -15,8 +15,9 @@ Given /^(.*) is manifested for an? (.+) on our aircraft \"(.*)\"$/ do |jumper, j
   And   'I choose "' + aircraft + '"'
   And   'I fill in "Jumper" with "' + jumper + '"'
   When  'I press "Submit"'
+  Then  'I should be on the loads page'
+
   When  'I follow "Edit"'
-  
   And   'I select "' + jump_type + '" from "Jump Type"'
 
   And   'I select "Polly" from "Pilot"'
@@ -28,6 +29,7 @@ Given /^(.*) is manifested for an? (.+) on our aircraft \"(.*)\"$/ do |jumper, j
   
   When  'I press "Submit"'
   Then  'I should see "success"'
+  And   'I should be on the loads page'
 end
 
 Given /^(.*) is manifested for an? (.+) on other aircraft \"(.*)\"$/ do |jumper, jump_type, aircraft|
