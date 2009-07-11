@@ -13,6 +13,10 @@ class Transaction < ActiveRecord::Base
     account.name if account
   end
 
+  def account_name=(name)
+    self.account = Account.find_or_create_by_name(name) unless name.blank?
+  end
+
   def payment_method_name
     payment_method.name if payment_method
   end

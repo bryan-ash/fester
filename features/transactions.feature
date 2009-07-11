@@ -54,3 +54,9 @@ Feature: Transactions
     When  I go to the transactions page
     Then  the transaction should not be deletable
     And   the transaction should not be editable
+
+  Scenario: Transactions can be edited
+    Given a cash payment credits an account
+    And   I enter Julia's cash payment of $20
+    When  I change Julia's payment to $40
+    Then  Julia's balance should be $40

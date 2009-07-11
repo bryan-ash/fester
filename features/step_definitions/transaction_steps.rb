@@ -4,11 +4,20 @@ end
 
 When /^I enter (.+)\'s (.+) payment of \$(.+)$/ do |name, method, amount|
   Given 'I am on the new transaction page'
-  When  'I select "' + name + '" from "Account"'
+  When  'I fill in "Account" with "' + name + '"'
   And   'I select "' + method + '" from "Method"'
   And   'I fill in "Amount" with "' + amount + '"'
   And   'I fill in "Notes" with "payment"'
   And   'I press "Submit"'
+  Then  'I should be on the transactions page'
+end
+
+When /^I change Julia\'s payment to \$40$/ do
+  Given 'I am on the transactions page'
+  When  'I follow "edit"'
+  And   'I fill in "Amount" with "40"'
+  And   'I press "Submit"'
+  Then  'I should be on the transactions page'
 end
 
 Then /^I should see an entry for (.+)\'s (.+)$/ do |jumper, jump_type|

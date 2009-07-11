@@ -1,11 +1,9 @@
 From demo with Timmy
-- Default amounts for Jump Type
-- Option to charge slot to another account on the load form
-- Load list needs to show number of load today
-- Transaction form should autofill account
-- Transaction form should redirect to index
-- Account and Transaction index pages need filter
 - New account page needs to be able to set initial balance (Transaction?)
+- Default amounts for Jump Type
+- Load list needs to show number of load today
+- Option to charge slot to another account on the load form
+- Account and Transaction index pages need filter
 - On loads form, pilot dropdown should sort by recency for aircraft
 
 Equipment _form partial has an ugly method for getting the right path and action
