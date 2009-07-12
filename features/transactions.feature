@@ -60,3 +60,9 @@ Feature: Transactions
     And   I enter Julia's cash payment of $20
     When  I change Julia's payment to $40
     Then  Julia's balance should be $40
+
+  Scenario: Transaction list shows newest first
+    Given I enter Julia's cash payment of $20
+    And   I wait a bit
+    And   I enter Jenifer's cash payment of $500
+    Then  Jenifer's transaction should be above Julia's

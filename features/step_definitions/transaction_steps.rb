@@ -2,7 +2,13 @@ Given /^that no transactions exist$/ do
   Transaction.delete_all
 end
 
+Given /^I wait a bit$/ do
+  sleep 1
+end
+
 When /^I enter (.+)\'s (.+) payment of \$(.+)$/ do |name, method, amount|
+  Given 'a ' + method + ' payment credits an account'
+  
   Given 'I am on the new transaction page'
   When  'I fill in "Account" with "' + name + '"'
   And   'I select "' + method + '" from "Method"'
@@ -36,3 +42,10 @@ end
 Then /^the transaction should not be editable$/ do
   Then 'I should not see "Edit"'
 end
+
+Then /^Jenifer\'s transaction should be above Julia\'s$/ do
+  jenifers_position = (response.body =~ /Jenifer/)
+  julias_position   = (response.body =~ /Julia/)
+  jenifers_position.should < julias_position
+end
+

@@ -5,10 +5,10 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.xml
   def index
-    @transactions = Transaction.all
+    @transactions = Transaction.all :order => 'updated_at DESC'
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml  { render :xml => @transactions }
     end
   end
@@ -19,7 +19,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.xml  { render :xml => @transaction }
     end
   end
@@ -30,7 +30,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.xml  { render :xml => @transaction }
     end
   end

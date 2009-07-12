@@ -15,12 +15,15 @@
         - if maintenance_topmenu_active? then
           = render :partial => 'navigation/maintenance_submenu'
           #dvrightpanel
+            = yield
+
         - elsif my_account_topmenu_active? then
           = render :partial => 'navigation/my_account_submenu'
           #dvrightpanel
+            = yield
+
         - else
           #dvfullpanel
-
             = yield
 
       #dvfootercontainer
