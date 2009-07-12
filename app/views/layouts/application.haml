@@ -1,0 +1,29 @@
+!!! XML
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title Fester - Dropzone Management
+    = stylesheet_link_tag 'style', 'jquery.autocomplete', :cache => true
+    = google_javascripts :jquery, :prototype
+    = javascript_include_tag 'jquery.autocomplete', 'application', :cache => true
+
+  %body
+    #dvmaincontainer
+      = render :partial => 'navigation/topmenu'
+
+      #dvbodycontainer
+        - if maintenance_topmenu_active? then
+          = render :partial => 'navigation/maintenance_submenu'
+          #dvrightpanel
+        - elsif my_account_topmenu_active? then
+          = render :partial => 'navigation/my_account_submenu'
+          #dvrightpanel
+        - else
+          #dvfullpanel
+
+            = yield
+
+      #dvfootercontainer
+        #foottop
+          = link_to 'Feedback', 'http://bryanash.heroku.com/projects/fester', :id => 'footer-left'
+          #footer-right Copyright © 2009 Bryan Ash
