@@ -1,60 +1,4 @@
-From demo with Timmy
-- New account page needs to be able to set initial balance (Transaction?)
-- Default amounts for Jump Type
-- Load list needs to show number of load today
-- Option to charge slot to another account on the load form
-- Account and Transaction index pages need filter
-- On loads form, pilot dropdown should sort by recency for aircraft
-
-Equipment _form partial has an ugly method for getting the right path and action
-- suggestion from Rails mailing list was to rename Equipment model to something that has a singular and plural that are different
-
-My Accounts page should:
-- allow association with accounts
-  - pick account 
-  - email is sent to that account with link to association confirmation url
-
-Put Signup link on Login page
-
-Roles
-- Controller actions should be provided only to those with sufficient permission
-- Manager
-  - can do everything a Manifester can
-  - can change a user role
-  - can perform Maintenance functions
-- Manifester
-  - can do everything a Default user can
-  - can edit manifests
-  - can edit transactions
-  - can edit accounts
-- Default
-  - can view own account
-
-Authentication
-- forgotten username
-- forgotten password
-- needs some more feature descriptions
-
-Import SkyWriter data
-- Validate input
-- Reformat name to be First Last
-
-Show something sensible when no data found (equipment, aircraft, etc)
-
-Transactions
-- Transactions should list in date reverse order
-- Put "New" link at top of page
-- Transactions (and slot) should be links on Account/edit page
-- ? link to new transaction from Account/edit page
-
 Manifesting
-- Default altitude for jump types
-- Default cost for jump type
-- Default cost for Equipment?
-- Picking our aircraft should blank Other
-- Entering Other should uncheck radio buttons
-- Display multiple slots dependant on capacity of aircraft
-- On loads page, clicking icon toggles slots visible
 - Performance: editing load fetches jump types, accounts and equipment lists for each slot, should only fetch once
 
 Vulnerabilty
@@ -72,27 +16,16 @@ Vulnerabilty
 
 Link to New Transaction on Account edit page
 
-Refactor Manifest feature scenarios
-
 Heroku Services
 - Backup is available, need to figure out how to use
-
-Export transactions to CSV
-
-Log pruning
-- Reduce the ammount of stuff that gets logged in the first place
-- Implement periodic log pruning
 
 Manage bookings?
 - Phone operator enters booking
 - Jumper enters booking online
 
 Business Names
-- ishelpful.com
 - softwarethathelps.com
 - softwareforfun.com
 - plainanduseful.com
 - workhappily.com
 
-Kuler colors:
-- Blue Sky Day: 56797F, 87A0A4, FCFBDC, F2DDB6, A6937C

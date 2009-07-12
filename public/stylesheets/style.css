@@ -410,7 +410,7 @@ body {
     padding:0px 0px 50px 0px;
 }
 
-#foottop p {
+#footer-right {
     float:right;
     font-size:12px;
     text-align:left;
@@ -419,20 +419,18 @@ body {
     padding:25px 0px 0px 20px;
 }
 
-#foottop p a {
+#footer-left {
+    float:left;
+    font-size:12px;
+    text-align:left;
     text-decoration:none;
     color:#938A82;
-    padding-left:5px;
-    padding-right:5px;
+    margin:0px;
+    padding:25px 0px 0px 20px;
 }
 
-#foottop p a:hover {
+#footer-left:hover {
     text-decoration:underline;
-    color:#938A82;
-}
-
-#foottop p span {
-    padding:0px 10px 0px 0px;
 }
 
 /*- Menu Tabs 1--------------------------- */ 
