@@ -35,3 +35,9 @@ I want Fester to remember account information
   | Contact | 555-123-4567        |
   | Gender  | Female              |
   | DOB     | 04-04-1972          |
+
+  @focus
+  Scenario: Account list is sorted by name
+    When I create pilot "Peter"
+    And  I create jumper "Johnny"
+    Then Johnny should be listed above Peter

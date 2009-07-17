@@ -56,3 +56,11 @@ Then /^(.+)\'s balance should be (.+)$/ do |name, amount|
   visit edit_account_path(account)
   response.body.should contain(amount)
 end
+
+Then /^Johnny should be listed above Peter$/ do
+  visit 'accounts'
+  johnnys_position = (response.body =~ /Johnny/)
+  peters_position  = (response.body =~ /Peter/)
+  johnnys_position.should < peters_position  
+end
+
