@@ -13,7 +13,7 @@
       = slot_form.label :altitude, 'Altitude:'
       = slot_form.text_field :altitude, :size => 6
 
-      = link_to_function "remove", "$(this).up('.slot').remove()"
+      = link_to_function "remove", "$(this).parents('.slot').remove()"
 
       %br
 

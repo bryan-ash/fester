@@ -8,10 +8,4 @@ $(document).ready(function () {
     });
   }); 
 
-  $(".add_slot a").click( function (event) {
-    event.preventDefault();
-
-    var new_slot = $(".slot:last").clone()
-    new_slot.insertAfter(".slot:last");
-  });
 });

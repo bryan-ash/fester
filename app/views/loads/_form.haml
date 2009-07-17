@@ -18,17 +18,14 @@
   .line
     %hr
 
-  .slots
+  #slots
     = render :partial => 'slot', :collection => @load.slots
 
   .submit
     = f.submit "Submit"
 
-  .add_slot
-    .round_button_block
-      .round_button_button
-        .round_button_content 
-          = link_to 'Add a Slot'
+  .learn
+    %span= add_slot_link "ADD A SLOT"
 
 = set_focus_to_id 'load_pilot_id'
 = javascript_include_tag 'slot_cost'
