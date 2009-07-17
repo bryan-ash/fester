@@ -36,8 +36,7 @@ I want Fester to remember account information
   | Gender  | Female              |
   | DOB     | 04-04-1972          |
 
-  @focus
   Scenario: Account list is sorted by name
     When I create pilot "Peter"
     And  I create jumper "Johnny"
-    Then Johnny should be listed above Peter
+    Then Johnny should be listed above Peter on the accounts page

@@ -22,4 +22,9 @@ I want jump types to be remembered
     And   a Tandem costs $200
     When  I go to the jump types page
     Then  I should see "200.00"
+
+  Scenario: Jump type list is sorted by name 
+    Given there is a jump type named "Whacky"
+    And   there is a jump type named "Crazy"
+    Then  Crazy should be listed above Whacky on the jump_types page
     

@@ -30,4 +30,3 @@ When /^I rename jump type "(.+)" to "(.+)"$/ do |from, to|
   fill_in "Name", :with => to
   click_button "Submit"
 end
-

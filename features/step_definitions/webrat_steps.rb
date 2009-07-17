@@ -136,3 +136,10 @@ Then /^the "(.+)" link should not be visible$/ do |link|
   lambda { click_link(link) }.should raise_error  
 end
 
+Then /^(.+) should be listed above (.+) on the (.+) page$/ do |first, second, page|
+  visit page
+  first_position  = (response.body =~ /#{first}/)
+  second_position = (response.body =~ /#{second}/)
+  first_position.should < second_position  
+end
+

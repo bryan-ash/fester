@@ -1,7 +1,7 @@
 class JumpTypesController < ApplicationController
 
   def index
-    @jump_types = JumpType.all
+    @jump_types = JumpType.all :order => 'name ASC'
 
     respond_to do |format|
       format.html
