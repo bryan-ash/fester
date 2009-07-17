@@ -41,8 +41,8 @@ When /^I create an account with (.+) "(.+)"$/ do |field, value|
   And  'I press "Submit"'
 end
 
-When /^I go to Julia\'s page$/ do
-  account = Account.find_by_name 'Julia'
+When /^I go to (.+)\'s page$/ do |name|
+  account = Account.find_by_name name
   visit "/accounts/#{account.id}/edit"
 end
 

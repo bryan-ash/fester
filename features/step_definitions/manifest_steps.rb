@@ -21,10 +21,8 @@ Given /^(.*) is manifested for an? (.+) on our aircraft \"(.*)\"$/ do |jumper, j
   And   'I select "' + jump_type + '" from "Jump Type"'
 
   And   'I select "Polly" from "Pilot"'
-  And   'I fill in "Cost" with "100"'
   And   'I fill in "Altitude" with "11000"'
   And   'I select "Wing Suit" from "Equipment"'
-  And   'I fill in "Cost" with "123.45"'
   And   'I fill in "Notes" with "Level 4"'
   
   When  'I press "Submit"'

@@ -1,0 +1,24 @@
+var jump_type_cost = new Array;
+
+<% for jump_type in @jump_types -%>
+  jump_type_cost.push(<%= jump_type.cost %>);
+<% end -%>
+
+function populate_slot_cost(item) {
+  var jump_type = item.closest(".slot").find(".jump_type")
+  var jump_type_index = jump_type.val() - 1;
+
+  item.val(jump_type_cost[jump_type_index]);
+}
+
+$(document).ready(function () {
+  $(".cost").each(function () {
+    if ($(this).val() == "") {
+      populate_slot_cost($(this));
+    }
+  });
+
+  $(".jump_type").change(function () {
+    populate_slot_cost($(this).closest(".slot").find(".cost"));
+  });
+});

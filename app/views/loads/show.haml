@@ -1,0 +1,36 @@
+%p
+  %b Date:
+  = h @load.date
+
+%p
+  %b Aircraft:
+  = h @load.aircraft_name
+%p
+  %b Pilot:
+  = h @load.pilot_name
+
+- for slot in @load.slots
+  %p
+    %b Jumper:
+    = h slot.account_name
+  %p
+    %b Jump Type:
+    = h slot.jump_type_name
+  %p
+    %b Equipment:
+    = h slot.equipment_name
+  %p
+    %b Altitude:
+    = h slot.altitude
+  %p
+    %b Cost:
+    = h slot.cost
+  %p
+    %b Notes:
+    = h slot.notes
+
+= link_to 'Edit', edit_load_path(@load) 
+\|
+= link_to 'New',  new_load_path
+\|
+= link_to 'List', loads_path

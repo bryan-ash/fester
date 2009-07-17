@@ -296,29 +296,34 @@ body {
     white-space:nowrap;
 }
 
-.link_to_new_block {
+.round_button_block {
     float:left;
     background:url(../images/learnright.gif) no-repeat right -40px;
     margin:0;
     padding:0;
 }
 
-.link_to_new_button {
+.round_button_button {
     display:block;
     background:url(../images/learnleft.gif) no-repeat left -40px;
     padding:5px 15px;
 }
 
-.link_to_new_content {
+.round_button_content {
     color:#FFFFFF;
     text-decoration:none;
     voice-family:"\"}\"";
     line-height:17px;
 }
 
-.link_to_new_content:hover {
+.round_button_content:hover {
     color:#888888;
     text-decoration:none;
+}
+
+.add_slot {
+    float:right;
+    text-align:left;
 }
 
 #dvrightpanel .learn {

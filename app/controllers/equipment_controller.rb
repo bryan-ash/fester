@@ -1,44 +1,36 @@
 class EquipmentController < ApplicationController
-  # GET /equipment
-  # GET /equipment.xml
+
   def index
     @equipment = Equipment.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml  { render :xml => @equipment }
     end
   end
 
-  # GET /equipment/1
-  # GET /equipment/1.xml
   def show
     @equipment = Equipment.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.xml  { render :xml => @equipment }
     end
   end
 
-  # GET /equipment/new
-  # GET /equipment/new.xml
   def new
     @equipment = Equipment.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.xml  { render :xml => @equipment }
     end
   end
 
-  # GET /equipment/1/edit
   def edit
     @equipment = Equipment.find(params[:id])
   end
 
-  # POST /equipment
-  # POST /equipment.xml
   def create
     @equipment = Equipment.new(params[:equipment])
 
@@ -54,8 +46,6 @@ class EquipmentController < ApplicationController
     end
   end
 
-  # PUT /equipment/1
-  # PUT /equipment/1.xml
   def update
     @equipment = Equipment.find(params[:id])
 
@@ -71,8 +61,6 @@ class EquipmentController < ApplicationController
     end
   end
 
-  # DELETE /equipment/1
-  # DELETE /equipment/1.xml
   def destroy
     @equipment = Equipment.find(params[:id])
     @equipment.destroy

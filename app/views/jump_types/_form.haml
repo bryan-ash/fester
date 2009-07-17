@@ -1,0 +1,15 @@
+- form_for(@jump_type) do |f|
+  = f.error_messages
+
+  %p
+    = f.label :name, 'Name:'
+    = f.text_field :name
+
+  %p
+    = f.label :cost, 'Cost:'
+    = f.text_field :cost
+
+  %p
+    = f.submit 'Submit'
+
+= set_focus_to_id 'jump_type_name'

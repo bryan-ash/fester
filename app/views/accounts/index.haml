@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th Name
+
+  - @accounts.each do |account|
+    %tr
+      %td= h account.name
+      %td= link_to 'Edit', edit_account_path(account)
+      %td= link_to 'Delete', account, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= round_button 'New', new_account_path

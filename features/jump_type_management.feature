@@ -16,3 +16,10 @@ I want jump types to be remembered
     When  I rename jump type "Tandem" to "Super Jump"
     And   I go to the jump types page
     Then  I should see "Super Jump"
+
+  Scenario: Jump type has a cost
+    Given there is a jump type named "Tandem"
+    And   a Tandem costs $200
+    When  I go to the jump types page
+    Then  I should see "200.00"
+    

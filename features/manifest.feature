@@ -43,3 +43,9 @@ I want Fester to remember who jumped
     When  I edit the load
     And   I press "Submit"
     Then  1 transaction should exist
+
+  @focus
+  Scenario: The cost for a jump type is used for the cost of the slot
+    Given a Tandem costs $200
+    When  July is manifested for a Tandem on our aircraft "1EE"
+    Then  July's balance should be -$200

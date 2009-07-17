@@ -5,7 +5,7 @@
   - fields_for prefix, slot do |slot_form|
     %p
       = slot_form.label :jump_type_id, 'Jump Type:'
-      = slot_form.collection_select(:jump_type_id, JumpType.find(:all), :id, :name)
+      = slot_form.collection_select(:jump_type_id, JumpType.find(:all), :id, :name, {}, { :class => :jump_type })
 
       = slot_form.label :account_name, 'Jumper:'
       = slot_form.text_field :account_name, :class => 'autocomplete', :autocomplete_url => autocomplete_for_account_name_slots_path
@@ -18,10 +18,10 @@
       %br
 
       = slot_form.label :equipment_id, 'Equipment:'
-      = slot_form.collection_select :equipment_id, Equipment.find(:all), :id, :name, { :prompt =>  true }
+      = slot_form.collection_select :equipment_id, Equipment.find(:all), :id, :name, { :include_blank =>  true }
 
       = slot_form.label :cost, 'Cost:'
-      = slot_form.text_field :cost, :size => 6
+      = slot_form.text_field :cost, :size => 6, :class => 'cost'
       
       %br
 

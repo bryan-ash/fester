@@ -88,10 +88,18 @@ module ApplicationHelper
     EMBED_SCRIPT
   end
 
-  def link_to_new(label, path)
-    content_tag :div, :class => 'link_to_new_block' do
-      content_tag :span, :class => 'link_to_new_button' do
-        link_to label, path, :class => 'link_to_new_content'
+  def round_button(label, path)
+    content_tag :div, :class => 'round_button_block' do
+      content_tag :span, :class => 'round_button_button' do
+        link_to label, path, :class => 'round_button_content'
+      end
+    end
+  end
+
+  def round_button_function(label, function)
+    content_tag :div, :class => 'round_button_block' do
+      content_tag :span, :class => 'round_button_button' do
+        link_to_function label, function, :class => 'round_button_content'
       end
     end
   end

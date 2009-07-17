@@ -1,0 +1,20 @@
+%h1 Listing users
+
+%table 
+  %tr 
+    %th Username
+    %th Email
+    %th Password
+  
+  - @users.each do |user| 
+    %tr 
+      %td= h user.username
+      %td= h user.email
+      %td= h user.password
+      %td= link_to 'Show', user
+      %td= link_to 'Edit', edit_user_path(user)
+      %td= link_to 'Destroy', user, :confirm =  'Are you sure?', :method =  :delete
+
+%br
+
+= round_button 'New', new_user_path

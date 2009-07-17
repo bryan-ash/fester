@@ -1,0 +1,10 @@
+- form_for(@payment_method) do |f|
+  = f.error_messages
+
+  %p
+    = f.label :name, 'Name:'
+    = f.text_field :name
+  %p
+    = f.submit 'Submit'
+
+= set_focus_to_id 'payment_method_name'

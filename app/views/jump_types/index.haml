@@ -1,0 +1,14 @@
+%table
+  %tr
+    %th Name
+    %th Cost
+
+  - @jump_types.each do |jump_type|
+    %tr
+      %td= link_to h(jump_type.name), edit_jump_type_path(jump_type)
+      %td= number_to_currency jump_type.cost
+      %td= link_to 'Delete', jump_type, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= round_button 'New', new_jump_type_path

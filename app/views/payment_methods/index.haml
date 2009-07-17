@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th Name
+
+  - @payment_methods.each do |payment_method|
+    %tr
+      %td= h payment_method.name
+      %td= link_to 'Edit', edit_payment_method_path(payment_method)
+      %td= link_to 'Delete', payment_method, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= round_button 'New', new_payment_method_path

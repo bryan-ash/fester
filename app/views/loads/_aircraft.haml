@@ -1,0 +1,9 @@
+= f.label 'Aircraft:'
+
+- Aircraft.find_ours.each do |aircraft|
+
+  = f.radio_button :aircraft_name, aircraft.name
+  = f.label 'aircraft_name_' + aircraft.name.downcase, aircraft.name
+
+= f.label :new_aircraft_name, 'Other:'
+= f.text_field :new_aircraft_name
