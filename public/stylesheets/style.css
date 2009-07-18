@@ -78,64 +78,6 @@ body {
     padding:0px 0px 0px 0px;
 }
 
-#dvbodycontainer #dvbannerbgcontainer {
-    float:left;
-    width:873px;
-    height:226px;
-    background-image:url(../images/bg.jpg);
-    background-repeat:repeat;
-    background-position:top;
-    border-bottom:1px solid #D5D4CD;
-    border-top:1px solid #D5D4CD;
-    margin:0px;
-    padding:38px 0px 0px 25px;
-}
-
-#dvbannerbgcontainer .lftcontainer {
-    float:left;
-    width:277px;
-    font-size:0px;
-    margin:0px;
-    padding:0px 0px 0px 0px;
-}
-
-.lftcontainer .dvbannerleft {
-    float:left;
-    width:277px;
-    margin:0px;
-    padding:0px 0px 15px 0px;
-}
-
-.dvbannerleft img {
-    float:left;
-    margin:0px;
-    padding:0px 11px 0px 0px;
-    font-size:0px;
-}
-
-.dvbannerleft p {
-    float:left;
-    width:203PX;
-    font-size:12px;
-    text-align:left;
-    color:#424037;
-    background-color:#FBF8A8;
-    margin:6px 0px 0px 0px;
-    padding:6px 0px 5px 8px;
-}
-
-.dvbannerleft p b {
-    font-size:13px;
-    font-weight:bold;
-}
-
-#dvbannerbgcontainer #dvbanner {
-    float:left;
-    font-size:0px;
-    margin:0px;
-    padding:0px 0px 0px 35px;
-}
-
 #dvbodycontainer #dvfullpanel {
     float:left;
     width:826px;
@@ -143,9 +85,8 @@ body {
     padding:18px 0px 4px 3px;
 }
 
-#dvfullpanel h1 {
+h1 {
     float:left;
-    width:826px;
     font-size:20px;
     text-align:left;
     color:#2C1B11;
@@ -153,8 +94,11 @@ body {
     padding:10px 0px 0px 15px;
 }
 
-#dvfullpanel p {
-    width:826xpx;
+#dvfullpanel h1 {
+    width:826px;
+}
+
+p {
     font-size:13px;
     text-align:left;
     voice-family:"\"}\"";
@@ -164,12 +108,19 @@ body {
     padding:10px 0px 10px 15px;
 }
 
-#dvfullpanel .line {
+#dvfullpanel p {
+    width:826xpx;
+}
+
+.line {
     float:left;
-    width:826px;
     font-size:0px;
     margin:0px;
     padding:10px 0px 15px 15px;
+}
+
+#dvfullpanel .line {
+    width:826px;
 }
 
 #dvfullpanel .submit {
@@ -178,67 +129,6 @@ body {
     font-size:0px;
     margin:0px;
     padding:0px 0px 14px 14px;
-}
-
-#dvfullpanel .learn {
-    float:left;
-    text-align:left;
-    font-size:0px;
-    margin:0px;
-    padding:0px 0px 14px 445px;
-}
-
-#dvfullpanel .learn span {
-    height:20px;
-    width:140px;
-    font-size:10px;
-    color:#FFFFFF;
-    margin:0px 0px 0px 0px;
-    padding:0px 0px 0px 0px;
-}
-
-#dvfullpanel .learn span a {
-    background-image:url(../images/learn.jpg);
-    background-repeat:no-repeat;
-    width:140px;
-    height:30px;
-    font-size:10px;
-    color:#FFFFFF;
-    padding-right:20px;
-    text-decoration:none;
-    padding-top:8px;
-    voice-family:"\"}\"";
-    line-height:17px;
-}
-
-#dvfullpanel .learn span a:hover {
-    background-image:url(../images/learn_over.jpg);
-    background-repeat:no-repeat;
-    width:130px;
-    color:#FFFFFF;
-    text-decoration:none;
-}
-
-#dvfullpanel .learn a {
-    background-image:url(../images/learn.jpg);
-    background-repeat:no-repeat;
-    background-position:center;
-    height:20px;
-    width:97px;
-    font-size:11px;
-    color:#FFFFFF;
-    padding-bottom:10px;
-    padding-left:11px;
-    padding-top:3px;
-}
-
-#dvfullpanel .learn a:hover {
-    background-image:url(../images/learn_over.jpg);
-    background-repeat:no-repeat;
-    height:20px;
-    width:97px;
-    padding-bottom:10px;
-    color:#FFFFFF;
 }
 
 #dvleftpanel {
@@ -256,33 +146,16 @@ body {
 }
 
 #dvrightpanel h1 {
-    float:left;
     width:395px;
-    font-size:20px;
-    text-align:left;
-    color:#2C1B11;
-    margin:0px;
-    padding:10px 0px 0px 15px;
 }
 
 #dvrightpanel p {
     float:left;
     width:530px;
-    font-size:13px;
-    text-align:left;
-    voice-family:"\"}\"";
-    line-height:16px;
-    color:#513D2C;
-    margin:0px;
-    padding:10px 0px 10px 15px;
 }
 
 #dvrightpanel .line {
-    float:left;
     width:533px;
-    font-size:0px;
-    margin:0px;
-    padding:10px 0px 15px 15px;
 }
 
 .flash_notice {
@@ -323,68 +196,6 @@ body {
 
 .add_slot {
     float:right;
-    text-align:left;
-}
-
-#dvrightpanel .learn {
-    float:left;
-    text-align:left;
-    font-size:0px;
-    margin:0px;
-    padding:0px 0px 14px 445px;
-}
-
-#dvrightpanel .learn span {
-    height:20px;
-    width:140px;
-    font-size:10px;
-    color:#FFFFFF;
-    margin:0px 0px 0px 0px;
-    padding:0px 0px 0px 0px;
-}
-
-#dvrightpanel .learn span a {
-    background-image:url(../images/learn.jpg);
-    background-repeat:no-repeat;
-    width:140px;
-    height:30px;
-    font-size:10px;
-    color:#FFFFFF;
-    padding-right:20px;
-    text-decoration:none;
-    padding-top:8px;
-    voice-family:"\"}\"";
-    line-height:17px;
-}
-
-#dvrightpanel .learn span a:hover {
-    background-image:url(../images/learn_over.jpg);
-    background-repeat:no-repeat;
-    width:130px;
-    color:#FFFFFF;
-    text-decoration:none;
-}
-
-#dvrightpanel .learn a {
-    background-image:url(../images/learn.jpg);
-    background-repeat:no-repeat;
-    background-position:center;
-    height:20px;
-    width:97px;
-    font-size:11px;
-    color:#FFFFFF;
-    padding-bottom:10px;
-    padding-left:11px;
-    padding-top:3px;
-}
-
-#dvrightpanel .learn a:hover {
-    background-image:url(../images/learn_over.jpg);
-    background-repeat:no-repeat;
-    height:20px;
-    width:97px;
-    padding-bottom:10px;
-    color:#FFFFFF;
 }
 
 #dvrightpanel #righttfoot {
@@ -547,18 +358,6 @@ img {
 }
 
 .menu a, .menu a:visited {
-    width:186px;
-    height:22px;
-    margin:0px 0px 2px 7px;
-    position:relative;
-    display:block;
-    color:#fff;
-    text-decoration:none;
-    background:url(../images/menubg2.jpg) no-repeat;
-    padding:4px 0 0 8px;
-}
-
-*html .menu a, .menu a:visited {
     width:186px;
     height:22px;
     margin:0px 0px 2px 7px;

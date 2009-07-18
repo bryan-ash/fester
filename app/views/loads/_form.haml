@@ -24,8 +24,7 @@
   .submit
     = f.submit "Submit"
 
-  .learn
-    %span= add_slot_link "ADD A SLOT"
+  .add_slot= add_slot_link "Add a Slot"
 
 = set_focus_to_id 'load_pilot_id'
 = javascript_include_tag 'slot_cost'
