@@ -3,7 +3,6 @@ Given /^there are no loads manifested$/ do
 end
 
 Given /^(.*) is manifested for an? (.+) on our aircraft \"(.*)\"$/ do |jumper, jump_type, aircraft|
-  Given 'there are no loads manifested'
   And   'we own an aircraft named "' + aircraft + '"'
   And   'there is a jumper named "' + jumper + '"'
   And   'there is a jump type named "' + jump_type + '"'
@@ -31,7 +30,6 @@ Given /^(.*) is manifested for an? (.+) on our aircraft \"(.*)\"$/ do |jumper, j
 end
 
 Given /^(.*) is manifested for an? (.+) on other aircraft \"(.*)\"$/ do |jumper, jump_type, aircraft|
-  Given 'there are no loads manifested'
   And   'there is a jumper named "' + jumper + '"'
   And   'there is a jump type named "' + jump_type + '"'
 
@@ -99,3 +97,28 @@ Then /^I should see 6 slots$/ do
   one_for_javascript_add_slot = 1
   response.body.scan(/Jumper/).length.should == 6 + one_for_javascript_add_slot
 end
+
+Then /^load (.+) is on "(.+)"$/ do |number, aircraft|
+  When 'I go to the loads page'
+  Then 'I should see something like "' + number + ':.*' + aircraft + '"'
+end
+
+Given /^a load was manifested yesterday$/ do
+  Given 'Johnny is manifested for a Fun Jump on our aircraft "42Z"'
+  When  'I edit the load'
+  And   'I select "' + Date.yesterday.to_s + '" as the date'
+  And   'I press "Submit"'
+end
+
+Given /^a load is manifested today$/ do 
+  Given 'Jenny is manifested for a Fun Jump on our aircraft "1EE"'
+end
+
+Then /^today\'s load should be load 1$/ do 
+  Then 'load 1 is on "1EE"'
+end
+
+Then /^today\'s load should be listed above yesterday\'s$/ do
+  Then "1EE should be listed above 42Z on the loads page"
+end
+

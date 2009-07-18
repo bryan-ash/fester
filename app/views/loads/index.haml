@@ -1,10 +1,12 @@
 %table
   %tr
+    %th #
     %th Date
     %th Aircraft
 
   - @loads.each do |load|
     %tr
+      %td= "#{load.number}:"
       %td= h load.date
       %td= h load.aircraft_name
       %td= link_to 'Edit', edit_load_path(load)

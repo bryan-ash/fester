@@ -108,6 +108,10 @@ Then /^I should not see "([^\"]*)"$/ do |text|
   response.should_not contain(text)
 end
 
+Then /^I should see something like "([^\"]*)"$/ do |regexp|
+  response.body.should =~ /#{regexp}/m
+end
+
 Then /^the "([^\"]*)" field should contain "([^\"]*)"$/ do |field, value|
   field_labeled(field).value.should =~ /#{value}/
 end

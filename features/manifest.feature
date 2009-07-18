@@ -44,8 +44,35 @@ I want Fester to remember who jumped
     And   I press "Submit"
     Then  1 transaction should exist
 
-  @focus
   Scenario: The cost for a jump type is used for the cost of the slot
     Given a Tandem costs $200
     When  July is manifested for a Tandem on our aircraft "1EE"
     Then  July's balance should be -$200
+
+  Scenario: Creating Load 1
+    Given there are no loads manifested
+    When  I go to the new load page
+    Then  I should see "Creating load 1"
+
+  Scenario: Editing Load 1
+    Given Johnny is manifested for an AFF on other aircraft "visitor"
+    When  I follow "Edit"
+    Then  I should see "Editing load 1"
+
+  Scenario: Creating Load 2
+    Given Johnny is manifested for an AFF on other aircraft "visitor"
+    When  I go to the new load page
+    Then  I should see "Creating load 2"
+
+  Scenario: Loads are listed newest first
+    Given Johnny is manifested for an AFF on other aircraft "visitor"
+    And   Jenny is manifested for a Fun Jump on our aircraft "1EE"    
+    Then  load 1 is on "visitor"
+    And   load 2 is on "1EE"
+    And   1EE should be listed above visitor on the loads page
+
+  Scenario: Load numbers restart every day
+    Given a load was manifested yesterday
+    And   a load is manifested today
+    Then  today's load should be load 1
+    And   today's load should be listed above yesterday's

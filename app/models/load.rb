@@ -7,6 +7,10 @@ class Load < ActiveRecord::Base
   before_save  :create_aircraft_from_name
   after_update :save_slots
   
+  def after_initialize
+    self.number = Load.count(:conditions => { :date => Date.today }) + 1 unless self.number
+  end
+
   def new_slot_attributes=(slot_attributes)
     slot_attributes.each do |attributes|
       slots.build(attributes) unless attributes[:account_name].blank?

@@ -38,6 +38,9 @@ module NavigationHelpers
     when /manifest/, /loads/
       loads_path
 
+    when /new load/
+      new_load_path
+
     when /new transaction/
       'transactions/new'
       

@@ -1,46 +1,37 @@
 class LoadsController < ApplicationController
 
-  # GET /loads
-  # GET /loads.xml
   def index
-    @loads = Load.all
+    @loads = Load.all :order => 'date DESC, number DESC'
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml  { render :xml => @loads }
     end
   end
 
-  # GET /loads/1
-  # GET /loads/1.xml
   def show
     @load = Load.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.xml  { render :xml => @load }
     end
   end
 
-  # GET /loads/new
-  # GET /loads/new.xml
   def new
     @load = Load.new
     6.times { @load.slots.build }
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.xml  { render :xml => @load }
     end
   end
 
-  # GET /loads/1/edit
   def edit
     @load = Load.find(params[:id])
   end
 
-  # POST /loads
-  # POST /loads.xml
   def create
     @load = Load.new(params[:load])
 
@@ -56,8 +47,6 @@ class LoadsController < ApplicationController
     end
   end
 
-  # PUT /loads/1
-  # PUT /loads/1.xml
   def update
     params[:load][:existing_slot_attributes] ||= {}
     
@@ -75,8 +64,6 @@ class LoadsController < ApplicationController
     end
   end
 
-  # DELETE /loads/1
-  # DELETE /loads/1.xml
   def destroy
     @load = Load.find(params[:id])
     @load.destroy
