@@ -10,4 +10,14 @@ module LoadsHelper
     end
   end
   
+  def set_focus_to_first_aircraft
+    <<-EMBED_SCRIPT
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $(".aircraft:first").focus();
+        });
+      </script>
+    EMBED_SCRIPT
+  end
+
 end
