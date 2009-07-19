@@ -5,6 +5,9 @@
     = f.label :name, 'Name:'
     = f.text_field :name
   %p
+    = f.label :credit, 'Credit:'
+    = f.check_box :credit
+  %p
     = f.submit 'Submit'
 
 = set_focus_to_id 'payment_method_name'

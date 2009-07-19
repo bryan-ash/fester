@@ -3,9 +3,11 @@
 %table
   %tr
     %th Name
+    %th Type
 
   - @payment_methods.each do |payment_method|
     %tr
       %td= h payment_method.name
+      %td= payment_method.credit ? 'Credit' : 'Debit'
       %td= link_to 'Edit', edit_payment_method_path(payment_method)
       %td= link_to 'Delete', payment_method, :confirm => 'Are you sure?', :method => :delete

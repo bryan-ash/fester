@@ -11,10 +11,11 @@ Given /^there is a payment method named "(.*)"$/ do |payment_method|
   PaymentMethod.create! :name => payment_method
 end
 
-When /^I create a payment method named "(.+)"$/ do |name|
+When /^I create a "(Credit|Debit)" payment method named "(.+)"$/ do |credit_debit, name|
   When 'I go to the payment methods page'
   And  'I follow "New"'
   And  'I fill in "Name" with "' + name + '"'
+  And  'I check "Credit"' if credit_debit == 'Credit'
   And  'I press "Submit"'
 end
 
