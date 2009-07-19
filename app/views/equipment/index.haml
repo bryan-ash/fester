@@ -1,3 +1,5 @@
+= round_button 'New', new_equipment_instance_path
+
 %table
   %tr
     %th Name
@@ -5,7 +7,3 @@
     %tr
       %td= link_to(h(equipment.name), edit_equipment_instance_path(equipment))
       %td= link_to 'Delete', equipment_instance_path(equipment), :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= round_button 'New', new_equipment_instance_path

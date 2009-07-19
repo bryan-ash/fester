@@ -170,7 +170,7 @@ p {
 }
 
 .round_button_block {
-    float:left;
+    float:right;
     background:url(../images/learnright.gif) no-repeat right -40px;
     margin:0;
     padding:0;
@@ -192,10 +192,6 @@ p {
 .round_button_content:hover {
     color:#888888;
     text-decoration:none;
-}
-
-.add_slot {
-    float:right;
 }
 
 #dvrightpanel #righttfoot {

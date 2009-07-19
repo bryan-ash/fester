@@ -1,3 +1,5 @@
+= round_button 'New', new_aircraft_path
+
 %table
   %tr
     %th Name
@@ -11,7 +13,3 @@
       %td= h 'Yes' if aircraft.ours
       %td= link_to 'Edit', edit_aircraft_path(aircraft)
       %td= link_to 'Delete', aircraft, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= round_button 'New', new_aircraft_path

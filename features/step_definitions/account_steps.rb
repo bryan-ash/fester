@@ -12,7 +12,7 @@ end
 
 Given /^I am on an account page$/ do
   Given 'there is a jumper named "Julia"'
-  And   'I go to Julia\'s page'
+  And   'I go to Julia\'s edit page'
 end
 
 When /^I create (.+)\'s account with an initial balance of \$(\d+)$/ do |jumper, balance|
@@ -56,6 +56,11 @@ end
 When /^I go to (.+)\'s page$/ do |name|
   account = Account.find_by_name name
   visit account_path(account)
+end
+
+When /^I go to (.+)\'s edit page$/ do |name|
+  account = Account.find_by_name name
+  visit edit_account_path(account)
 end
 
 Then /^(.+)\'s balance should be (.+)$/ do |name, amount|

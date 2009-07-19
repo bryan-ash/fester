@@ -81,9 +81,9 @@ module ApplicationHelper
   def set_focus_to_id(id)
     <<-EMBED_SCRIPT
       <script type="text/javascript">
-        window.onload = function() {
-          document.getElementById('#{id}').focus();
-      }
+        $(document).ready(function () {
+          $('\##{id}').focus();
+        });
       </script>
     EMBED_SCRIPT
   end
@@ -92,14 +92,6 @@ module ApplicationHelper
     content_tag :div, :class => 'round_button_block' do
       content_tag :span, :class => 'round_button_button' do
         link_to label, path, :class => 'round_button_content'
-      end
-    end
-  end
-
-  def round_button_function(label, function)
-    content_tag :div, :class => 'round_button_block' do
-      content_tag :span, :class => 'round_button_button' do
-        link_to_function label, function, :class => 'round_button_content'
       end
     end
   end

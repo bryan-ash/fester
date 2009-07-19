@@ -1,3 +1,5 @@
+= round_button 'New', new_load_path
+
 %table
   %tr
     %th #
@@ -11,7 +13,3 @@
       %td= h load.aircraft_name
       %td= link_to 'Edit', edit_load_path(load)
       %td= link_to 'Delete', load, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= round_button 'New', new_load_path

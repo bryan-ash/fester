@@ -1,3 +1,5 @@
+= round_button 'New', new_transaction_path
+
 %table
   %tr
     %th Account
@@ -16,7 +18,3 @@
       - unless transaction.slot
         %td= link_to 'Edit', edit_transaction_path(transaction)
         %td= link_to 'Delete', transaction, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= round_button 'New', new_transaction_path

@@ -1,3 +1,5 @@
+= round_button 'New', new_user_path
+
 %h1 Listing users
 
 %table 
@@ -14,7 +16,3 @@
       %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_path(user)
       %td= link_to 'Destroy', user, :confirm =  'Are you sure?', :method =  :delete
-
-%br
-
-= round_button 'New', new_user_path
