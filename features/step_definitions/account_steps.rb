@@ -10,11 +10,22 @@ Given /^there is a pilot named "(.*)"$/ do |pilot|
   Account.create! :name => pilot, :pilot => true
 end
 
-When /^I create jumper "(.+)"$/ do |jumper|
+Given /^I am on an account page$/ do
+  Given 'there is a jumper named "Julia"'
+  And   'I go to Julia\'s page'
+end
+
+When /^I create (.+)\'s account with an initial balance of \$(\d+)$/ do |jumper, balance|
   When 'I go to the accounts page'
   And  'I follow "New"'
   And  'I fill in "Name" with "' + jumper + '"'
+  And  'I fill in "Balance adjustment" with "' + balance + '"'
   And  'I press "Submit"'
+  Then 'I should be on the accounts page'
+end
+
+When /^I create jumper "(.+)"$/ do |jumper|
+  When "I create #{jumper}'s account with an initial balance of $0"
 end
 
 When /^I create jumping pilot "(.+)"$/ do |pilot|
@@ -34,21 +45,17 @@ When /^I create pilot "(.+)"$/ do |pilot|
   And  'I press "Submit"'
 end
 
-When /^I create an account with (.+) "(.+)"$/ do |field, value|
+When /^I create Jane\'s account with (.+) "(.+)"$/ do |field, value|
   When 'I go to the accounts page'
   And  'I follow "New"'
+  And  'I fill in "Name" with "Jane"'
   And  'I fill in "' + field + '" with "' + value + '"'
   And  'I press "Submit"'
 end
 
 When /^I go to (.+)\'s page$/ do |name|
   account = Account.find_by_name name
-  visit "/accounts/#{account.id}/edit"
-end
-
-Given /^I am on an account page$/ do
-  Given 'there is a jumper named "Julia"'
-  And   'I go to Julia\'s page'
+  visit account_path(account)
 end
 
 Then /^(.+)\'s balance should be (.+)$/ do |name, amount|

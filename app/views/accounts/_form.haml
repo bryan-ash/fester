@@ -26,6 +26,9 @@
     = f.label :balance, 'Balance:'
     = number_to_currency(@account.balance) 
   %p
+    = f.label :balance_adjustment, 'Balance Adjustment:'
+    = f.text_field :balance_adjustment
+  %p
     = f.submit 'Submit', :class => :button 
 
   = render :partial => 'account_transactions', :object => @account.transactions

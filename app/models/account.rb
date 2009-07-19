@@ -5,6 +5,8 @@ class Account < ActiveRecord::Base
 
   has_many   :transactions
   belongs_to :user
+
+  attr_reader :balance_adjustment
   
   Name       = 2
   Created_At = 1
@@ -42,6 +44,14 @@ class Account < ActiveRecord::Base
 
   def balance
     Transaction.sum_for_account(id)
+  end
+
+  def balance_adjustment=(amount)
+    if amount.to_f > 0
+      self.transactions.build(:amount => amount,
+                              :date   => Date.today,
+                              :notes  => 'Balance adjustment')
+    end
   end
 
 end

@@ -8,25 +8,29 @@ I want Fester to remember account information
   Scenario: Creating a jumper
     Given that no accounts exist
     When  I create jumper "Johnny"
+    And   I go to Johnny's page
     Then  I should see "Johnny"
     And   I should see "Jumper"
 
   Scenario: Creating a jumping pilot
     Given that no accounts exist
     When  I create jumping pilot "Random"
+    And   I go to Random's page
     Then  I should see "Random"
     And   I should see "Jumper, Pilot"
 
   Scenario: Creating a non jumping pilot
     Given that no accounts exist
     When  I create pilot "Handsome Joe"
+    And   I go to Handsome Joe's page
     Then  I should see "Handsome Joe"
     And   I should see "Pilot"
     And   I should not see "Jumper"
 
   Scenario Outline: Accounts have details
     Given that no accounts exist
-    When  I create an account with <field> "<value>"
+    When  I create Jane's account with <field> "<value>"
+    And   I go to Jane's page
     Then  I should see "<value>"
 
   Examples:
@@ -40,3 +44,8 @@ I want Fester to remember account information
     When I create pilot "Peter"
     And  I create jumper "Johnny"
     Then Johnny should be listed above Peter on the accounts page
+
+  Scenario: Initial balance can be entered for a new account
+    Given that no accounts exist
+    When  I create Julia's account with an initial balance of $40
+    Then  Julia's balance should be $40
