@@ -3,7 +3,9 @@ $(document).ready(function () {
     $("#other_aircraft").val("");
   });
 
-  $("#other_aircraft").keypress(function () {
-    $(".our_aircraft").removeAttr("checked");
+  $("#other_aircraft").keyup(function () {
+    if ($(this).val() > "") {
+      $(".our_aircraft").removeAttr("checked");
+    }
   });
 });
