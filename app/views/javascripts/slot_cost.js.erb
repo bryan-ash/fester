@@ -1,14 +1,17 @@
-var jump_type_cost = new Array;
+var jump_type_costs = new Array;
 
 <% for jump_type in @jump_types -%>
-  jump_type_cost.push(<%= jump_type.cost %>);
+  jump_type_costs.push(new Array(<%= jump_type.id %>, <%= jump_type.cost %>));
 <% end -%>
 
 function populate_slot_cost(item) {
   var jump_type = item.closest(".slot").find(".jump_type")
-  var jump_type_index = jump_type.val() - 1;
 
-  item.val(jump_type_cost[jump_type_index]);
+  jQuery.each(jump_type_costs, function (index, jump_type_cost) {
+    if (jump_type_cost[0] == jump_type.val()) {
+      item.val(jump_type_cost[1]);
+    }
+  });
 }
 
 $(document).ready(function () {
