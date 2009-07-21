@@ -51,7 +51,19 @@ Given /^a load manifested on our aircraft$/ do
 end
 
 When /^I edit the load$/ do
-  visit '/loads/1/edit'
+  Given 'I am on the loads page'
+  And   'I follow "Edit"'
+end
+
+Given /^a load was manifested yesterday$/ do
+  Given 'Johnny is manifested for a Fun Jump on our aircraft "42Z"'
+  When  'I edit the load'
+  And   'I select "' + Date.yesterday.strftime('%b %d, %Y') + '" as the date'
+  And   'I press "Submit"'
+end
+
+Given /^a load is manifested today$/ do 
+  Given 'Jenny is manifested for a Fun Jump on our aircraft "1EE"'
 end
 
 When /^(.+) takes the slot$/ do |jumper|
@@ -101,17 +113,6 @@ end
 Then /^load (.+) is on "(.+)"$/ do |number, aircraft|
   When 'I go to the loads page'
   Then 'I should see something like "' + number + ':.*' + aircraft + '"'
-end
-
-Given /^a load was manifested yesterday$/ do
-  Given 'Johnny is manifested for a Fun Jump on our aircraft "42Z"'
-  When  'I edit the load'
-  And   'I select "' + Date.yesterday.to_s + '" as the date'
-  And   'I press "Submit"'
-end
-
-Given /^a load is manifested today$/ do 
-  Given 'Jenny is manifested for a Fun Jump on our aircraft "1EE"'
 end
 
 Then /^today\'s load should be load 1$/ do 
