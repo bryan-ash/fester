@@ -49,3 +49,13 @@ I want Fester to remember account information
     Given that no accounts exist
     When  I create Julia's account with an initial balance of $40
     Then  Julia's balance should be $40
+
+  Scenario: Accounts are searchable
+    Given I create jumper "July"
+    And   I create jumper "Julia"
+    And   I create jumper "Jane"
+    When  I search accounts for "Jane"
+    Then  I should see "Jane"
+    And   I should not see "July"
+    And   I should not see "Julia"
+

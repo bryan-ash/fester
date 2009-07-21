@@ -63,6 +63,12 @@ When /^I go to (.+)\'s edit page$/ do |name|
   visit edit_account_path(account)
 end
 
+When /^I search accounts for "Jane"$/ do 
+  Given 'I am on the accounts page'
+  When  'I fill in "name" with "Jane"'
+  And   'I press "Search"'
+end
+
 Then /^(.+)\'s balance should be (.+)$/ do |name, amount|
   account = Account.find_by_name(name)
   visit edit_account_path(account)

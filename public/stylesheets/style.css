@@ -173,6 +173,18 @@ td {
     white-space:nowrap;
 }
 
+fieldset {
+    border: 1px solid #e4e4e4; 
+    width: 214px;
+    margin-bottom: 10px;
+}
+legend {
+    margin-left: 10px;
+}
+fieldset#filters p { 
+    width: 214px;
+}
+
 .round_button_block {
     float:right;
     background:url(../images/learnright.gif) no-repeat right -40px;

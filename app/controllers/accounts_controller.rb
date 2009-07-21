@@ -1,7 +1,13 @@
 class AccountsController < ApplicationController
 
+  autocomplete_for :account, :name, :order => 'name ASC'
+  
   def index
-    @accounts = Account.all :order => 'name ASC'
+    if params[:name]
+      @accounts = Account.all :conditions => ['name LIKE ?', "%#{params[:name]}%"], :order => 'name ASC'      
+    else
+      @accounts = Account.all :order => 'name ASC'      
+    end
 
     respond_to do |format|
       format.html
