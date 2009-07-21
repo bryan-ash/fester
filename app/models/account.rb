@@ -19,6 +19,14 @@ class Account < ActiveRecord::Base
     find_all_by_pilot(true)
   end
 
+  def self.search(search)
+    if search
+      all :conditions => ['name ILIKE ?', "%#{search}%"], :order => 'name ASC'
+    else
+      all :order => 'name ASC'      
+    end    
+  end
+
   def self.create_from_csv(csv_file)
     FasterCSV.parse(csv_file.read, :headers => true).each do |row|
       account = find_or_create_by_name row[Name]

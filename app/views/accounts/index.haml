@@ -1,7 +1,7 @@
 = round_button 'New', new_account_path
 
 - form_tag accounts_path, :method => :get do
-  %fieldset#search
+  %fieldset#search_form
     %p
       = text_field_tag :search, params[:search], :class => 'autocomplete', :autocomplete_url => autocomplete_for_account_name_accounts_path
       = submit_tag 'Search', :name => nil
@@ -11,3 +11,5 @@
     %tr
       %td= link_to h(account.name), edit_account_path(account)
       %td= link_to 'Delete', account, :confirm => 'Are you sure?', :method => :delete
+
+= set_focus_to_id 'search'

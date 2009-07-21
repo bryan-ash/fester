@@ -178,7 +178,8 @@ fieldset {
     width: 216px;
     margin-bottom: 10px;
 }
-fieldset#search p { 
+
+fieldset#search_form p { 
     width: 216px;
 }
 
