@@ -4,7 +4,7 @@ class AccountsController < ApplicationController
   
   def index
     if params[:search]
-      @accounts = Account.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"], :order => 'name ASC')
+      @accounts = Account.all :conditions => ['name ILIKE ?', "%#{params[:search]}%"], :order => 'name ASC'
     else
       @accounts = Account.all :order => 'name ASC'      
     end
