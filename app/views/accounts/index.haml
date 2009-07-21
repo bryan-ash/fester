@@ -1,7 +1,7 @@
 = round_button 'New', new_account_path
 
 - form_tag accounts_path, :method => :get do
-  %fieldset#filters
+  %fieldset#search
     %p
       = text_field_tag :name, params[:name], :class => 'autocomplete', :autocomplete_url => autocomplete_for_account_name_accounts_path
       = submit_tag 'Search', :name => nil

@@ -175,14 +175,11 @@ td {
 
 fieldset {
     border: 1px solid #e4e4e4; 
-    width: 214px;
+    width: 216px;
     margin-bottom: 10px;
 }
-legend {
-    margin-left: 10px;
-}
-fieldset#filters p { 
-    width: 214px;
+fieldset#search p { 
+    width: 216px;
 }
 
 .round_button_block {
