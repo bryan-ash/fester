@@ -158,6 +158,10 @@ p {
     width:533px;
 }
 
+td {
+    padding: 2px 5px;
+}
+
 .flash_notice {
     clear:right;
     float:right;
