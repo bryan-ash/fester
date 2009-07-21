@@ -65,7 +65,7 @@ end
 
 When /^I search accounts for "Jane"$/ do 
   Given 'I am on the accounts page'
-  When  'I fill in "name" with "Jane"'
+  When  'I fill in "search" with "Jane"'
   And   'I press "Search"'
 end
 
