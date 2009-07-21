@@ -20,13 +20,13 @@ When /^I create a jump type named "(.+)"$/ do |name|
   And  'I follow "New"'
   And  'I fill in "Name" with "' + name + '"'
   And  'I press "Submit"'
-  Then  'I should be on the jump types page'
+  Then 'I should be on the jump types page'
 end
 
-When /^I rename jump type "(.+)" to "(.+)"$/ do |from, to|
-  jump_type = JumpType.find_or_create_by_name(from)
+When /^I rename jump type "(.+)" to "(.+)"$/ do |from_name, to_name|
+  jump_type = JumpType.find_or_create_by_name(from_name)
 
   visit edit_jump_type_path(jump_type)
-  fill_in "Name", :with => to
+  fill_in "Name", :with => to_name
   click_button "Submit"
 end
