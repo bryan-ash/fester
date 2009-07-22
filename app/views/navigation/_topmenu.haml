@@ -17,6 +17,5 @@
               %span Login
     %img{ :src => "/images/navi_right.jpg", :alt => "", :width => "11", :height => "41" }
 
-  - if flash[:notice] then
-    .flash_notice
-      = flash[:notice]
+  - flash.each do |name, msg|
+    = content_tag :div, msg, :id => "flash_#{name}"
