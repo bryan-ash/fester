@@ -126,9 +126,6 @@ p {
 #dvfullpanel .submit {
     float:left;
     text-align:left;
-    font-size:0px;
-    margin:0px;
-    padding:0px 0px 14px 14px;
 }
 
 #dvleftpanel {
@@ -166,8 +163,9 @@ td {
     clear:right;
     float:right;
     font-size:14px;
-    padding:10px;
+    padding:10px 10px 10px 30px;
     margin:17px 0 0 0;
+    text-align: left;
 }
 
 #flash_notice {
@@ -176,8 +174,9 @@ td {
 }
 
 #flash_error {
-    background-color: #FCC;
-    border: solid 1px #C66;
+    background: #ffe3e3 url(../images/false.png) no-repeat 9px 9px;
+    border: solid 2px #dd0000;
+    color: #550000;
 }
 
 .fieldWithErrors {
@@ -231,6 +230,7 @@ td {
 }
 
 fieldset {
+    float: left;
     border: 1px solid #e4e4e4; 
     width: 216px;
     margin-bottom: 10px;
@@ -238,6 +238,28 @@ fieldset {
 
 fieldset#search_form p { 
     width: 216px;
+}
+
+fieldset#login p { 
+    text-align: right;
+    margin-right: 30px;
+    width: 300px;
+}
+
+fieldset#login .input { 
+    margin-left: 8px;
+    width: 200px;
+}
+
+fieldset#login .submit { 
+    clear: both;
+    float: right;
+    margin-bottom: 10px;
+}
+
+legend {
+    font-weight: bold;
+    margin-left: 10px;
 }
 
 .round_button_block {

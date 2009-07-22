@@ -12,7 +12,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = 'Successfully logged in.'
       redirect_to current_user.entry_page_path
     else
-      flash[:error] = 'Login Failed!'
+      flash[:error] = 'Invalid username or password'
       render :action => 'new'
     end
   end

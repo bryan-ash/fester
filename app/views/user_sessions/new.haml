@@ -1,0 +1,16 @@
+- form_for @user_session do |f|
+
+  %fieldset#login
+    %legend Login
+    %p
+      = f.label :username
+      = f.text_field :username, :class => 'input'
+   
+    %p
+      = f.label :password
+      = f.password_field :password, :class => 'input'
+   
+    %p
+      = f.submit 'Submit', :class => 'submit'
+
+= set_focus_to_id 'user_session_username'
