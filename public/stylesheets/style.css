@@ -169,8 +169,9 @@ td {
 }
 
 #flash_notice {
-    background-color: #CFC;
-    border: solid 1px #6C6;
+    background: #cfc url(../images/true.png) no-repeat 9px 9px;
+    border: solid 2px #9fcf9f;
+    color: #005f00
 }
 
 #flash_error {
