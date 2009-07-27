@@ -1,3 +1,3 @@
 authlogic
 fastercsv
-openrain-action_mailer_tls  
+openrain-action_mailer_tls --source gems.github.com
