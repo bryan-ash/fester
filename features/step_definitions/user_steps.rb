@@ -13,7 +13,7 @@ end
 
 When /^I provide a new password$/ do
   When 'I fill in "Password" with "secret"'
-  And  'I fill in "Password confirmation" with "secret"'
+  And  'I fill in "Confirmation" with "secret"'
   And  'I press "Update my password and log me in"'
 end
 
