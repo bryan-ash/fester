@@ -16,14 +16,14 @@ body {
     margin:0px auto;
 }
 
-#dvmaincontainer #dvtopcontainer {
+#dvtopcontainer {
     float:left;
     width:900px;
     margin:0px;
     padding:0px 0px 0px 0px;
 }
 
-#dvtopcontainer #dvlogocontainer {
+#dvlogocontainer {
     float:left;
     width:324px;
     font-size:0px;
@@ -43,7 +43,7 @@ body {
     padding:32px 0px 0px 0px;
 }
 
-#dvlogocontainer h4 {
+h2 {
     float:right;
     font-family:Arial, Helvetica, sans-serif;
     font-size:14px;
@@ -54,7 +54,7 @@ body {
     padding:0px 0px 30px 0px;
 }
 
-#dvtopcontainer #dvnavicontainer {
+#dvnavicontainer {
     float:right;
     font-size:0px;
     margin:0px;
@@ -68,7 +68,7 @@ body {
     padding:0px 0px 0px 0px;
 }
 
-#dvmaincontainer #dvbodycontainer {
+#dvbodycontainer {
     float:left;
     width:900px;
     background-image:url(../images/page_bg.jpg);
@@ -78,7 +78,7 @@ body {
     padding:0px 0px 0px 0px;
 }
 
-#dvbodycontainer #dvfullpanel {
+#dvfullpanel {
     float:left;
     width:826px;
     margin:0px 0px 0px 20px;
@@ -92,6 +92,12 @@ h1 {
     color:#2C1B11;
     margin:0px;
     padding:10px 0px 0px 15px;
+}
+
+h3 {
+    float:left;
+    font-size:13px;
+    padding:10px 0px 10px 15px;
 }
 
 #dvfullpanel h1 {
@@ -163,9 +169,11 @@ td {
     clear:right;
     float:right;
     font-size:14px;
+    max-width:480px;
     padding:10px 10px 10px 30px;
     margin:17px 0 0 0;
     text-align: left;
+    white-space:nowrap;
 }
 
 #flash_notice {
@@ -178,22 +186,6 @@ td {
     background: #ffe3e3 url(../images/false.png) no-repeat 9px 9px;
     border: solid 2px #dd0000;
     color: #550000;
-}
-
-.fieldWithErrors {
-    display: inline;
-    font-size:13px;
-    font-weight:bold;
-    line-height:16px;
-    color:#513D2C;
-    margin:0px;
-    padding-left:15px;
-}
-
-.fieldWithErrors input {
-    display: inline;
-    outline: solid #c00;
-    padding-left: 0;
 }
 
 #errorExplanation {
@@ -237,23 +229,30 @@ fieldset {
     margin-bottom: 10px;
 }
 
-fieldset#search_form p { 
-    width: 216px;
+#search_form { 
+    width: 240px;
 }
 
-fieldset#login p { 
+#search_form p { 
+    width: 220px;
+}
+
+#login { 
+    width: 344px;
+}
+
+#login p { 
     text-align: right;
     margin-right: 30px;
     width: 300px;
 }
 
-fieldset#login .input { 
+#login .input { 
     margin-left: 8px;
     width: 200px;
 }
 
-fieldset#login .submit { 
-    clear: both;
+#login .submit { 
     float: right;
     margin-bottom: 10px;
 }
@@ -261,6 +260,12 @@ fieldset#login .submit {
 legend {
     font-weight: bold;
     margin-left: 10px;
+}
+
+.lost_password {
+    float: left;
+    text-align: left;
+    font-size: 13px;
 }
 
 .round_button_block {
@@ -288,7 +293,7 @@ legend {
     text-decoration:none;
 }
 
-#dvrightpanel #righttfoot {
+#righttfoot {
     float:left;
     width:556px;
     height:59px;
@@ -299,14 +304,14 @@ legend {
     padding:11px 0px 13px 0px;
 }
 
-#dvmaincontainer #dvfootercontainer {
+#dvfootercontainer {
     float:left;
     width:900px;
     margin:0px;
     padding:0px 0px 0px 0px;
 }
 
-#dvfootercontainer #foottop {
+#foottop {
     float:left;
     width:900px;
     background-image:url(../images/footer.jpg);
@@ -316,20 +321,30 @@ legend {
     padding:0px 0px 50px 0px;
 }
 
-#footer-right {
-    float:right;
-    font-size:12px;
-    text-align:left;
-    color:#938A82;
-    margin:0px;
-    padding:25px 0px 0px 20px;
-}
-
 #footer-left {
     float:left;
     font-size:12px;
     text-align:left;
     text-decoration:none;
+    color:#938A82;
+    margin:0px;
+    padding:25px 0px 0px 20px;
+}
+
+#footer-middle {
+    float:left;
+    font-size:12px;
+    text-align:center;
+    text-decoration:none;
+    color:#938A82;
+    margin:0px;
+    padding:25px 0px 0px 300px;
+}
+
+#footer-right {
+    float:right;
+    font-size:12px;
+    text-align:left;
     color:#938A82;
     margin:0px;
     padding:25px 0px 0px 20px;

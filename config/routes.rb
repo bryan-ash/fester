@@ -19,5 +19,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resources :user_sessions
 
+  map.resource :password_reset
+
   map.connect ':controller/:action.:format'
 end

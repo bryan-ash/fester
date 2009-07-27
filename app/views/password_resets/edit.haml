@@ -1,0 +1,15 @@
+- form_for @user, :url => password_reset_path(params[:format]), :method => :put do |f|
+  %fieldset#login
+    %legend Change Password
+    %p
+      = f.label :password
+      = f.password_field :password
+   
+    %p
+      = f.label :password_confirmation, "Confirmation"
+      = f.password_field :password_confirmation
+   
+    %p
+      = f.submit "Update my password and log me in"
+
+= set_focus_to_id 'user_password'

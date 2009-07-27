@@ -35,6 +35,9 @@ module NavigationHelpers
     when /equipment/
       '/equipment'
 
+    when /login/
+      login_path
+      
     when /manifest/, /loads/
       loads_path
 
@@ -46,6 +49,9 @@ module NavigationHelpers
       
     when /payment methods/
       payment_methods_path
+
+    when /registration/
+      new_user_path
 
     when /show my account/
       my_accounts_path

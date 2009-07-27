@@ -11,6 +11,7 @@
       = f.password_field :password, :class => 'input'
    
     %p
+      = link_to 'Lost Username or Password', new_password_reset_path, :class => 'lost_password'
       = f.submit 'Submit', :class => 'submit'
 
 = set_focus_to_id 'user_session_username'

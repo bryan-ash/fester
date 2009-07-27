@@ -2,17 +2,14 @@ class UsersController < ApplicationController
 
   skip_before_filter :authorize_access
 
-  # GET /users/new
   def new
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit
     @user = current_user
   end
 
-  # POST /users
   def create
     @user = User.new(params[:user])
 
@@ -24,7 +21,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # PUT /users/1
   def update
     @user = current_user
 
