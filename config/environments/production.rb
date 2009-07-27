@@ -25,7 +25,6 @@ config.action_view.cache_template_loading            = true
 config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default_url_options = {
   :host     => 'fester.heroku.com',
-  :port     => 3000,
   :protocol => 'https'
 }
 
