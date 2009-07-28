@@ -1,0 +1,20 @@
+- form_for(@balance_transfer) do |f|
+  %fieldset
+    %legend Balance Transfer
+   
+    %p
+      = f.label :from_account_name, 'From Account:'
+      = f.text_field :from_account_name, :class => 'autocomplete', :autocomplete_url => autocomplete_for_account_name_balance_transfer_path
+   
+      = f.label :to_account_name, 'To Account:'
+      = f.text_field :to_account_name, :class => 'autocomplete', :autocomplete_url => autocomplete_for_account_name_balance_transfer_path
+   
+      = f.label :amount, 'Amount:'
+      = f.text_field :amount, :size => 15
+   
+    %p
+      = f.label :date, 'Date:'
+      = f.date_select :date
+   
+    %p
+      = f.submit 'Transfer'

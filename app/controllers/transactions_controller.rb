@@ -2,8 +2,6 @@ class TransactionsController < ApplicationController
 
   autocomplete_for :account, :name, :order => 'name ASC'
   
-  # GET /transactions
-  # GET /transactions.xml
   def index
     @transactions = Transaction.all :order => 'updated_at DESC'
 
@@ -13,8 +11,6 @@ class TransactionsController < ApplicationController
     end
   end
 
-  # GET /transactions/1
-  # GET /transactions/1.xml
   def show
     @transaction = Transaction.find(params[:id])
 
@@ -24,24 +20,20 @@ class TransactionsController < ApplicationController
     end
   end
 
-  # GET /transactions/new
-  # GET /transactions/new.xml
   def new
     @transaction = Transaction.new
-
+    @balance_transfer = BalanceTransfer.new
+    
     respond_to do |format|
       format.html
       format.xml  { render :xml => @transaction }
     end
   end
 
-  # GET /transactions/1/edit
   def edit
     @transaction = Transaction.find(params[:id])
   end
 
-  # POST /transactions
-  # POST /transactions.xml
   def create
     @transaction = Transaction.new(params[:transaction])
 
@@ -57,8 +49,6 @@ class TransactionsController < ApplicationController
     end
   end
 
-  # PUT /transactions/1
-  # PUT /transactions/1.xml
   def update
     @transaction = Transaction.find(params[:id])
 
@@ -74,8 +64,6 @@ class TransactionsController < ApplicationController
     end
   end
 
-  # DELETE /transactions/1
-  # DELETE /transactions/1.xml
   def destroy
     @transaction = Transaction.find(params[:id])
     @transaction.destroy

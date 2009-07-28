@@ -20,6 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
 
   map.resource :password_reset
-
+  map.resource :balance_transfer, :collection => { :autocomplete_for_account_name => :get}
+  
   map.connect ':controller/:action.:format'
 end

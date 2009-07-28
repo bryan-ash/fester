@@ -62,4 +62,16 @@ class Account < ActiveRecord::Base
     end
   end
 
+  def transfer(to_account, amount, date)
+    Transaction.transaction do
+      self.transactions.create(:amount => -amount,
+                               :date   => date,
+                               :notes  => 'Balance transfer')
+
+      to_account.transactions.create(:amount => amount,
+                                     :date   => date,
+                                     :notes  => 'Balance transfer')
+    end    
+  end
+
 end

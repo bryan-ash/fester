@@ -26,6 +26,14 @@ When /^I change Julia\'s payment to \$40$/ do
   Then  'I should be on the transactions page'
 end
 
+When /^I transfer \$40 from Julia to Jane$/ do
+  Given 'I am on the new transaction page'
+  When  'I fill in "balance_transfer_amount" with "40"'
+  And   'I fill in "From Account" with "Julia"'
+  And   'I fill in "To Account" with "Jane"'
+  And   'I press "Transfer"'
+end
+
 Then /^I should see an entry for (.+)\'s (.+)$/ do |jumper, jump_type|
   Then "I should see \"#{jumper}\""
   And  "I should see \"#{jump_type}\""

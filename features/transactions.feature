@@ -66,3 +66,14 @@ Feature: Transactions
     And   I wait a bit
     And   I enter Jenifer's cash payment of $500
     Then  Jenifer's transaction should be above Julia's
+
+    @focus
+  Scenario: Transfer balance from one account to another
+    Given I create Julia's account with an initial balance of $40
+    And   I create Jane's account with an initial balance of $40
+    When  I transfer $40 from Julia to Jane
+    Then  Julia's balance should be 0.00
+    And   Jane's balance should be 80.00
+    When  I go to the transactions page
+    Then  I should see an entry for Julia's Balance transfer
+    Then  I should see an entry for Jane's Balance transfer

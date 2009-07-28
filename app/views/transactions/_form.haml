@@ -1,25 +1,27 @@
 - form_for(@transaction) do |f|
-  = f.error_messages
-
-  %p
-    = f.label :account_name, 'Account:'
-    = f.text_field :account_name, :class => 'autocomplete', :autocomplete_url => autocomplete_for_account_name_transactions_path
-
-    = f.label :payment_method_id, 'Method:'
-    = f.collection_select(:payment_method_id, PaymentMethod.all, :id, :name, { :prompt => true })
-
-    = f.label :amount, 'Amount:'
-    = f.text_field :amount, :size => 15
-
-  %p
-    = f.label :notes, 'Notes:'
-    = f.text_field :notes, :size => 60
-
-  %p
-    = f.label :date, 'Date:'
-    = f.date_select :date
-
-  %p
-    = f.submit 'Submit'
+  %fieldset
+    %legend Single Account Transaction
+    = f.error_messages
+   
+    %p
+      = f.label :account_name, 'Account:'
+      = f.text_field :account_name, :class => 'autocomplete', :autocomplete_url => autocomplete_for_account_name_transactions_path
+   
+      = f.label :payment_method_id, 'Method:'
+      = f.collection_select(:payment_method_id, PaymentMethod.all, :id, :name, { :prompt => true })
+   
+      = f.label :amount, 'Amount:'
+      = f.text_field :amount, :size => 15
+   
+    %p
+      = f.label :notes, 'Notes:'
+      = f.text_field :notes, :size => 60
+   
+    %p
+      = f.label :date, 'Date:'
+      = f.date_select :date
+   
+    %p
+      = f.submit 'Submit'
 
 = set_focus_to_id 'transaction_account_name'
