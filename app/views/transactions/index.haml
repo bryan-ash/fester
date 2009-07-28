@@ -10,7 +10,7 @@
   
   - @transactions.each do |transaction|
     %tr
-      %td= h transaction.account_name
+      %td= link_to h(transaction.account_name), edit_account_path(transaction.account)
       %td= h transaction.payment_method_name
       %td= h transaction.amount
       %td= h transaction.notes
