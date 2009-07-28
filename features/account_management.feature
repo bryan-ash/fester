@@ -59,3 +59,7 @@ I want Fester to remember account information
     And   I should not see "July"
     And   I should not see "Julia"
 
+  Scenario: The account list shows balances
+    Given I create Julia's account with an initial balance of $400
+    When  I go to the accounts page
+    Then  I should see "400.00"

@@ -55,11 +55,9 @@ class Account < ActiveRecord::Base
   end
 
   def balance_adjustment=(amount)
-    if amount.to_f > 0
-      self.transactions.build(:amount => amount,
-                              :date   => Date.today,
-                              :notes  => 'Balance adjustment')
-    end
+    self.transactions.build(:amount => amount.to_f,
+                            :date   => Date.today,
+                            :notes  => 'Balance adjustment')
   end
 
   def transfer(to_account, amount, date)

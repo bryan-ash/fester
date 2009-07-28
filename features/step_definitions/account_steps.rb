@@ -15,7 +15,7 @@ Given /^I am on an account page$/ do
   And   'I go to Julia\'s edit page'
 end
 
-When /^I create (.+)\'s account with an initial balance of \$(\d+)$/ do |jumper, balance|
+When /^I create (.+)\'s account with an initial balance of \$(\-?\d+)$/ do |jumper, balance|
   When 'I go to the accounts page'
   And  'I follow "New"'
   And  'I fill in "Name" with "' + jumper + '"'

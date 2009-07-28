@@ -7,9 +7,14 @@
       = submit_tag 'Search', :name => nil
 
 %table
+  %tr
+    %th Name
+    %th Balance
+
   - @accounts.each do |account|
     %tr
       %td= link_to h(account.name), edit_account_path(account)
+      %td= number_to_currency(account.balance)
       %td= link_to 'Delete', account, :confirm => 'Are you sure?', :method => :delete
 
 = set_focus_to_id 'search'
