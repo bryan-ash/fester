@@ -15,6 +15,15 @@ Given /^a Tandem costs \$200$/ do
   Then  'I should be on the jump types page'
 end
 
+Given /^the default altitude for a Tandem is 12000 feet$/ do 
+  Given 'there is a jump type named "Tandem"'
+  And   'I am on the jump types page'
+  When  'I follow "Tandem"'
+  And   'I fill in "Default Altitude" with "12000"'
+  And   'I press "Submit"'
+  Then  'I should be on the jump types page'  
+end
+
 When /^I create a jump type named "(.+)"$/ do |name|
   When 'I go to the jump types page'
   And  'I follow "New"'

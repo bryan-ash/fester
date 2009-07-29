@@ -11,9 +11,9 @@
       = slot_form.text_field :account_name, :class => 'autocomplete', :autocomplete_url => autocomplete_for_account_name_slots_path
 
       = slot_form.label :altitude, 'Altitude:'
-      = slot_form.text_field :altitude, :size => 6
+      = slot_form.text_field :altitude, :class => 'altitude', :size => 6
 
-      = link_to_function "remove", "$(this).parents('.slot').remove()"
+      = link_to_function "remove this slot", "$(this).parents('.slot').remove()"
 
       %br
 

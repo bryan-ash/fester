@@ -1,0 +1,37 @@
+jump_types = new Array;
+
+<% for j in @jump_types -%>
+  jump_types.push({ id:               <%= j.id -%>, 
+                    cost:             <%= j.cost -%>, 
+                    default_altitude: <%= j.default_altitude -%> });
+<% end -%>
+
+function jump_type_element_closest_to(this_element) {
+  return this_element.closest(".slot").find(".jump_type");
+}
+
+function jump_type_find(this_element) {
+  found = jQuery.grep(jump_types, function(jump_type) {
+    return jump_type.id == this_element.val();
+  });
+
+  return found[0];
+}
+
+$(document).ready(function () {
+  $(".cost").each(function () {
+    if ($(this).val() == "") {
+      jump_type = jump_type_find(jump_type_element_closest_to($(this)));
+
+      $(this).val(jump_type.cost);
+    }
+  });
+
+  $(".jump_type").change(function () {
+    jump_type = jump_type_find($(this));
+    slot_element = $(this).closest(".slot");
+
+    slot_element.find(".cost").val(jump_type.cost);
+    slot_element.find(".altitude").val(jump_type.default_altitude);
+  });
+});

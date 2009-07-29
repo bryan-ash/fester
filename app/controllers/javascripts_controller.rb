@@ -1,6 +1,6 @@
 class JavascriptsController < ApplicationController
 
-  def slot_cost
+  def manifest_events
     @jump_types = JumpType.all_by_name
 
     respond_to do |format|

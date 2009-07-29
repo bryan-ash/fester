@@ -28,3 +28,8 @@ I want jump types to be remembered
     And   there is a jump type named "Crazy"
     Then  Crazy should be listed above Whacky on the jump_types page
     
+    @focus
+  Scenario: Jump type has a default altitude
+    Given the default altitude for a Tandem is 12000 feet
+    When  I go to the jump types page
+    Then  I should see "12000"

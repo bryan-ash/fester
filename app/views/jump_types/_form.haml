@@ -10,6 +10,10 @@
     = f.text_field :cost
 
   %p
+    = f.label :default_altitude, 'Default Altitude:'
+    = f.text_field :default_altitude
+
+  %p
     = f.submit 'Submit'
 
 = set_focus_to_id 'jump_type_name'
