@@ -1,3 +1,12 @@
+Given /^there is a user "Mani Fester"$/ do
+  visit '/users/new'
+  fill_in 'username', :with => 'Mani Fester'
+  fill_in 'email', :with => 'user@fester.com'
+  fill_in 'password', :with => 'secret'
+  fill_in 'password confirmation', :with => 'secret'
+  click_button 'Create'
+end
+
 Given /^I am logged in as "(.+)"$/ do |user|
   visit '/users/new'
   fill_in 'username', :with => user
@@ -34,6 +43,13 @@ end
 
 When /^I login$/ do
   Given 'I am logged in as Mani Fester'
+end
+
+When /^I login using my email address$/ do
+  Given 'there is a user "Mani Fester"'
+  And   'I am on the login page'
+  When  'I fill in "Username" with "user@fester.com"'
+  And   'I press "Submit"'
 end
 
 When /^I logout$/ do

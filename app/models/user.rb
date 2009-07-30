@@ -12,6 +12,11 @@ class User < ActiveRecord::Base
     first(:conditions => ["LOWER(users.perishable_token) = ?", token.downcase])
   end
   
+  def self.find_by_smart_case_login_field(login)
+    field = (login =~ Authlogic::Regex.email ? 'email' : 'username')
+    first(:conditions => ["LOWER(users.#{field}) = ?", login.downcase])
+  end
+
   def permitted_to_see?(name)
     case name
     when 'Manifest', 'Transactions', 'Accounts', 'Maintenance'
