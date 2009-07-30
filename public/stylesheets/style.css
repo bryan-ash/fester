@@ -243,12 +243,11 @@ fieldset {
 
 #login p { 
     text-align: right;
-    margin-right: 30px;
-    width: 300px;
+    width: 310px;
 }
 
 #login .input { 
-    margin-left: 8px;
+    margin-left: 5px;
     width: 200px;
 }
 
@@ -328,7 +327,7 @@ legend {
     text-decoration:none;
     color:#938A82;
     margin:0px;
-    padding:25px 0px 0px 20px;
+    padding:20px 0px 0px 15px;
 }
 
 #footer-middle {
@@ -338,7 +337,7 @@ legend {
     text-decoration:none;
     color:#938A82;
     margin:0px;
-    padding:25px 0px 0px 300px;
+    padding:20px 0px 0px 300px;
 }
 
 #footer-right {
@@ -347,7 +346,7 @@ legend {
     text-align:left;
     color:#938A82;
     margin:0px;
-    padding:25px 0px 0px 20px;
+    padding:20px 15px 0px 20px;
 }
 
 #footer-left:hover {

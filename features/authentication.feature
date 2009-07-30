@@ -4,7 +4,6 @@ Feature: Authentication
     When  I login
     Then  I should know that I'm logged in
 
-  @focus
   Scenario: Login using email address
     When  I login using my email address
     Then  I should know that I'm logged in
