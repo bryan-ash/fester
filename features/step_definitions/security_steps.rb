@@ -8,8 +8,6 @@ Given /^there is a user "(.+)"$/ do |user|
 end
 
 Given /^I am logged in as "(.+)"$/ do |user|
-  Given 'there is a user "' + user + '"'
-
   visit '/login'
   fill_in 'username', :with => user
   fill_in 'password', :with => 'secret'
@@ -17,14 +15,26 @@ Given /^I am logged in as "(.+)"$/ do |user|
   Then 'I should see "Successfully logged in."'
 end
 
+Given /^(.+) is a (Manager|Manifester)$/ do |username, role_name|
+  User.find_by_username(username).
+    update_attribute :role, Role.find_by_name(role_name)
+end
+
 Given /^I am logged in as Mani Fester$/ do
-  Given 'I am logged in as "Mani Fester"'
-  User.find_by_username('Mani Fester').
-    update_attribute :role, Role.find_by_name('Manager')
+  Given 'there is a user "Mani Fester"'
+  And   'Mani Fester is a Manifester'
+  And   'I am logged in as "Mani Fester"'
+end
+
+Given /^I am logged in as Maggie Manager$/ do
+  Given 'there is a user "Maggie Manager"'
+  And   'Maggie Manager is a Manager'
+  And   'I am logged in as "Maggie Manager"'
 end
 
 Given /^I am logged in as Bobby Basic$/ do
-  Given 'I am logged in as "Bobby Basic"'
+  Given 'there is a user "Bobby Basic"'
+  And   'I am logged in as "Bobby Basic"'
 end
 
 Given /^I am logged in$/ do

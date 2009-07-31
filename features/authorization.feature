@@ -27,3 +27,15 @@ Feature: Authorization
   | Transactions |
   | Accounts     |
   | Maintenance  |
+
+  Scenario Outline: Manager has access to everything
+    Given I am logged in as Maggie Manager
+    When  I go to the home page
+    Then  the "<name>" link should be visible
+
+  Examples:
+  | name         |
+  | Manifest     |
+  | Transactions |
+  | Accounts     |
+  | Maintenance  |
