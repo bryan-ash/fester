@@ -14,6 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :jump_types
   map.resources :loads
   map.resources :payment_methods
+  map.resources :searches, :only => [:new, :create]
   map.resources :slots, :collection => { :autocomplete_for_account_name => :get}
   map.resources :transactions, :collection => { :autocomplete_for_account_name => :get}
   map.resources :users

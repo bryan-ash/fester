@@ -237,6 +237,24 @@ fieldset {
     width: 220px;
 }
 
+#complex_search {
+    width:100%;
+    padding-bottom:10px;
+}
+
+.search_option {
+    float:left;
+    width:215px;
+    padding-top:10px;
+}
+
+.search_option p {
+    font-size:13px;
+    text-align:left;
+    color:#513D2C;
+    padding:0px 0px 0px 15px;
+}
+
 #login { 
     width: 344px;
 }

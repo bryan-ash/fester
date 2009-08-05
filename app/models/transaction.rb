@@ -4,6 +4,14 @@ class Transaction < ActiveRecord::Base
   belongs_to :payment_method
   belongs_to :slot
   
+  def self.search(account)
+    scope = scoped :include => [:account, :payment_method, :slot],
+                   :joins   => :account,
+                   :order   => 'updated_at DESC'
+    scope = scope.scoped :conditions => ['name ILIKE ?', "%#{account}%"] unless account.blank?
+    scope
+  end
+
   def self.sum_for_account(account_id)
     return 0 if account_id.nil?
     find_all_by_account_id(account_id).sum(&:amount)

@@ -3,7 +3,8 @@ class TransactionsController < ApplicationController
   autocomplete_for :account, :name, :order => 'name ASC'
   
   def index
-    @transactions = Transaction.all :order => 'updated_at DESC'
+    @search = Search.new(params[:search])
+    @transactions = @search.transactions
 
     respond_to do |format|
       format.html

@@ -1,20 +1,40 @@
 = round_button 'New', new_transaction_path
 
-%table
-  %tr
-    %th Account
-    %th Method
-    %th Amount
-    %th Notes
-    %th Date
-  
-  - @transactions.each do |transaction|
-    %tr
-      %td= link_to h(transaction.account_name), edit_account_path(transaction.account)
-      %td= h transaction.payment_method_name
-      %td= h transaction.amount
-      %td= h transaction.notes
-      %td= h transaction.date
-      - unless transaction.slot
-        %td= link_to 'Edit', edit_transaction_path(transaction)
-        %td= link_to 'Delete', transaction, :confirm => 'Are you sure?', :method => :delete
+- form_for @search, :url => transactions_path, :html => { :method => :get } do |f|
+  %fieldset#complex_search
+    .search_option
+      %p
+        = f.label :account_name
+      %p
+        = f.text_field :account_name, :class => 'autocomplete', :autocomplete_url => autocomplete_for_account_name_accounts_path
+    .search_option
+      %p
+        = f.label :payment_method_id, 'Payment Method'
+      %p
+        = f.collection_select(:payment_method_id, PaymentMethod.all, :id, :name, { :include_blank => true })
+        = f.submit 'Search', :name => nil
+
+#dvfullpanel
+  - if @transactions.blank?
+    %strong No transactions found that matched the search criteria
+  - else
+    %table
+      %tr
+        %th Account
+        %th Payment Method
+        %th Amount
+        %th Notes
+        %th Date
+      
+      - @transactions.each do |transaction|
+        %tr
+          %td= link_to h(transaction.account_name), edit_account_path(transaction.account)
+          %td= h transaction.payment_method_name
+          %td= h transaction.amount
+          %td= h transaction.notes
+          %td= h transaction.date
+          - unless transaction.slot
+            %td= link_to 'Edit', edit_transaction_path(transaction)
+            %td= link_to 'Delete', transaction, :confirm => 'Are you sure?', :method => :delete
+
+= set_focus_to_id 'search_account_name'

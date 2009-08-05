@@ -34,6 +34,18 @@ When /^I transfer \$40 from Julia to Jane$/ do
   And   'I press "Transfer"'
 end
 
+When /^I search transactions for account "(.+)"$/ do |name| 
+  Given 'I am on the transactions page'
+  When  'I fill in "Account" with "' + name + '"'
+  And   'I press "Search"'
+end
+
+When /^I search transactions for payment method "cash"$/ do 
+  Given 'I am on the transactions page'
+  When  'I select "cash" from "Payment Method"'
+  And   'I press "Search"'
+end
+
 Then /^I should see an entry for (.+)\'s (.+)$/ do |jumper, jump_type|
   Then "I should see \"#{jumper}\""
   And  "I should see \"#{jump_type}\""

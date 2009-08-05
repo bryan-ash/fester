@@ -24,6 +24,8 @@ Manage bookings?
 - Jumper enters booking online
 
 Business Names
+- itsyoursoftware (yoursoftware is taken)
+- rapidperfection
 - softwarethathelps.com
 - softwareforfun.com
 - plainanduseful.com
@@ -35,3 +37,11 @@ Business Names
 - worksmoother
 - worksmoothly
 - livesmoothly
+- easilyeverything (easyeverything is taken)
+
+Taken names
+- simpleinteractions
+- simplesoftware
+- simplyeverything
+- simplysoftware
+- easylife
