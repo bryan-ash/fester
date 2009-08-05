@@ -26,7 +26,7 @@ Feature: Authorization
   | Manifest     |
   | Transactions |
   | Accounts     |
-  | Maintenance  |
+  | Management   |
 
   Scenario Outline: Manager has access to everything
     Given I am logged in as Maggie Manager
@@ -38,4 +38,4 @@ Feature: Authorization
   | Manifest     |
   | Transactions |
   | Accounts     |
-  | Maintenance  |
+  | Management   |

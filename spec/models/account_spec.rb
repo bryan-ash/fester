@@ -32,7 +32,7 @@ end
 describe "Non-jumping, non-pilot account" do
 
   it "roles include 'None'" do
-    account = Account.create(:name => "Maintenance Man", :jumper => false, :pilot => false)
+    account = Account.create(:name => "non-jumping-non-pilot", :jumper => false, :pilot => false)
     account.roles.should include('None')
   end
   

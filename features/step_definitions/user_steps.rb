@@ -1,6 +1,7 @@
 Given /^I have forgotten my password$/ do
   Given 'I register as Jenny with an email of Jenny@jumper.com'
-  Given 'I am on the login page'
+  And   'I am logged out'
+  And   'I am on the login page'
   And   'I follow "Lost Username or Password"'
 end
 
@@ -15,6 +16,15 @@ When /^I provide a new password$/ do
   When 'I fill in "Password" with "secret"'
   And  'I fill in "Confirmation" with "secret"'
   And  'I press "Update my password and log me in"'
+end
+
+When /^I register as (.+) with an email of (.+)$/ do |jumper, email|
+  When 'I go to the registration page'
+  And  'I fill in "Username" with "' + jumper + '"'
+  And  'I fill in "Email" with "' + email + '"'
+  And  'I fill in "Password" with "Secret"'
+  And  'I fill in "Password confirmation" with "Secret"'
+  And  'I press "Submit"'
 end
 
 Then /^I should be sent a password reset email$/ do

@@ -12,13 +12,13 @@
       = render :partial => 'navigation/topmenu'
 
       #dvbodycontainer
-        - if maintenance_topmenu_active? then
-          = render :partial => 'navigation/maintenance_submenu'
+        - if management_topmenu_active? then
+          = render :partial => 'navigation/submenu', :locals => { :submenu_items => management_submenu_items }
           #dvrightpanel
             = yield
 
         - elsif my_account_topmenu_active? then
-          = render :partial => 'navigation/my_account_submenu'
+          = render :partial => 'navigation/submenu', :locals => { :submenu_items => my_account_submenu_items }
           #dvrightpanel
             = yield
 

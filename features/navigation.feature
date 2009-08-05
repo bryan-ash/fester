@@ -18,8 +18,8 @@ Feature: Navigation
   | Transactions | transactions |
   | Accounts     | accounts     |
 
-  Scenario Outline: Maintenance functions
-    Given I am looking at the maintenance features
+  Scenario Outline: Management functions
+    Given I am looking at the management features
     When  I follow "<link>"
     Then  I should be on the <page> page
 

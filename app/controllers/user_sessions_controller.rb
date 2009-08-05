@@ -3,6 +3,8 @@ class UserSessionsController < ApplicationController
   skip_before_filter :authorize_access
   
   def new
+    redirect_to current_user.entry_page_path if current_user
+
     @user_session = UserSession.new
   end
 

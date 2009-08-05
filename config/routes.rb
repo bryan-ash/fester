@@ -1,10 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.root :controller => 'user_sessions', :action => 'new'
-  
   map.login  'login',  :controller => 'user_sessions', :action => 'new'
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
 
+  map.root :login
+  
   map.my_accounts 'my_accounts', :controller => 'accounts', :action => 'my_accounts'
   
   map.resources :accounts, :collection => { :autocomplete_for_account_name => :get}

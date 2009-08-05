@@ -24,15 +24,6 @@ When /^I create (.+)\'s account with an initial balance of \$(\-?\d+)$/ do |jump
   Then 'I should be on the accounts page'
 end
 
-When /^I register as (.+) with an email of (.+)$/ do |jumper, email|
-  When 'I go to the registration page'
-  And  'I fill in "Username" with "' + jumper + '"'
-  And  'I fill in "Email" with "' + email + '"'
-  And  'I fill in "Password" with "Secret"'
-  And  'I fill in "Password confirmation" with "Secret"'
-  And  'I press "Create"'
-end
-
 When /^I create jumper "(.+)"$/ do |jumper|
   When "I create #{jumper}'s account with an initial balance of $0"
 end

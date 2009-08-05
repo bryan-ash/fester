@@ -4,10 +4,11 @@ Given /^there is a user "(.+)"$/ do |user|
   fill_in 'email', :with => 'user@fester.com'
   fill_in 'password', :with => 'secret'
   fill_in 'password confirmation', :with => 'secret'
-  click_button 'Create'
+  click_button 'Submit'
 end
 
 Given /^I am logged in as "(.+)"$/ do |user|
+  visit '/logout'
   visit '/login'
   fill_in 'username', :with => user
   fill_in 'password', :with => 'secret'
@@ -42,8 +43,7 @@ Given /^I am logged in$/ do
 end
 
 Given /^I am logged out$/ do
-  session = UserSession.find
-  session.destroy if session
+  visit 'logout'
 end
 
 When /^I login$/ do
@@ -52,13 +52,15 @@ end
 
 When /^I login using my email address$/ do
   Given 'there is a user "Mani Fester"'
+  And   'I am logged out'
   And   'I am on the login page'
   When  'I fill in "Username/Email" with "user@fester.com"'
+  And   'I fill in "Password" with "secret"'
   And   'I press "Submit"'
 end
 
 When /^I logout$/ do
-  visit 'logout'
+  Given 'I am logged out'
 end
 
 When /^a div with id "injected" is entered into "Name"$/ do

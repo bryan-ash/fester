@@ -16,8 +16,8 @@ module ApplicationHelper
     when 'Accounts'
       current_controller? 'accounts' unless my_account_topmenu_active?
       
-    when 'Maintenance'
-      maintenance_topmenu_active?
+    when 'Management'
+      management_topmenu_active?
 
     when 'My Account'
       my_account_topmenu_active?
@@ -50,8 +50,8 @@ module ApplicationHelper
     topmenu_active? my_account_submenu_items
   end
 
-  def maintenance_topmenu_active?
-    topmenu_active?(maintenance_submenu_items) ||
+  def management_topmenu_active?
+    topmenu_active?(management_submenu_items) ||
       current_controller?('aircrafts') ||
       current_controller?('equipment') ||
       current_controller?('jump_types') ||
@@ -60,12 +60,12 @@ module ApplicationHelper
 
   def topmenu_items
     [{ :label => 'Manifest',     :path => loads_path },
-     { :label => 'Transactions', :path => transactions_path },
      { :label => 'Accounts',     :path => accounts_path },
-     { :label => 'Maintenance',  :path => aircrafts_path }]
+     { :label => 'Transactions', :path => transactions_path },
+     { :label => 'Management',   :path => aircrafts_path }]
   end
 
-  def maintenance_submenu_items
+  def management_submenu_items
     [{ :label => 'Aircraft',        :path => aircrafts_path },
      { :label => 'Equipment',       :path => { :controller => :equipment, :action => :index} },
      { :label => 'Jump Types',      :path => jump_types_path },
@@ -75,7 +75,8 @@ module ApplicationHelper
 
   def my_account_submenu_items
     [{ :label => 'Account Status', :path => { :controller => :accounts, :action => :my_accounts } },
-     { :label => 'Edit Profile',   :path => edit_user_path(:current) }]
+     { :label => 'Edit Profile',   :path => edit_user_path(:current) },
+     { :label => 'Logout',         :path => logout_path }]
   end
 
   def set_focus_to_id(id)

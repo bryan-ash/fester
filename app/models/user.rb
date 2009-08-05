@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   def permitted_to_see?(name)
     case name
-    when 'Manifest', 'Transactions', 'Accounts', 'Maintenance'
+    when 'Manifest', 'Accounts', 'Transactions', 'Management'
       ['Manager', 'Manifester'].include? role.name
 
     else
