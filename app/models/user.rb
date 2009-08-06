@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def permitted_to_access?(path)
+    ['Manager', 'Manifester'].include? role.name
+  end
+
   def entry_page_path
     if role.name == 'Default' then
       '/users/current/edit'

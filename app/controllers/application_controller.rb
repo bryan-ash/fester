@@ -28,8 +28,13 @@ class ApplicationController < ActionController::Base
     return true if current_user
   end
 
+  def current_path
+    url_for :only_path => true
+  end
+
   def authorize_access
-    return redirect_to(root_path) unless logged_in?
+    return redirect_to(root_path) unless
+      logged_in? and current_user.permitted_to_access? current_path
   end
 
 end

@@ -26,6 +26,7 @@ Manage bookings?
 Business Names
 - itsyoursoftware (yoursoftware is taken)
 - rapidperfection
+- intentionalvalue
 - softwarethathelps.com
 - softwareforfun.com
 - plainanduseful.com

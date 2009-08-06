@@ -5,9 +5,10 @@ Feature: Authorization
   I want to limit access to editing of business data
 
   Scenario Outline: Nothing is available unless logged in
-    When I go to the <protected> page
-    Then I should be on the home page
-    And  the "Login" link should be visible
+    Given I am logged out
+    When  I go to the <protected> page
+    Then  I should be on the home page
+    And   the "Login" link should be visible
 
   Examples:
   | protected    |
@@ -16,26 +17,27 @@ Feature: Authorization
   | manifest     |
   | transactions |
 
-  Scenario Outline: Basic user has limited access
+  Scenario Outline: Default user role has very restricted access
     Given I am logged in as Bobby Basic
-    When  I go to the home page
-    Then  the "<name>" link should not be visible
+    When  I go to the <protected> page
+    Then  I should be on the edit my profile page
 
   Examples:
-  | name         |
-  | Manifest     |
-  | Transactions |
-  | Accounts     |
-  | Management   |
+  | protected    |
+  | accounts     |
+  | aircrafts    |
+  | manifest     |
+  | transactions |
 
-  Scenario Outline: Manager has access to everything
+  Scenario Outline: Manager user role has unrestricted access
     Given I am logged in as Maggie Manager
-    When  I go to the home page
-    Then  the "<name>" link should be visible
+    When  I go to the <protected> page
+    Then  I should be on the <protected> page
 
   Examples:
-  | name         |
-  | Manifest     |
-  | Transactions |
-  | Accounts     |
-  | Management   |
+  | protected    |
+  | accounts     |
+  | aircrafts    |
+  | manifest     |
+  | transactions |
+
