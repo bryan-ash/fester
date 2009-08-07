@@ -1,5 +1,5 @@
 Given /^an account to be imported already exists$/ do
-  Given 'there is a jumper named "Payer, Prompt"'
+  Given 'there is a jumper named "Prompt Payer"'
 
   existing_user.dob.should be_nil
 end
@@ -25,13 +25,13 @@ end
 
 Then /^the accounts should be imported$/ do
   Account.count.should == 3
-  johnny = Account.find_by_name 'Jumper, Johnny'
+  johnny = Account.find_by_name 'Johnny Jumper'
   johnny.created_at.to_date.should == Date.parse('7/19/2008')
 #  johnny.email.should ==
 #  johnny.contact.should ==
   johnny.balance.should == -23.45
 
-  prompt = Account.find_by_name 'Payer, Prompt'
+  prompt = Account.find_by_name 'Prompt Payer'
   prompt.dob.should == Date.parse('12/7/1976')
 end
 
@@ -47,6 +47,6 @@ Then /^the accounts should not be imported$/ do
 end
 
 def existing_user
-  Account.find_by_name 'Payer, Prompt'
+  Account.find_by_name 'Prompt Payer'
 end
 

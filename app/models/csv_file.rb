@@ -1,5 +1,6 @@
 
 require 'fastercsv'
+require 'string'
 
 class CsvFile
 
@@ -20,7 +21,7 @@ class CsvFile
     begin
       Account.transaction do
         FasterCSV.parse(@path.read, :headers => true).each do |row|
-          account = Account.find_or_create_by_name row[Name]
+          account = Account.find_or_create_by_name row[Name].reverse_first_last_names
           
           account.update_attributes(:created_at => row[Created_At],
                                     :email      => row[Email],
