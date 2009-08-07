@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   end
 
   def permitted_to_access?(path)
-    ['Manager', 'Manifester'].include? role.name
+    path == entry_page_path or ['Manager', 'Manifester'].include? role.name
   end
 
   def entry_page_path

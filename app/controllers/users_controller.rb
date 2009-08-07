@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  skip_before_filter :authorize_access
+  skip_before_filter :authorize_access, :except => [:edit, :update]
 
   def new
     @user = User.new

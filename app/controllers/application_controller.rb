@@ -1,12 +1,10 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
 
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  helper :all
 
-  # Scrub sensitive parameters from your log
+  protect_from_forgery
+
   filter_parameter_logging :password, :password_confirmation
 
   before_filter :authorize_access
@@ -33,8 +31,8 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize_access
-    return redirect_to(root_path) unless
-      logged_in? and current_user.permitted_to_access? current_path
+    return redirect_to(root_path) unless logged_in?
+    return redirect_to(current_user.entry_page_path) unless current_user.permitted_to_access? current_path
   end
 
 end

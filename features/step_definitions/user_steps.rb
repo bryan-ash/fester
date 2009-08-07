@@ -27,6 +27,10 @@ When /^I register as (.+) with an email of (.+)$/ do |jumper, email|
   And  'I press "Submit"'
 end
 
+When /^I update the current user profile$/ do
+  put 'users/current'
+end
+
 Then /^I should be sent a password reset email$/ do
   Given '"Jenny@jumper.com" should have 1 email'
   When  'I open the email'

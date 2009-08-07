@@ -17,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :searches, :only => [:new, :create]
   map.resources :slots, :collection => { :autocomplete_for_account_name => :get}
   map.resources :transactions, :collection => { :autocomplete_for_account_name => :get}
-  map.resources :users
+  map.resources :users, :except => :show
   map.resources :user_sessions
 
   map.resource :password_reset

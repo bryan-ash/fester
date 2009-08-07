@@ -11,11 +11,17 @@ Feature: Authorization
     And   the "Login" link should be visible
 
   Examples:
-  | protected    |
-  | accounts     |
-  | aircrafts    |
-  | manifest     |
-  | transactions |
+  | protected       |
+  | accounts        |
+  | aircrafts       |
+  | manifest        |
+  | transactions    |
+  | edit my profile |
+
+  Scenario: Updating a user profile isn't allowed unless logged in
+    Given I am logged out
+    When  I update the current user profile
+    Then  I should be on the home page
 
   Scenario Outline: Default user role has very restricted access
     Given I am logged in as Bobby Basic
@@ -40,4 +46,3 @@ Feature: Authorization
   | aircrafts    |
   | manifest     |
   | transactions |
-
