@@ -1,6 +1,6 @@
 %tr
-  %td= transaction.date
+  %td= link_to_if transaction.editable, transaction.date, edit_transaction_path(transaction), :title => 'date'
   %td= transaction.payment_method_name
-  %td= transaction.amount
+  %td= link_to_if transaction.editable, transaction.amount, edit_transaction_path(transaction), :title => 'amount'
   %td= transaction.notes
-  %td= transaction.slot_id
+  %td= link_to("Load #{transaction.slot.load.number}", edit_load_path(transaction.slot.load)) if transaction.slot

@@ -69,3 +69,6 @@ Then /^Jenifer\'s transaction should be above Julia\'s$/ do
   jenifers_position.should < julias_position
 end
 
+Then /^I should be editing Julia\'s transaction$/ do
+  Then 'I should see "Editing transaction"'
+end

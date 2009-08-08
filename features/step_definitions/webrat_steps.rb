@@ -29,6 +29,11 @@ When /^I follow "([^\"]*)"$/ do |link|
   click_link(link)
 end
 
+When /^I follow today\'s date link$/ do
+  link = Date.today.to_s
+  click_link(link)
+end
+
 When /^I fill in "([^\"]*)" with "([^\"]*)"$/ do |field, value|
   fill_in(field, :with => value) 
 end
@@ -140,6 +145,9 @@ Then /^the "(.+)" link should not be visible$/ do |link|
   lambda { click_link(link) }.should raise_error  
 end
 
+When /^"(.+)" should not be a link$/ do |link|
+  lambda { click_link(link) }.should raise_error  
+end
 Then /^(.+) should be listed above (.+) on the (.+) page$/ do |first, second, page|
   visit page
   first_position  = (response.body =~ /#{first}/)

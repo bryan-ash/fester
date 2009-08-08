@@ -1,8 +1,9 @@
 class Slot < ActiveRecord::Base
 
   belongs_to :account
-  belongs_to :jump_type
   belongs_to :equipment
+  belongs_to :jump_type
+  belongs_to :load
 
   has_one :transaction, :dependent => :destroy
 

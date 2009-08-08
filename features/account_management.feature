@@ -63,3 +63,37 @@ I want Fester to remember account information
     Given I create Julia's account with an initial balance of $400
     When  I go to the accounts page
     Then  I should see "400.00"
+
+  Scenario: Jumper's transactions are listed on their account page
+    Given PENDING a way to enter values into a given slot on the load
+    Given Julia is manifested for a Fun Jump on our aircraft "1EE"
+    And   a cash payment credits an account
+    And   I enter Julia's cash payment of $20
+
+    When  I go to Julia's page
+    Then  I should see "Fun Jump"
+    And   I should see "cash"
+    And   I should see "20.0"
+
+  Scenario: Slot transaction links back to the load
+    Given Julia is manifested for a Fun Jump on our aircraft "1EE"
+    When  I go to Julia's page
+    And   I follow "Load 1"
+    Then  I should see "Editing Load 1"
+
+  Scenario: Slot transactions do not link to transaction edit page
+    Given Julia is manifested for a Fun Jump on our aircraft "1EE"
+    When  I go to Julia's page
+    Then  "date" should not be a link
+    And   "amount" should not be a link
+
+  Scenario: Transaction links to transaction edit page
+    Given a cash payment credits an account
+    And   I enter Julia's cash payment of $20
+    When  I go to Julia's page
+    And   I follow "date"
+    Then  I should be editing Julia's transaction
+
+    When  I go to Julia's page
+    And   I follow "amount"
+    Then  I should be editing Julia's transaction

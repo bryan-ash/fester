@@ -53,17 +53,17 @@ I want Fester to remember who jumped
   Scenario: Creating Load 1
     Given there are no loads manifested
     When  I go to the new load page
-    Then  I should see "Creating load 1"
+    Then  I should see "Creating Load 1"
 
   Scenario: Editing Load 1
     Given Johnny is manifested for an AFF on other aircraft "visitor"
     When  I follow "Edit"
-    Then  I should see "Editing load 1"
+    Then  I should see "Editing Load 1"
 
   Scenario: Creating Load 2
     Given Johnny is manifested for an AFF on other aircraft "visitor"
     When  I go to the new load page
-    Then  I should see "Creating load 2"
+    Then  I should see "Creating Load 2"
 
   Scenario: Loads are listed newest first
     Given Johnny is manifested for an AFF on other aircraft "visitor"

@@ -38,17 +38,6 @@ Feature: Transactions
     When  I go to the transactions page
     Then  I should see an entry for Jenifer's Tandem
 
-  Scenario: Jumper's transactions are listed on their account page
-    Given PENDING a way to enter values into a given slot on the load
-    Given Julia is manifested for a Fun Jump on our aircraft "1EE"
-    And   a cash payment credits an account
-    And   I enter Julia's cash payment of $20
-
-    When  I go to Julia's page
-    Then  I should see "Fun Jump"
-    And   I should see "cash"
-    And   I should see "20.0"
-
   Scenario: Transactions for slots may not be deleted or edited
     Given Julia is manifested for a Fun Jump on our aircraft "1EE"
     When  I go to the transactions page
