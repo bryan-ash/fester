@@ -1,22 +1,15 @@
 = error_messages_for :load
 
-- form_for @load do |f|
+- form_for @load, :html => { :id => 'load' } do |f|
 
   %p
     = f.label :date, 'Date:'
     = f.date_select :date, { :order => [:month, :day, :year] }
 
-    %br
-
     = render :partial => 'aircraft', :locals => { :f => f }
-
-    %br
 
     = f.label :pilot_id, 'Pilot:'
     = f.collection_select(:pilot_id, Account.pilots, :id, :name)
-
-  .line
-    %hr
 
   #slots
     = render :partial => 'slot', :collection => @load.slots

@@ -118,17 +118,6 @@ p {
     width:826px;
 }
 
-.line {
-    float:left;
-    font-size:0px;
-    margin:0px;
-    padding:10px 0px 15px 15px;
-}
-
-#dvfullpanel .line {
-    width:826px;
-}
-
 #dvfullpanel .submit {
     float:left;
     text-align:left;
@@ -157,8 +146,15 @@ p {
     width:530px;
 }
 
-#dvrightpanel .line {
-    width:533px;
+#load fieldset {
+    margin:0px;
+    padding-top:0px;
+}
+
+#load p {
+    margin:0px;
+    padding-top:5px;
+    padding-bottom:5px;
 }
 
 td {

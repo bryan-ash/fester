@@ -43,8 +43,11 @@ Business Names
 - easilyeverything (easyeverything is taken)
 
 Taken names
+- easylife
+- pathtoperfection
 - simpleinteractions
 - simplesoftware
 - simplyeverything
 - simplysoftware
-- easylife
+- softwarethatworks
+- workeasily
