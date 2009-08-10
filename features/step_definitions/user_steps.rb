@@ -2,7 +2,7 @@ Given /^I have forgotten my password$/ do
   Given 'I register as Jenny with an email of Jenny@jumper.com'
   And   'I am logged out'
   And   'I am on the login page'
-  And   'I follow "Lost Username or Password"'
+  And   'I follow "Lost Password"'
 end
 
 When /I request a password reset/ do
