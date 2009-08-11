@@ -38,7 +38,7 @@ class LoadsController < ApplicationController
     respond_to do |format|
       if @load.save
         flash[:notice] = 'Load was successfully created.'
-        format.html { redirect_to loads_path }
+        format.html { redirect_to loads_url }
         format.xml  { render :xml => @load, :status => :created, :location => @load }
       else
         format.html { render :action => "new" }
@@ -55,7 +55,7 @@ class LoadsController < ApplicationController
     respond_to do |format|
       if @load.update_attributes(params[:load])
         flash[:notice] = 'Load was successfully updated.'
-        format.html { redirect_to loads_path }
+        format.html { redirect_to loads_url }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

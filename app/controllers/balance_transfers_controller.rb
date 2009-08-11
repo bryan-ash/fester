@@ -16,7 +16,7 @@ class BalanceTransfersController < ApplicationController
 
     if balance_transfer.save
       flash[:notice] = "Balance transfer successfull"
-      redirect_to transactions_path
+      redirect_to transactions_url
     end
 
   end

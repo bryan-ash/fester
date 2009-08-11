@@ -37,7 +37,7 @@ class JumpTypesController < ApplicationController
     respond_to do |format|
       if @jump_type.save
         flash[:notice] = "Jump Type '#{@jump_type.name}' was created."
-        format.html { redirect_to jump_types_path }
+        format.html { redirect_to jump_types_url }
         format.xml  { render :xml => @jump_type, :status => :created, :location => @jump_type }
       else
         format.html { render :action => "new" }
@@ -52,7 +52,7 @@ class JumpTypesController < ApplicationController
     respond_to do |format|
       if @jump_type.update_attributes(params[:jump_type])
         flash[:notice] = "Jump Type '#{@jump_type.name}' was updated."
-        format.html { redirect_to jump_types_path }
+        format.html { redirect_to jump_types_url }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

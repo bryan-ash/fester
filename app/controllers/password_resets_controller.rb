@@ -15,7 +15,7 @@ class PasswordResetsController < ApplicationController
       redirect_to root_url  
     else  
       flash[:error] = "Email address not found"  
-      redirect_to new_password_reset_path
+      redirect_to new_password_reset_url
     end      
   end
 

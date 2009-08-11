@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize_access
-    return redirect_to(root_path) unless logged_in?
+    return redirect_to(root_url) unless logged_in?
     return redirect_to(current_user.entry_page_path) unless current_user.permitted_to_access? current_path
   end
 

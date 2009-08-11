@@ -37,7 +37,7 @@ class PaymentMethodsController < ApplicationController
     respond_to do |format|
       if @payment_method.save
         flash[:notice] = 'Payment Method was successfully created.'
-        format.html { redirect_to payment_methods_path }
+        format.html { redirect_to payment_methods_url }
         format.xml  { render :xml => @payment_method, :status => :created, :location => @payment_method }
       else
         format.html { render :action => "new" }
@@ -52,7 +52,7 @@ class PaymentMethodsController < ApplicationController
     respond_to do |format|
       if @payment_method.update_attributes(params[:payment_method])
         flash[:notice] = 'Payment Method was successfully updated.'
-        format.html { redirect_to payment_methods_path }
+        format.html { redirect_to payment_methods_url }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
