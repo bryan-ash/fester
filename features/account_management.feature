@@ -1,6 +1,6 @@
 In order to know who owes what
 As a Manifester
-I want Fester to remember account information
+I want to remember account information
 
   Background:
     Given I am logged in as Mani Fester

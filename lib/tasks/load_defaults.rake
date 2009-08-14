@@ -1,4 +1,4 @@
-namespace :fester do
+namespace :yougo do
 
   desc 'Populate database with default data'
   task :load_default_data => :environment do

@@ -1,6 +1,6 @@
 In order to keep only the truth stored
 As a dropzone owner
-I want Fester to be safe from attack
+I want malicious attack protection
 
   Background:
     Given I am logged in as Mani Fester

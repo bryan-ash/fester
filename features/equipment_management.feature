@@ -1,6 +1,6 @@
 In order to rent equipment to jumpers
 As a Manifester
-I want Fester to remember equipment information
+I want to remember equipment information
 
   Background:
     Given I am logged in as Mani Fester

@@ -2,7 +2,7 @@ Feature: Manifesting
 
 In order to track customer's jumps
 As a Manifester
-I want Fester to remember who jumped
+I want to remember who jumped
 
   Background:
     Given I am logged in as Mani Fester

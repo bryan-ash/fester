@@ -34,5 +34,5 @@ end
 Then /^I should be sent a password reset email$/ do
   Given '"Jenny@jumper.com" should have 1 email'
   When  'I open the email'
-  Then  'I should see "Fester Password Reset Instructions" in the subject'
+  Then  'I should see "YouGoJump Password Reset Instructions" in the subject'
 end

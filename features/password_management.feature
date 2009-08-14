@@ -2,7 +2,7 @@ Feature: Password Management
 
   In order to protect account information
   As a dropzone manager
-  I want Fester to be password protected
+  I want password protection
 
   Scenario: Forgotten password
     Given I have forgotten my password
