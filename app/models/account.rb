@@ -10,9 +10,9 @@ class Account < ActiveRecord::Base
     find_all_by_pilot(true)
   end
 
-  def self.search(search)
-    if search
-      all :conditions => ['name ILIKE ?', "%#{search}%"], :order => 'name ASC'
+  def self.search(name)
+    if name
+      all :conditions => ['name ILIKE ?', "%#{name}%"], :order => 'name ASC'
     else
       all :order => 'name ASC'      
     end    

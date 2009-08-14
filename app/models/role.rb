@@ -4,5 +4,4 @@ class Role < ActiveRecord::Base
     find_by_name 'Default'
   end
 
-
 end

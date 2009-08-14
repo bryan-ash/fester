@@ -26,6 +26,7 @@ Manage bookings?
 Business Names
 - easilyachieved
 - yougocentric
+- intrinsicsimplicity
 - rapidperfection
 - intentionalvalue
 - softwarethathelps.com
@@ -33,7 +34,7 @@ Business Names
 - plainanduseful.com
 - workhappily.com
 - admirablesoftware
-- simplymarveloussoftware
+- simplymarveloussoftware (simplymarvelous is taken)
 - enjoymentmatters
 - itsyoursoftware (yoursoftware is taken)
 - smoothersoftware (smoothsoftware is taken)
