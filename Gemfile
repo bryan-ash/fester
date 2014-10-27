@@ -5,7 +5,6 @@ ruby "1.8.7"
 
 gem "authlogic"
 gem "fastercsv"
-gem "openrain-action_mailer_tls"
 
 gem "pg", "0.8.0"
 gem "rails", "2.3.11"

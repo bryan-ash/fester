@@ -19,7 +19,6 @@ GEM
     eventmachine (1.0.3)
     fastercsv (1.5.5)
     haml (2.2.3)
-    openrain-action_mailer_tls (1.1.3)
     pg (0.8.0)
     rack (1.1.6)
     rails (2.3.11)
@@ -42,7 +41,6 @@ DEPENDENCIES
   authlogic
   fastercsv
   haml (= 2.2.3)
-  openrain-action_mailer_tls
   pg (= 0.8.0)
   rails (= 2.3.11)
   rake (= 0.8.7)
