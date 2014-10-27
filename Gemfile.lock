@@ -18,6 +18,7 @@ GEM
     daemons (1.1.9)
     eventmachine (1.0.3)
     fastercsv (1.5.5)
+    haml (2.2.3)
     openrain-action_mailer_tls (1.1.3)
     pg (0.8.0)
     rack (1.1.6)
@@ -28,7 +29,7 @@ GEM
       activeresource (= 2.3.11)
       activesupport (= 2.3.11)
       rake (>= 0.8.3)
-    rake (10.3.2)
+    rake (0.8.7)
     thin (1.2.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -40,7 +41,9 @@ PLATFORMS
 DEPENDENCIES
   authlogic
   fastercsv
+  haml (= 2.2.3)
   openrain-action_mailer_tls
   pg (= 0.8.0)
   rails (= 2.3.11)
+  rake (= 0.8.7)
   thin (= 1.2.1)
