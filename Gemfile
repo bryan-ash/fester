@@ -11,8 +11,7 @@ gem "openrain-action_mailer_tls"
 
 # aspen gems
 gem "pg", "0.8.0"
-gem "rack", "1.0.1"
-gem "rails", "2.3.5"
+gem "rails", "2.3.11"
 gem "thin", "1.2.1"
 
 # gem "abstract", "1.0.0"
