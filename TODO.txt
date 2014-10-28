@@ -16,39 +16,6 @@ Vulnerabilty
 
 Link to New Transaction on Account edit page
 
-Heroku Services
-- Backup is available, need to figure out how to use
-
 Manage bookings?
 - Phone operator enters booking
 - Jumper enters booking online
-
-Business Names
-- easilyachieved
-- yougocentric
-- intrinsicsimplicity
-- rapidperfection
-- intentionalvalue
-- softwarethathelps.com
-- softwareforfun.com
-- plainanduseful.com
-- workhappily.com
-- admirablesoftware
-- simplymarveloussoftware (simplymarvelous is taken)
-- enjoymentmatters
-- itsyoursoftware (yoursoftware is taken)
-- smoothersoftware (smoothsoftware is taken)
-- worksmoother
-- worksmoothly
-- livesmoothly
-- easilyeverything (easyeverything is taken)
-
-Taken names
-- easylife
-- pathtoperfection
-- simpleinteractions
-- simplesoftware
-- simplyeverything
-- simplysoftware
-- softwarethatworks
-- workeasily
